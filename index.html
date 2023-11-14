@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+    <meta name="generator" content="Hugo 0.104.2" />
+    <title>Dashboard Template · Bootstrap v5.2</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/" />
+
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- my Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1), inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="navbar navbar-dark sticky-top bg-danger flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#" style="font-family: 'Agbalumo';">MY padamelan</a>
+      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="position-sticky pt-3 sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  <span data-feather="home" class="align-text-bottom"></span>
+                  Opname Material
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file" class="align-text-bottom"></span>
+                  Update Achievement
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="shopping-cart" class="align-text-bottom"></span>
+                  Products
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Opname Material</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group me-2">
+                <select class="form-select form-select border-success"style="border-radius: 5px; font-size: 1rem;">
+                  <option selected>Line</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                </select>
+                <select class="form-select form-select border-success"style="border-radius: 5px; font-size: 1rem;">
+                  <option selected>Shift</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <button type="button" class="btn btn-sm btn-outline-success"> 
+                <span data-feather="share-2" class="align-text-bottom"></span>
+                  Share
+              </button>
+            </div> 
+          </div>
+           <div class="row justify-content-center"> 
+                <!-- Start Prefrom -->
+                  <div class="collapse" id="prefrom">
+                    <div class="card card-body">
+                      <div class="card-title">
+                          <h2>Preform</h2>
+                        </div>
+                        
+                          <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-lg-12">
+                              <select class="form-select" id="jenis_preform" >
+                                <option selected disabled>Jenis Prefrom</option>
+                                <option value="330ml">330ml</option>
+                                <option value="600ml">600ml</option>
+                                <option value="1500ml">1500ml</option>
+                                <option value="5L">5L</option>
+                              </select>
+                            </div>  
+                          
+                            <div class="col-md-6">
+                              <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick=tambahKrj() >
+                                <span data-feather="plus-circle" class="align-text-bottom"></span>
+                                Colom Keranjang
+                              </button>
+                              <div id="awalKeranjang">
+                                <div class=" mb-2">
+                                  <input type="number"  placeholder="0" class="form-control text-right keranjang" required>
+                                                                        
+                                </div>
+                              </div> 
+                              <div id="keranjang">  
+                                
+                              </div>
+                          
+                            </div>
+                            <!-- pcs -->
+                            <div class="col-md-6">
+                              <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahPcs() >+ Colom Pcs</button>
+                              <div id="awalPcs">
+                                <div class="mb-2">
+                                  <input type="number" placeholder="0" class="form-control text-right pcs"  required>
+                                    
+                                </div>
+                              </div>  
+                              <div id="pcs">
+                                
+                              </div>
+                            </div>
+                          </form>
+                        
+                          <div class="mt-2">
+                            <button type="button" id="check" data-bs-toggle="collapse" data-bs-target="#prefrom" aria-expanded="false" aria-controls="#prefrom"  class="btn btn-outline-dark">Submit</button>                           
+                          </div>
+                        </div>
+                  </div>      
+                <!-- End Prefrom -->
+
+                <!-- Start cap -->
+                  <div class="collapse" id="cap">
+                    <div class="card card-body">
+                      <div class="card-title">
+                        <h2>Cap</h2>
+                        </div>
+                      
+                        <form class="row g-3 needs-validation" novalidate>
+                          <div class="col-lg-12 ">
+                            <select class="form-select jenisCap" required >
+                              <option selected disabled>Jumlah Cap</option>
+                              <option value="3600">3600</option>
+                              <option value="2150">2150</option>
+                            </select>
+                          </div>  
+                        
+                          <div class="col-md-6">
+                            <label for="palletCap">Input Pallet</label>
+                            <div id="awalPalletCap">
+                              <div class="input-group mb-2">
+                                <input type="number" placeholder="0" class="form-control text-right palletCap" aria-describedby="inputGroupPrepend" required>
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahCap() >+  Colom Pallet</button>
+                                
+                              </div>
+                            </div> 
+                            <div id="palletCap">  
+                              
+                            </div>
+                        
+                          </div>
+                        <!-- Box Cap -->
+                          <div class="col-md-6">
+                            <label for="boxCap">Input Box</label>
+                            <div id="awalBoxCap">
+                              <div class="input-group mb-2">
+                                <input type="number" placeholder="0" class="form-control text-right box"  aria-describedby="inputGroupPrepend" required>
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahBoxCap() >+ Colom Box</button>
+                                
+                              </div>
+                            </div>  
+                            <div id="boxCap">
+                              
+                            </div>
+                          </div>
+                        </form>
+                        <div class="mt-2">
+                          <button type="button" id="saveCap" data-bs-toggle="collapse" data-bs-target="#cap" aria-expanded="false" aria-controls="#cap" class="btn btn-outline-dark">Submit</button>                           
+                        </div>
+                  
+                      </div>
+                  </div>
+                <!-- End Cap -->
+
+                <!-- Start HandleGrip -->
+                  <div class="collapse" id="HandleGrip">
+                    <div class="card card-body">
+                      <div class="card-title">
+                        <h2>Handle Grip</h2>
+                      </div>
+                      <div class="modal-body">
+                        <form class="row g-3 needs-validation" novalidate>
+                          <div class="col-md-6">
+                            <label for="palletHandleGrip">Input Pallet</label>
+                            <div id="awalPalletHandleGrip">
+                              <div class="input-group mb-2">
+                                <input type="number" placeholder="0" class="form-control text-right palletHandleGrip"  aria-describedby="inputGroupPrepend" required>
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahHandleGrip() >+  Colom Pallet</button>
+                                
+                              </div>
+                            </div> 
+                            <div id="palletHandleGrip">  
+                              
+                            </div>
+                        
+                        </div>
+                        <!-- pcs -->
+
+                          <div class="col-md-6">
+                            <label for="boxCap">Input Box</label>
+                            <div id="awalbox">
+                              <div class="input-group mb-2">
+                                <input type="number" placeholder="0" class="form-control text-right boxHandleGrip"  aria-describedby="inputGroupPrepend" required>
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahBoxHandleGrip() >+ Colom Box</button>
+                                
+                              </div>
+                            </div>  
+                            <div id="boxHandleGrip">
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mt-2">
+                          <button type="button" id="saveHandleGrip" data-bs-toggle="collapse" data-bs-target="#HandleGrip" aria-expanded="false" aria-controls="#HandleGrip" class="btn btn-outline-dark">Submit</button>                           
+                        </div>
+                      </div>
+                    </form>
+                   </div>
+                <!-- End Handle Grip -->
+
+                <!-- Start labelReg -->
+                  <div class="collapse" id="labelReg">
+                    <div class="card card-body">
+                      <div class="card-title">
+                        <h2>Label Reguler</h2>
+                      </div>
+                      <div class="modal-body">
+                        <form class="row g-3 needs-validation" novalidate>
+                          <div class="col-lg-12">
+                            <select class="form-select jenisLabel" required aria-label="Default select example">
+                              <option selected disabled>Pilih Qty Label</option>
+                              <option value="2">2 Roll</option>
+                              <option value="3">3 Roll</option>
+                              <option value="4">4 Roll</option>
+                              <option value="6">6 Roll</option>
+                            </select>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="awallabelReg">Input Box</label>
+                            <div id="awallabelReg">
+                              <div class="input-group mb-2">
+                                <input type="number" placeholder="0" class="form-control text-right boxLabel"  aria-describedby="inputGroupPrepend" required>
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahlabelReg() >+  Colom Box</button>
+                                
+                              </div>
+                            </div> 
+                            <div id="akhirlabelReg">  
+                              
+                            </div>
+                        
+                        </div>
+                        <!-- pcs -->
+
+                          <div class="col-md-6">
+                            <label for="boxCap">Input Roll</label>
+                            <div id="awalrollLabel">
+                              <div class="input-group mb-2">
+                                <input type="number" placeholder="0" class="form-control text-right rollLabel"  aria-describedby="inputGroupPrepend" required>
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahRollLabelReg() >+ Colom Roll</button>
+                                
+                              </div>
+                            </div>  
+                            <div id="rollLabel">
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mt-2">
+                          <button type="button" id="savelabelReg" data-bs-toggle="collapse" data-bs-target="#labelReg" aria-expanded="false" aria-controls="#labelReg" class="btn btn-outline-dark">Submit</button>                           
+                        </div>
+                      </div>
+                    </form>
+                   </div>
+                <!-- End labelReg -->
+
+                <!-- Start labelExp -->
+                  <div class="collapse" id="labelExp">
+                    <div class="card card-body">
+                      <div class="card-title">
+                        <h2>Label Export</h2>
+                      </div>
+                      <div class="modal-body">
+                        <form class="row g-3 needs-validation" novalidate>
+                          <div class="col-md-6">
+                            <label for="awallabelExp">Input Box</label>
+                            <div id="awallabelExp">
+                              <div class="input-group mb-2">
+                                <input type="number" placeholder="0" class="form-control text-right boxLabelExp"  aria-describedby="inputGroupPrepend" required>
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahlabelExp() >+  Colom Box</button>
+                                
+                              </div>
+                            </div> 
+                            <div id="akhirlabelExp">  
+                              
+                            </div>
+                        
+                        </div>
+                        <!-- pcs -->
+
+                          <div class="col-md-6">
+                            <label for="boxCap">Input Roll</label>
+                            <div id="awalrollLabelExp">
+                              <div class="input-group mb-2">
+                                <input type="number" placeholder="0" class="form-control text-right rollLabelExp"  aria-describedby="inputGroupPrepend" required>
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahRollLabelExp() >+ Colom Roll</button>
+                                
+                              </div>
+                            </div>  
+                            <div id="rollLabelExp">
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mt-2">
+                          <button type="button" id="savelabelExp" data-bs-toggle="collapse" data-bs-target="#labelExp" aria-expanded="false" aria-controls="#labelExp" class="btn btn-outline-dark">Submit</button>                           
+                        </div>
+                      </div>
+                    </form>
+                   </div>
+                <!-- End labelExp -->
+
+                <!-- Start Capseal -->
+                  <div class="collapse" id="Capseal">
+                    <div class="card card-body">
+                      <div class="card-title">
+                        <h2>Capseal</h2>
+                      </div>
+                      <div class="modal-body">
+                        <form class="row g-3 needs-validation" novalidate>
+                          <div class="col-md-6">
+                            <label for="awalCapseal">Input Box</label>
+                            <div id="awalCapseal">
+                              <div class="input-group mb-2">
+                                <input type="number" placeholder="0" class="form-control text-right boxCapseal"  aria-describedby="inputGroupPrepend" required>
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahCapseal() >+  Colom Box</button>
+                                
+                              </div>
+                            </div> 
+                            <div id="akhirCapseal">  
+                              
+                            </div>
+                        
+                        </div>
+                        <!-- pcs -->
+
+                          <div class="col-md-6">
+                            <label for="boxCap">Input Roll</label>
+                            <div id="awalrollCapseal">
+                              <div class="input-group mb-2">
+                                <input type="number" placeholder="0" class="form-control text-right rollCapseal"  aria-describedby="inputGroupPrepend" required>
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahRollCapseal() >+ Colom Roll</button>
+                                
+                              </div>
+                            </div>  
+                            <div id="rollCapseal">
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mt-2">
+                          <button type="button" id="saveCapseal" data-bs-toggle="collapse" data-bs-target="#Capseal" aria-expanded="false" aria-controls="#Capseal" class="btn btn-outline-dark">Submit</button>                           
+                        </div>
+                      </div>
+                    </form>
+                   </div>
+                <!-- End Capseal -->
+    
+                <!-- Start LemAMDK -->
+                  <div class="collapse" id="LemAMDK">
+                    <div class="card card-body">
+                      <div class="card-title">
+                        <h2>LemAMDK</h2>
+                      </div>
+                      <div class="modal-body">
+                        <form class="row g-3 needs-validation" novalidate>
+                          <div class="col-md-12">
+                            <select class="form-select mb-2 jumlahLemAmdk" required aria-label="Default select example">
+                              <option selected disabled>Qty Lem</option>
+                              <option value="12">12</option>
+                              <option value="20">20</option>
+                            </select>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="awalLemAMDK">Input Box</label>
+                            <div id="awalLemAMDK">
+                              <div class="input-group mb-2">
+                                <input type="number" placeholder="0" class="form-control text-right boxLemAMDK"  aria-describedby="inputGroupPrepend" required>
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahLemAMDK() >+  Colom Box</button>
+                                
+                              </div>
+                            </div> 
+                            <div id="akhirLemAMDK">  
+                              
+                            </div>
+                        
+                        </div>
+                        <!-- pcs -->
+
+                          <div class="col-md-6">
+                            <label for="boxCap">Input Kg</label>
+                            <div id="awalkglemAMDK">
+                              <div class="input-group mb-2">
+                                <input type="number" placeholder="0" class="form-control text-right kg"  aria-describedby="inputGroupPrepend" required>
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahKgLemAMDK() >+ Colom Kg</button>
+                                
+                              </div>
+                            </div>  
+                            <div id="kgLemAMDK">
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mt-2">
+                          <button type="button" id="saveLemAMDK" data-bs-toggle="collapse" data-bs-target="#LemAMDK" aria-expanded="false" aria-controls="#LemAMDK" class="btn btn-outline-dark">Submit</button>                           
+                        </div>
+                      </div>
+                    </form>
+                   </div>
+                <!-- End LemAMDK -->
+
+                <!-- Start LemAMDK -->
+                  <div class="collapse" id="LemKarton">
+                    <div class="card card-body">
+                      <div class="card-title">
+                        <h2>LemKarton</h2>
+                      </div>
+                      <div class="modal-body">
+                        <form class="row g-3 needs-validation" novalidate>
+                          <div class="col-md-6">
+                            <label for="awalLemKarton">Input Sak</label>
+                            <div id="awalLemKarton">
+                              <div class="input-group mb-2">
+                                <input type="number" placeholder="0" class="form-control text-right sakLemAdtek"  aria-describedby="inputGroupPrepend" required>
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahLemKarton() >+  Colom Sak</button>
+                                
+                              </div>
+                            </div> 
+                            <div id="akhirLemKarton">  
+                              
+                            </div>
+                        
+                        </div>
+                        <!-- pcs -->
+
+                          <div class="col-md-6">
+                            <label for="boxCap">Input Kg</label>
+                            <div id="awalkglemKarton">
+                              <div class="input-group mb-2">
+                                <input type="number" placeholder="0" class="form-control text-right kgLemAdtek"  aria-describedby="inputGroupPrepend" required>
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahKgLemKarton() >+ Colom Kg</button>
+                                
+                              </div>
+                            </div>  
+                            <div id="kgLemKarton">
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mt-2">
+                          <button type="button" id="saveLemKarton" data-bs-toggle="collapse" data-bs-target="#LemKarton" aria-expanded="false" aria-controls="#LemKarton" class="btn btn-outline-dark">Submit</button>                           
+                        </div>
+                      </div>
+                    </form>
+                   </div>
+                <!-- End LemKarton -->
+
+                     <!-- Start PackingTape -->
+                     <div class="collapse" id="PackingTape">
+                      <div class="card card-body">
+                        <div class="card-title">
+                          <h2>PackingTape</h2>
+                        </div>
+                        <div class="modal-body">
+                          <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-md-6">
+                              <label for="awalPackingTape">Input Box</label>
+                              <div id="awalPackingTape">
+                                <div class="input-group mb-2">
+                                  <input type="number" placeholder="0" class="form-control text-right boxPackingTape"  aria-describedby="inputGroupPrepend" required>
+                                  <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahPackingTape() >+  Colom Box</button>
+                                  
+                                </div>
+                              </div> 
+                              <div id="akhirPackingTape">  
+                                
+                              </div>
+                          
+                          </div>
+                          <!-- pcs -->
+  
+                            <div class="col-md-6">
+                              <label for="boxCap">Input Roll</label>
+                              <div id="awalrollPackingTape">
+                                <div class="input-group mb-2">
+                                  <input type="number" placeholder="0" class="form-control text-right rollPT"  aria-describedby="inputGroupPrepend" required>
+                                  <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahRollPackingTape() >+ Colom Roll</button>
+                                  
+                                </div>
+                              </div>  
+                              <div id="rollPackingTape">
+                                
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-2">
+                            <button type="button" id="savePackingTape" data-bs-toggle="collapse" data-bs-target="#PackingTape" aria-expanded="false" aria-controls="#PackingTape" class="btn btn-outline-dark">Submit</button>                           
+                          </div>
+                        </div>
+                      </form>
+                     </div>
+                  <!-- End PackingTape -->
+    
+                     <!-- Start Promo -->
+                     <div class="collapse" id="Promo">
+                      <div class="card card-body">
+                        <div class="card-title">
+                          <h2>Promo</h2>
+                        </div>
+                        <div class="modal-body">
+                          <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-md-12">
+                              <select class="form-select qty-promo" aria-label="Default select example">
+                                <option selected>Qty Karton</option>
+                                <option value="150">150 Lembar</option>
+                                <option value="800">800 Lembar</option>
+                                <option value="1000">1000 Lembar</option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <label for="awalPromo">Input Pallet</label>
+                              <div id="awalPromo">
+                                <div class="input-group mb-2">
+                                  <input type="number" placeholder="0" class="form-control text-right palletPromo"  aria-describedby="inputGroupPrepend" required>
+                                  <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahPromo() >+  Colom Pallet</button>
+                                  
+                                </div>
+                              </div> 
+                              <div id="akhirPromo">  
+                                
+                              </div>
+                          
+                          </div>
+                          <!-- pcs -->
+  
+                            <div class="col-md-6">
+                              <label for="boxCap">Input lbr</label>
+                              <div id="awallbrPromo">
+                                <div class="input-group mb-2">
+                                  <input type="number" placeholder="0" class="form-control text-right lbrPromo"  aria-describedby="inputGroupPrepend" required>
+                                  <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahLbrPromo() >+ Colom lbr</button>
+                                  
+                                </div>
+                              </div>  
+                              <div id="lbrPromo">
+                                
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-2">
+                            <button type="button" id="savePromo" data-bs-toggle="collapse" data-bs-target="#Promo" aria-expanded="false" aria-controls="#Promo" class="btn btn-outline-dark">Submit</button>                           
+                          </div>
+                        </div>
+                      </form>
+                     </div>
+                  <!-- End Promo -->
+    
+             
+           </div>
+           <table class="table " id="data-material">
+            <thead>
+              <tr align="center">
+                <th scope="col">Nama Material</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Satuan</th>
+                <th scope="col">Total</th>
+
+              </tr>
+            </thead>
+            <tbody id="data-opname" class="table-group-divider text-center">
+              <tr>
+                <th scope="row">  
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#prefrom" aria-expanded="false" aria-controls="#prefrom">
+                      Preform
+                    </button>
+                  </div>
+                </th>
+                <td id="qtyPreform">0</td>
+                <td >Keranjang/Pcs</td>
+                <td id="totalPreform">0</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#cap" aria-expanded="false" aria-controls="cap">
+                      Cap
+                    </button>
+                  </div>
+                </th>
+                <td id="qtyCap">0</td>
+                <td>Pallet/Box</td>
+                <td id="totalCap">0</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#HandleGrip" aria-expanded="false" aria-controls="HandleGrip">
+                      Handle Grip
+                    </button>
+                  </div>
+                </th>
+                <td id="qtyHG">0</td>
+                <td>Pallet/Box</td>
+                <td id="totalHandleGrip">0</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#labelReg" aria-expanded="false" aria-controls="labelReg">
+                      Label Reguler
+                    </button>
+                  </div>
+                </th>
+                <td id="qtyLabelReg">0</td>
+                <td>Box/Roll</td>
+                <td id="totalLabelReg">0</td>
+              </tr>
+              <tr>
+                <th scope="row"> 
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#labelExp" aria-expanded="false" aria-controls="labelExp">
+                      Label Export
+                    </button>
+                   </div>
+                </th>
+                <td id="qtyLabelExp">0</td>
+                <td>Box/Roll</td>
+                <td id="totalLabelExp">0</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#Capseal" aria-expanded="false" aria-controls="Capseal">
+                      Capseal
+                    </button>
+                   </div>
+                </th>
+                <td id="qtyCapseal">0</td>
+                <td>Box/Roll</td>
+                <td id="totalCapseal">0</td>
+              </tr>
+              <tr>
+                <th scope="row"> 
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#LemAMDK" aria-expanded="false" aria-controls="LemAMDK">
+                      LemAMDK
+                    </button>
+                 </div>
+                </th>
+                <td id="qtyLemAMDK">0</td>
+                <td>Box/Kg</td>
+                <td id="totalLemAMDK">0</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#LemKarton" aria-expanded="false" aria-controls="LemKarton">
+                      LemKarton
+                    </button>
+                 </div>
+                </th>
+                <td id="qtyLemKarton">0</td>
+                <td>Sak/Kg</td>
+                <td id="totalLemKarton">0</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#PackingTape" aria-expanded="false" aria-controls="PackingTape">
+                      PackingTape
+                    </button>
+                  </div>
+                </th>
+                <td id="qtyPT">0</td>
+                <td>Box/Roll</td>
+                <td id="totalPackingTape">0</td>
+              </tr>
+              <tr>
+                <td colspan="2" align="left"><h5>Karton</h5></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#Promo" aria-expanded="false" aria-controls="Promo">
+                      Promo
+                    </button>
+                  </div>
+                </th>
+                <td id="qtyPromo">0</td>
+                <td>Pallet/lembar</td>
+                <td id="totalPromo">0</td>
+              </tr>
+              <tr>
+                <th scope="row" id="namaReguler"> Reguler</th>
+                <td id="qtyReguler">Pallet/Lembar</td>
+                <td id="totalReguler">0</td>
+              </tr>
+              <tr>
+                <th scope="row" id="namaphillReguler"> Phill Reguler</th>
+                <td id="qtyPhillReguler">Pallet/Lembar</td>
+                <td id="totalphillReguler">0</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </main>
+      </div>
+    </div>
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/tambah.js"></script>
+    <script src="js/preform.js"></script>
+    <script src="js/cap.js"></script>
+    <script src="js/HandleGrip.js"></script>
+    <script src="js/labelReg.js"></script>
+    <script src="js/labelExp.js"></script>
+    <script src="js/capseal.js"></script>
+    <script src="js/LemAMDK.js"></script>
+    <script src="js/lemAdtek.js"></script>
+    <script src="js/pt.js"></script>
+    <script src="js/promo.js"></script>
+  </body>
+</html>
