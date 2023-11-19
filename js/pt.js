@@ -1,7 +1,7 @@
 $(function () {
   var total_PackingTape = function () {
     var sum = 0;
-    var option = $(".option").val();
+    var option = $(".qty-PT").val();
     var totalBoxPT = 0;
     var totalRollPT = 0;
 

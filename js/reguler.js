@@ -1,7 +1,7 @@
 $(function () {
   var total_Reguler = function () {
     var sum = 0;
-    var option = Number($(".qty-reguler").val().replace(",", ""));
+    var option = Number($(".qty-Reguler").val().replace(",", ""));
     var totalpalletReguler = 0;
     var totallbrReguler = 0;
 
@@ -29,7 +29,7 @@ $(function () {
       }
     });
     $("#totalReguler").text(sum.toLocaleString("en-US"));
-    $("#qtyReguler").text(totalpalletReguler + " (Pallet) " + totallbrReguler + " (Lembar)");
+    $("#qtyReguler").text(totalpalletReguler + " / " + totallbrReguler);
   };
 
   $("#saveReguler").on("click", function () {

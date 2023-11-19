@@ -6,7 +6,7 @@
     <meta name="description" content="" />
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
     <meta name="generator" content="Hugo 0.104.2" />
-    <title>Dashboard Template · Bootstrap v5.2</title>
+    <title>My Padamelan</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/" />
 
@@ -73,7 +73,7 @@
   </head>
   <body>
     <header class="navbar navbar-dark sticky-top bg-danger flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#" style="font-family: 'Agbalumo';">MY padamelan</a>
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#" style="font-family: 'Agbalumo'; text-transform: uppercase;">MY padamelan</a>
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -82,7 +82,7 @@
     <div class="container-fluid">
       <div class="row">
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-          <div class="position-sticky pt-3 sidebar-sticky">
+          <div class="position-sticky pt-2 sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">
@@ -108,10 +108,10 @@
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Opname Material</h1>
+            <h1 class="h2 mb-2">Opname Material</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group me-2">
-                <select class="form-select form-select border-success"style="border-radius: 5px; font-size: 1rem;">
+                <select class="form-select form-select border-success" id="line" style="border-radius: 5px; font-size: 1rem;">
                   <option selected>Line</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -122,6 +122,9 @@
                   <option value="7">7</option>
                   <option value="8">8</option>
                 </select>
+             
+              </div>
+              <div class="me-2">
                 <select class="form-select form-select border-success"style="border-radius: 5px; font-size: 1rem;">
                   <option selected>Shift</option>
                   <option value="1">One</option>
@@ -442,7 +445,7 @@
                   <div class="collapse" id="LemAMDK">
                     <div class="card card-body">
                       <div class="card-title">
-                        <h2>LemAMDK</h2>
+                        <h2>Lem AMDK</h2>
                       </div>
                       <div class="modal-body">
                         <form class="row g-3 needs-validation" novalidate>
@@ -495,7 +498,7 @@
                   <div class="collapse" id="LemKarton">
                     <div class="card card-body">
                       <div class="card-title">
-                        <h2>LemKarton</h2>
+                        <h2>Lem Adtex</h2>
                       </div>
                       <div class="modal-body">
                         <form class="row g-3 needs-validation" novalidate>
@@ -541,10 +544,17 @@
                      <div class="collapse" id="PackingTape">
                       <div class="card card-body">
                         <div class="card-title">
-                          <h2>PackingTape</h2>
+                          <h2>Packing Tape</h2>
                         </div>
                         <div class="modal-body">
                           <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-lg-12">
+                              <select class="form-select qty-PT" required aria-label="Default select example">
+                                <option selected disabled>Pilih Qty Packing Tape</option>
+                                <option value="12">12 Roll</option>
+                                <option value="20">20 Roll</option>
+                              </select>
+                            </div>
                             <div class="col-md-6">
                               <label for="awalPackingTape">Input Box</label>
                               <div id="awalPackingTape">
@@ -583,7 +593,7 @@
                      </div>
                   <!-- End PackingTape -->
     
-                     <!-- Start Promo -->
+                  <!-- Start Promo -->
                      <div class="collapse" id="Promo">
                       <div class="card card-body">
                         <div class="card-title">
@@ -636,6 +646,114 @@
                       </form>
                      </div>
                   <!-- End Promo -->
+
+                  <!-- Start Reguler -->
+                     <div class="collapse" id="Reguler">
+                      <div class="card card-body">
+                        <div class="card-title">
+                          <h2>Reguler</h2>
+                        </div>
+                        <div class="modal-body">
+                          <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-md-12">
+                              <select class="form-select qty-Reguler" aria-label="Default select example">
+                                <option selected>Qty Karton</option>
+                                <option value="150">150 Lembar</option>
+                                <option value="800">800 Lembar</option>
+                                <option value="1000">1000 Lembar</option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <label for="awalReguler">Input Pallet</label>
+                              <div id="awalReguler">
+                                <div class="input-group mb-2">
+                                  <input type="number" placeholder="0" class="form-control text-right palletReguler"  aria-describedby="inputGroupPrepend" required>
+                                  <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahReguler() >+  Colom Pallet</button>
+                                  
+                                </div>
+                              </div> 
+                              <div id="akhirReguler">  
+                                
+                              </div>
+                          
+                          </div>
+                          <!-- pcs -->
+  
+                            <div class="col-md-6">
+                              <label for="boxCap">Input lbr</label>
+                              <div id="awallbrReguler">
+                                <div class="input-group mb-2">
+                                  <input type="number" placeholder="0" class="form-control text-right lbrReguler"  aria-describedby="inputGroupPrepend" required>
+                                  <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahLbrReguler() >+ Colom lbr</button>
+                                  
+                                </div>
+                              </div>  
+                              <div id="lbrReguler">
+                                
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-2">
+                            <button type="button" id="saveReguler" data-bs-toggle="collapse" data-bs-target="#Reguler" aria-expanded="false" aria-controls="#Reguler" class="btn btn-outline-dark">Submit</button>                           
+                          </div>
+                        </div>
+                      </form>
+                     </div>
+                  <!-- End Reguler -->
+
+                  <!-- Start PhillReguler -->
+                     <div class="collapse" id="PhillReguler">
+                      <div class="card card-body">
+                        <div class="card-title">
+                          <h2>PhillReguler</h2>
+                        </div>
+                        <div class="modal-body">
+                          <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-md-12">
+                              <select class="form-select qty-PhillReguler" aria-label="Default select example">
+                                <option selected>Qty Karton</option>
+                                <option value="150">150 Lembar</option>
+                                <option value="800">800 Lembar</option>
+                                <option value="1000">1000 Lembar</option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <label for="awalPhillReguler">Input Pallet</label>
+                              <div id="awalPhillReguler">
+                                <div class="input-group mb-2">
+                                  <input type="number" placeholder="0" class="form-control text-right palletPhillReguler"  aria-describedby="inputGroupPrepend" required>
+                                  <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahPhillReguler() >+  Colom Pallet</button>
+                                  
+                                </div>
+                              </div> 
+                              <div id="akhirPhillReguler">  
+                                
+                              </div>
+                          
+                          </div>
+                          <!-- pcs -->
+  
+                            <div class="col-md-6">
+                              <label for="boxCap">Input lbr</label>
+                              <div id="awallbrPhillReguler">
+                                <div class="input-group mb-2">
+                                  <input type="number" placeholder="0" class="form-control text-right lbrPhillReguler"  aria-describedby="inputGroupPrepend" required>
+                                  <button type="button" class="btn btn-outline-dark btn-sm" onclick=tambahLbrPhillReguler() >+ Colom lbr</button>
+                                  
+                                </div>
+                              </div>  
+                              <div id="lbrPhillReguler">
+                                
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-2">
+                            <button type="button" id="savePhillReguler" data-bs-toggle="collapse" data-bs-target="#PhillReguler" aria-expanded="false" aria-controls="#PhillReguler" class="btn btn-outline-dark">Submit</button>                           
+                          </div>
+                        </div>
+                      </form>
+                     </div>
+                  <!-- End PhillReguler -->
     
              
            </div>
@@ -674,7 +792,7 @@
                 <td>Pallet/Box</td>
                 <td id="totalCap">0</td>
               </tr>
-              <tr>
+              <tr id="coloum-handle-grip">
                 <th scope="row">
                   <div class="d-grid gap-2">
                     <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#HandleGrip" aria-expanded="false" aria-controls="HandleGrip">
@@ -690,7 +808,7 @@
                 <th scope="row">
                   <div class="d-grid gap-2">
                     <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#labelReg" aria-expanded="false" aria-controls="labelReg">
-                      Label Reguler
+                      Label Reg
                     </button>
                   </div>
                 </th>
@@ -698,11 +816,11 @@
                 <td>Box/Roll</td>
                 <td id="totalLabelReg">0</td>
               </tr>
-              <tr>
+              <tr id="coloum-label-exp">
                 <th scope="row"> 
                   <div class="d-grid gap-2">
                     <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#labelExp" aria-expanded="false" aria-controls="labelExp">
-                      Label Export
+                      Label Exp
                     </button>
                    </div>
                 </th>
@@ -726,7 +844,7 @@
                 <th scope="row"> 
                   <div class="d-grid gap-2">
                     <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#LemAMDK" aria-expanded="false" aria-controls="LemAMDK">
-                      LemAMDK
+                      Lem AMDK
                     </button>
                  </div>
                 </th>
@@ -734,11 +852,11 @@
                 <td>Box/Kg</td>
                 <td id="totalLemAMDK">0</td>
               </tr>
-              <tr>
+              <tr id="coloum-lem-karton">
                 <th scope="row">
                   <div class="d-grid gap-2">
                     <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#LemKarton" aria-expanded="false" aria-controls="LemKarton">
-                      LemKarton
+                      Lem Adtex
                     </button>
                  </div>
                 </th>
@@ -746,7 +864,7 @@
                 <td>Sak/Kg</td>
                 <td id="totalLemKarton">0</td>
               </tr>
-              <tr>
+              <tr id="coloum-packing-tape">
                 <th scope="row">
                   <div class="d-grid gap-2">
                     <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#PackingTape" aria-expanded="false" aria-controls="PackingTape">
@@ -774,14 +892,28 @@
                 <td id="totalPromo">0</td>
               </tr>
               <tr>
-                <th scope="row" id="namaReguler"> Reguler</th>
-                <td id="qtyReguler">Pallet/Lembar</td>
+                <th scope="row"> 
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#Reguler" aria-expanded="false" aria-controls="Reguler">
+                      Reguler
+                    </button>
+                  </div>
+                </th>
+                <td id="qtyReguler">0</td>
+                <td>Pallet/Lembar</td>
                 <td id="totalReguler">0</td>
               </tr>
               <tr>
-                <th scope="row" id="namaphillReguler"> Phill Reguler</th>
-                <td id="qtyPhillReguler">Pallet/Lembar</td>
-                <td id="totalphillReguler">0</td>
+                <th scope="row"> 
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#PhillReguler" aria-expanded="false" aria-controls="PhillReguler">
+                      Phill Reg
+                    </button>
+                  </div>
+                </th>
+                <td id="qtyPhillReguler">0</td>
+                <td>Pallet/Lembar</td>
+                <td id="totalPhillReguler">0</td>
               </tr>
               
             </tbody>
@@ -807,5 +939,31 @@
     <script src="js/lemAdtek.js"></script>
     <script src="js/pt.js"></script>
     <script src="js/promo.js"></script>
+    <script src="js/reguler.js"></script>
+    <script src="js/phill_reguler.js"></script>
+
+    <script>
+      $('#line').on('change', function() {
+        if (!($(this).val() == 6)){
+          $('#coloum-handle-grip').css("display", "none");
+        }else{
+          $('#coloum-handle-grip').css("display", "table-row");
+        }
+
+        if($(this).val() == 1 || $(this).val() == 2 || $(this).val() == 3){
+          $('#coloum-packing-tape').css("display", "none");
+          $('#coloum-lem-karton').css("display", "table-row");
+        }else{
+          $('#coloum-packing-tape').css("display", "table-row");
+          $('#coloum-lem-karton').css("display", "none");
+        }
+
+        if ($(this).val() == 7 || $(this).val() == 8 ){
+          $('#coloum-label-exp').css("display", "none");
+        }else{
+          $('#coloum-label-exp').css("display", "table-row");
+        }
+      })
+    </script>
   </body>
 </html>

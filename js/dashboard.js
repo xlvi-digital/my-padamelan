@@ -1,53 +1,13 @@
-/* globals Chart:false, feather:false */
+const stickyTop = document.querySelector(".sidebar-sticky");
+const collapse = document.querySelector(".collapse");
+const Humberger = document.querySelector(".navbar-toggler-icon");
 
-(() => {
-  'use strict'
+Humberger.addEventListener("click", function () {
+  // document.body.style.paddingRight = "400px";
+  stickyTop.style.overflow = "visible";
+});
 
-  feather.replace({ 'aria-hidden': 'true' })
-
-  // Graphs
-  const ctx = document.getElementById('myChart')
-  // eslint-disable-next-line no-unused-vars
-  const myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday'
-      ],
-      datasets: [{
-        data: [
-          15339,
-          21345,
-          18483,
-          24003,
-          23489,
-          24092,
-          12034
-        ],
-        lineTension: 0,
-        backgroundColor: 'transparent',
-        borderColor: '#007bff',
-        borderWidth: 4,
-        pointBackgroundColor: '#007bff'
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: false
-          }
-        }]
-      },
-      legend: {
-        display: false
-      }
-    }
-  })
-})()
+collapse.addEventListener("hidden.bs.collapse", function () {
+  // document.body.style.paddingRight = "0";
+  stickyTop.style.overflow = "hidden";
+});
