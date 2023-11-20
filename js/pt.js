@@ -7,10 +7,12 @@ $(function () {
 
     $(".boxPackingTape").each(function () {
       var boxPT = $(this).val().replace(",", "");
-      if (option == "dua_belas") {
+      if (option == "12") {
         sum += parseFloat(boxPT) * 12;
-      } else {
+      } else if (option == "20") {
         sum += parseFloat(boxPT) * 20;
+      } else {
+        sum += parseFloat(boxPT) * 10;
       }
       totalBoxPT += Number(boxPT);
     });
