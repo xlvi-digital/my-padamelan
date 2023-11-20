@@ -89,13 +89,13 @@
           <div class="position-sticky mb-2 sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+                <a class="nav-link" href="index.html">
                   <i class='bx bx-package'></i>
                   Opname Material
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="achievement.html">
                   <i class='bx bx-line-chart'></i>
                   Update Achievement
                 </a>
@@ -964,21 +964,21 @@
 
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-    <script src="js/dashboard.js"></script>
     <script src="js/jquery.js"></script>
-    <script src="js/tambah.js"></script>
-    <script src="js/preform.js"></script>
-    <script src="js/cap.js"></script>
-    <script src="js/HandleGrip.js"></script>
-    <script src="js/labelReg.js"></script>
-    <script src="js/labelExp.js"></script>
-    <script src="js/capseal.js"></script>
-    <script src="js/LemAMDK.js"></script>
-    <script src="js/lemAdtek.js"></script>
-    <script src="js/pt.js"></script>
-    <script src="js/promo.js"></script>
-    <script src="js/reguler.js"></script>
-    <script src="js/phill_reguler.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/opname/tambah.js"></script>
+    <script src="js/opname/preform.js"></script>
+    <script src="js/opname/cap.js"></script>
+    <script src="js/opname/HandleGrip.js"></script>
+    <script src="js/opname/labelReg.js"></script>
+    <script src="js/opname/labelExp.js"></script>
+    <script src="js/opname/capseal.js"></script>
+    <script src="js/opname/LemAMDK.js"></script>
+    <script src="js/opname/lemAdtek.js"></script>
+    <script src="js/opname/pt.js"></script>
+    <script src="js/opname/promo.js"></script>
+    <script src="js/opname/reguler.js"></script>
+    <script src="js/opname/phill_reguler.js"></script>
 
     <script>
      $('#line').on('change', function() {
@@ -993,6 +993,10 @@
 
         // Handle #coloum-label-exp
         $('#coloum-label-exp').css("display", (value == 7 || value == 8) ? "none" : "table-row");
+
+        $("#jenis_preform").val( (value == 1 || value == 7) ? "1500ml" : (value == 3) ? "330ml" : (value == 6) ? "5L" : "600ml");
+        $(".jenisCap").val( (value != 6 ) ? "3600" : "2150");
+
       });
     </script>
 
@@ -1013,9 +1017,6 @@
           "Lem AMDK": "totalLemAMDK",
           "Packing Tape": "totalPackingTape",
           "Lem Karton": "totalLemKarton",
-          // "Promo": "totalPromo",
-          // "Reguler": "totalReguler",
-          // "phill Reguler": "totalPhillReguler"
         };
 
         var message = "*Hasil Opname Line " + line + " Shift " + shift + "*" + "\n\n";
@@ -1044,7 +1045,7 @@
         var kartonphillReguler = document.getElementById("totalPhillReguler").innerHTML;
 
         if (kartonPromo !== "0" || kartonReguler !== "0"  || kartonphillReguler !== "0") {
-          message += "====== Karton ======" + "\n";
+          message += "\n" + "====== Karton ======" + "\n";
           if (kartonPromo !== "0") {
             message += "Promo : " + kartonPromo + " Lembar" + "\n";
           }
