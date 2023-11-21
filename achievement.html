@@ -141,6 +141,155 @@
               </button>
             </div>
           </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="row text-center">
+                <div class="col-md-12">
+                  <div class="result"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Update Per Jam Line 7</h3>
+              <a href="../index.html" class="btn btn-outline-danger">Back to home</a>
+            </div>
+            <div class="card-body">
+              <form id="formTransaksi">
+                <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-floating mb-3">
+                        <select class="form-select Shift" id="Shift" name="Shift">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                        <label for="tb-email">Pilih Shift</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-floating">
+                        <select class="form-select sku" id="produk" required name="produk">
+                          <option aria-readonly="true">Jenis Produk</option>
+                          <option value="600ml">600ml</option>
+                          <option value="1500ml">1500ml</option>
+                        </select>
+                        <label for="tb-email">Pilih Produk</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-floating">
+                        <select class="form-select sku" id="sku" name="sku">
+                          <option value="Promo">Promo</option>
+                          <option value="Reguler">Reguler</option>
+                          <option value="Reguler_GT">Reguler GT</option>
+                          <option value="Phill_Reguler">Phill Reguler</option>
+                          <option value="Phill_Promo">Phill Promo</option>
+                        </select>
+                        <label for="tb-email">Pilih SKU</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="input_tgl" name="input_tgl" required
+                          placeholder="Enter Name here" />
+                        <label for="input_tgl">Tanggal </label>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-1">
+                      <div class="form-floating mb-1">
+                        <input type="time" class="form-control" id="jam_awal" name="jam_awal" required
+                          placeholder="Enter Name here" />
+                        <label for="jam_awal">Dari Jam </label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <div class="form-floating mb-1">
+                        <input type="time" class="form-control" id="jam_akhir" name="jam_akhir" required
+                          placeholder="Enter Name here" />
+                        <label for="jam_akhir">Sampai Jam </label>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-1">
+                      <div class="form-floating mb-1">
+                        <input type="number" class="form-control" id="awal" name="awal" required
+                          placeholder="Enter Name here" />
+                        <label for="awal">No Pallet Awal </label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="akhir" name="akhir" required
+                          placeholder="Enter Name here" />
+                        <label for="akhir">No Pallet Akhir </label>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-1">
+                      <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="receh" name="receh"
+                          placeholder="Enter Name here" />
+                        <label for="receh">Receh </label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="buffer" name="buffer"
+                          placeholder="Enter Name here" />
+                        <label for="buffer">Buffer </label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="minus" name="minus"
+                          placeholder="Enter Name here" />
+                        <label for="minus">Minus </label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="note" name="note"
+                          placeholder="Enter Name here" />
+                        <label for="note">Note </label>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-md-flex align-items-center mt-3">
+                    <div class="ms-auto mt-3 mt-md-0">
+                      <button type="button" id="delete" class="
+                          btn btn-danger
+                          font-weight-medium 
+                          rounded-pill
+                          px-4
+                        ">
+                        <div class="d-flex align-items-center">
+                          <i data-feather="send" class="feather-sm fill-white me-2"></i>
+                          Reset
+                        </div>
+                      </button>
+                      <button type="submit" class="
+                          btn btn-info
+                          font-weight-medium
+                          rounded-pill
+                          px-4
+                        ">
+                        <div class="d-flex align-items-center">
+                          <i data-feather="send" class="feather-sm fill-white me-2"></i>
+                          Submit
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </form>
+          </div>
         </main>
       </div>
     </div>
