@@ -27,7 +27,7 @@ $(function () {
       }
     });
     $("#totalPromo").text(sum.toLocaleString("en-US"));
-    $("#qtyPromo").text(totalpalletPromo + " / " + totallbrPromo);
+    $("#qtyPromo").text(totalpalletPromo + " (Promo) " + totallbrPromo + " (Lembar)");
   };
 
   $("#savePromo").on("click", function () {

@@ -315,85 +315,272 @@
     <script src="js/opname/phill_reguler.js"></script>
 
     <script>
-      $("#line").on("change", function () {
-        var value = $(this).val();
-
-        // Handle #coloum-handle-grip
-        $("#coloum-handle-grip").css("display", value != 6 ? "none" : "table-row");
-
-        // Handle #coloum-packing-tape and #coloum-lem-karton
-        $("#coloum-packing-tape").css("display", value == 1 || value == 2 || value == 3 ? "none" : "table-row");
-        $("#coloum-lem-karton").css("display", value == 1 || value == 2 || value == 3 ? "table-row" : "none");
-
-        // Handle #coloum-label-exp
-        $("#coloum-label-exp").css("display", value == 7 || value == 8 ? "none" : "table-row");
-
-        $("#jenis_preform").val(value == 1 || value == 7 ? "1500ml" : value == 3 ? "330ml" : value == 6 ? "5L" : "600ml");
-        $(".jenisCap").val(value != 6 ? "3600" : "2150");
-      });
-    </script>
-
-    <script>
-      function sendWhatapps() {
-        var no_wa = document.getElementById("no_wa").value;
-        var line = document.getElementById("line").value; // Gantilah dengan nilai sesuai kebutuhan
-        var shift = document.getElementById("shift").value; // Gantilah dengan nilai sesuai kebutuhan
-
-        // Objek untuk menyimpan data variabel dan pesan
-        var data = {
-          Preform: "totalPreform",
-          Cap: "totalCap",
-          "Handle Grip": "totalHandleGrip",
-          "Label Reg": "totalLabelReg",
-          "Label Exp": "totalLabelExp",
-          Capseal: "totalCapseal",
-          "Lem AMDK": "totalLemAMDK",
-          "Packing Tape": "totalPackingTape",
-          "Lem Karton": "totalLemKarton",
-        };
-
-        var message = "*Hasil Opname Line " + line + " Shift " + shift + "*" + "\n\n";
-
-        // Loop melalui data variabel dan tambahkan ke pesan jika nilainya tidak nol
-        for (var key in data) {
-          var value = document.getElementById(data[key]).innerHTML;
-          if (value !== "0") {
-            var unit = "";
-
-            if (key === "Preform" || key === "Cap" || key === "Handle Grip") {
-              unit = " Pcs";
-            } else if (key === "Lem AMDK" || key === "Lem Karton") {
-              unit = " Kg";
-            } else if (key === "Label Reg" || key === "Label Exp" || key === "Packing Tape") {
-              unit = " Roll";
-            }
-
-            message += key + " : " + value + unit + "\n";
-          }
-        }
-
-        // Tambahkan pesan kartonPromo, kartonReguler, kartonphillPromo, kartonphillReguler
-        var kartonPromo = document.getElementById("totalPromo").innerHTML;
-        var kartonReguler = document.getElementById("totalReguler").innerHTML;
-        var kartonphillReguler = document.getElementById("totalPhillReguler").innerHTML;
-
-        if (kartonPromo !== "0" || kartonReguler !== "0" || kartonphillReguler !== "0") {
-          message += "====== Karton ======" + "\n";
-          if (kartonPromo !== "0") {
-            message += "Promo : " + kartonPromo + " Lembar" + "\n";
-          }
-          if (kartonReguler !== "0") {
-            message += "Reguler : " + kartonReguler + " Lembar" + "\n";
-          }
-          if (kartonphillReguler !== "0") {
-            message += "Phill Reguler : " + kartonphillReguler + " Lembar" + "\n";
-          }
-        }
-
-        var url = "https://wa.me/+62" + no_wa + "?text=" + encodeURIComponent(message);
-
-        window.open(url, "_blank").focus();
+      // method
+      
+      function insert() {
+          const form = $("#formTransaksi").serializeArray(); 
+          let line7 = JSON.parse(localStorage.getItem("line7")) || [];
+  
+          let newData = {};   
+  
+          form.forEach(function (item, index) {
+            let name = item["name"];
+            let value = name === 'id' ? Number(item['value']):item['value']
+            newData[name] = value;
+          });
+          
+          // console.log(newData)
+          localStorage.setItem("line7", JSON.stringify([...line7, newData]));
+          return newData;
       }
+  
+      function showData(line7) {
+        var row = "";
+        
+        var awal = 0;
+        var akhir = 0;
+        var hasil = 0;
+        var jumlahCar = 0;
+        var persen = 0;
+        var total = 0;
+  
+        var shift = $('#Shift').val();
+        var sku = $('#sku').val();
+        var produk = $('#produk').val();
+        if(sku == "Phill_Promo"){
+          sku = "Phill Promo"
+        }
+        if(sku == "Phill_Reguler"){
+          sku = "Phill Reguler"
+        }
+        if(sku == "Reguler_GT"){
+          sku = "Reguler GT"
+        }
+        var tgl = "";   
+        if (line7.length == 0) {
+          return (row = `<h1>
+                Silahkan Isi Form Diatas
+              </h1>`);
+        }
+  
+        // Memeriksa apakah elemen dengan id "input_tgl" sudah terdefinisi
+        const tanggalInput = document.getElementById("input_tgl");
+     
+  
+  
+        if (tanggalInput) {
+          const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+          const tanggal = new Date(tanggalInput.value);
+          const tanggalFormat = tanggal.toLocaleDateString('id-ID', options);
+          row += `<h4 id="title">Hasil Produksi Shift ${shift}</h4>`;
+          row += `<h4 id="line_running"><i>LINE 7</i></h4>`;
+          row += `<h4 id="tgl_produksi">${tanggalFormat}</h4>`;
+        } else {
+          row += `<h4>Hasil Produksi Shift ${shift}</h4>`;
+          row += `<h4><i>LINE 7</i></h4>`;
+        }
+  
+        row += `<br/>`;
+        row += `<i id="sku_running">Le Minerale ${produk} ${sku}</i>`;
+        row += `<hr/>`;
+    
+        // row += `<br/>`;
+        var formatTotal = "";
+        var totalAkhir = "";
+        var buffer = $("#buffer").val();
+        var minus = $("#minus").val();
+      
+        line7.forEach(function (item, index) {
+          if(produk == '1500ml'){
+              hasil = item['akhir'] - item['awal'];
+              if(item['receh']){
+                jumlahCar =(hasil * 33) + Number(item['receh']);
+              }else{
+                jumlahCar = hasil * 33;
+              }
+            }else{
+              hasil = item['akhir'] - item['awal'];
+              if(item['receh']){
+                jumlahCar =(hasil * 40) + Number(item['receh']);
+              }else{
+                jumlahCar = hasil * 40;
+              }   
+          }
+          if(produk == "1500ml"){
+            persen = Math.round((jumlahCar / 2083) * 100);
+          }else{
+            persen = Math.round((jumlahCar / 1666) * 100);
+          }
+            total += Number(jumlahCar);
+            var formatJumlahCar = jumlahCar.toLocaleString("en-US").replace(',','.');
+             formatTotal = total.toLocaleString("en-US").replace(',','.');
+    
+            var jamAwal = item.jam_awal.replace(':', '.'); // Mengganti ":" dengan "."
+            var jamAkhir = item.jam_akhir.replace(':', '.'); // Mengganti ":" dengan "."
+            row += `
+              <p id="hasil_produksi_${index}" class="hasil_produksi">
+                ${jamAwal}-${jamAkhir} = ${formatJumlahCar} car ${persen}% 
+                <button onclick="deleteData(${index})" class="btn btn-danger btn-sm mb-2">
+                Hapus
+                </button>
+              </p>`;
+  
+        });
+        var note = $("#note").val();
+        var bufferNumber = Number(buffer); // Pastikan buffer juga berupa angka
+        var minusNumber = Number(minus); // Pastikan buffer juga berupa angka
+        if(minus != 0){
+          totalAkhir = total - minusNumber;
+          var formatedTotal = totalAkhir.toLocaleString("en-US").replace(',','.');
+          row += `<b id='total_produksi'> *${formatedTotal} car*</b>`
+          row += `<br/>`
+          row += `<b id='noted'>*${note} = ${minus} car*</b>`
+        }else if(buffer != 0){
+          totalAkhir = total + bufferNumber;
+          var formatedTotal = totalAkhir.toLocaleString("en-US").replace(',','.');
+          row += `<b id='total_produksi'> *${formatedTotal} car*</b>`
+          row += `<br/>`
+          row += `<b id='noted'>*${note} = ${buffer} car*</b>`
+        }else{
+          row += `<b id='total_produksi'> *${formatTotal} car*</b>`
+          row += `<br/>`
+          row += `<b id='noted'>${note}</b>`
+        }
+  
+        row.replace('${total}', total);
+  
+        return row;
+      }
+  
+      function deleteData(index) {
+        const pElement = document.getElementById(`hasil_produksi_${index}`);
+        if (pElement) {
+          pElement.remove(); // Menghapus tag "p" berdasarkan id-nya
+  
+          // Menghapus data dari line7 berdasarkan index
+          line7.splice(index, 1);
+          localStorage.setItem("line7", JSON.stringify(line7));
+  
+          updateTotal(); // Memperbarui total setelah penghapusan
+        }
+      }
+  
+      function updateTotal() {
+        var newTotal = 0;
+        var jenis = $('#produk').val();
+        if(jenis == '1500ml'){
+          line7.forEach(function (item) {
+            var hasil = item['akhir'] - item['awal'];
+            var jumlahCar = item['receh'] ? (hasil * 33) + Number(item['receh']) : hasil * 33;
+            newTotal += jumlahCar;
+          });
+     
+          var totalElement = document.getElementById('total_produksi');
+          if (totalElement) {
+            totalElement.textContent = ` *${newTotal.toLocaleString('en-US').replace(',','.')} car*`;
+          }
+          
+        }else{
+          line7.forEach(function (item) {
+            var hasil = item['akhir'] - item['awal'];
+            var jumlahCar = item['receh'] ? (hasil * 40) + Number(item['receh']) : hasil * 40;
+            newTotal += jumlahCar;
+          });
+    
+          var totalElement = document.getElementById('total_produksi');
+          if (totalElement) {
+            totalElement.textContent = ` *${newTotal.toLocaleString('en-US').replace(',','.')} car*`;
+          }
+  
+        }
+  
+      }
+  
+  
+  
+      let dataTansaksi;
+      $(function () {
+        // initialize
+        line7  = JSON.parse(localStorage.getItem("line7")) || [];
+  
+        $(".result").html(showData(line7));
+        // events
+        $("#formTransaksi").on("submit", function (e) {
+          e.preventDefault();
+          line7.push(insert());
+  
+          $(".result").html(showData(line7));
+          var akhir = document.getElementById("akhir").value;
+          var jamAkhir = document.getElementById("jam_akhir").value;
+          // var update2 = document.getElementById("total").innerHTML;
+          // alert(total);
+          document.getElementById("awal").value = akhir;
+          document.getElementById("akhir").value = null;
+          document.getElementById("jam_awal").value = jamAkhir;
+  
+          var jamAkhir = document.getElementById("jam_akhir").value;
+          var jamAkhirArray = jamAkhir.split(":");
+  
+          var jamAkhirBaru = parseInt(jamAkhirArray[0]) + 1;
+          if (jamAkhirBaru === 24) {
+            jamAkhirBaru = 0;
+            jamAkhirArray[0] = "00";
+          } else {
+            jamAkhirArray[0] = jamAkhirBaru.toString().padStart(2, "0");
+          }
+  
+          var jamAkhirString = jamAkhirArray.join(":");
+  
+          document.getElementById("jam_akhir").value = jamAkhirString;
+  
+          document.getElementById("receh").value = null;
+  
+  
+          
+        });
+  
+        // meriset 
+        $("#delete").on("click", function (e) {
+          e.preventDefault();
+          if (confirm("Hapus Semua Data?")) {
+            line7 = filterTransaksi = [];
+            localStorage.removeItem("line7");
+            $(".result").html(showData(line7));
+          }
+        });
+  
+        // 
+        $("#wa").on("click", function () {
+          var title = $('#title').text();
+          var line = $('#line_running').text();
+          var tgl_produksi= $('#tgl_produksi').text();
+          var total_produksi= $('#total_produksi').text();
+          var no_hp= $('#no_hp').val();
+          var noted = $('#noted').text();
+          var sku = $('#sku_running').text();
+          var hasilProduksi = "";
+          $('.hasil_produksi').each(function() {
+            var text = $(this).text().trim();
+            var withoutDataAfterPercentage = text.substring(0, text.indexOf('%') + 1); // Mengambil teks hingga tanda '%' termasuk '%'
+            hasilProduksi += withoutDataAfterPercentage + "%0a";
+          });
+  
+          var url =  "https://wa.me/+62"+no_hp+"?text=" 
+          +"*"+title+"*"+"%0a" 
+          +"_*"+line+"*_"+"%0a"
+          +"*"+tgl_produksi+"*"+"%0a"+"%0a"  
+  
+          +"_"+ sku +"_"  + total_produksi + "%0a"+"%0a" 
+          +hasilProduksi + "%0a"
+          +noted
+  
+          window.open(url, "_blank").focus();
+        });
+  
+  
+       });
+  
+  
     </script>
   </body>
 </html>

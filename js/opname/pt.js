@@ -24,7 +24,7 @@ $(function () {
       }
     });
     Number($("#totalPackingTape").text(sum.toLocaleString("en-US")));
-    Number($("#qtyPT").text(totalBoxPT + " / " + totalRollPT));
+    Number($("#qtyPT").text(totalBoxPT + " (Box) " + totalRollPT + " (Roll)"));
   };
 
   $("#savePackingTape").on("click", function () {

@@ -19,7 +19,7 @@ $(function () {
       }
     });
     $("#totalLabelExp").text(sum.toLocaleString("en-US"));
-    $("#qtyLabelExp").text(totalBoxExp + " / " + totalRollExp);
+    $("#qtyLabelExp").text(totalBoxExp + " (Box) " + totalRollExp + " (Roll)");
   };
 
   $("#savelabelExp").on("click", function () {

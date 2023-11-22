@@ -22,7 +22,7 @@ $(function () {
       }
     });
     $("#totalLemAMDK").text(sum.toLocaleString("en-US"));
-    $("#qtyLemAMDK").text(totalboxAMDK + " / " + totalKgAMDK);
+    $("#qtyLemAMDK").text(totalboxAMDK + " (Box) " + totalKgAMDK + " (Kg)");
   };
 
   $("#saveLemAMDK").on("click", function () {

@@ -19,7 +19,7 @@ $(function () {
       }
     });
     $("#totalLemKarton").text(sum.toLocaleString("en-US"));
-    $("#qtyLemKarton").text(totalSakAdtex + " / " + totalKgAdtex);
+    $("#qtyLemKarton").text(totalSakAdtex + " (Sak) " + totalKgAdtex + " (Kg)");
   };
   $("#saveLemKarton").on("click", function () {
     total_lemAdtek();

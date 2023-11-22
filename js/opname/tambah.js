@@ -117,7 +117,7 @@ function tambahPackingTape() {
   $("#akhirPackingTape").append(newElement);
 }
 function tambahRollPackingTape() {
-  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 rollPackingTape").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 rollPT").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "rollPackingTape"
   $("#rollPackingTape").append(newElement);

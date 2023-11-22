@@ -19,7 +19,7 @@ $(function () {
       }
     });
     $("#totalCapseal").text(sum.toLocaleString("en-US"));
-    $("#qtyCapseal").text(totalBoxCapseal + " / " + totalRollCapseal);
+    $("#qtyCapseal").text(totalBoxCapseal + " (Box) " + totalRollCapseal + " (Roll)");
   };
 
   $("#saveCapseal").on("click", function () {

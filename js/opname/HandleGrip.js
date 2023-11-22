@@ -21,7 +21,7 @@ $(function () {
       // alert(option)
     });
     $("#totalHandleGrip").text(sumHandleGrip.toLocaleString("en-US"));
-    $("#qtyHG").text(totalPalletHG + " / " + totalboxHG);
+    $("#qtyHG").text(totalPalletHG + " (Pallet) " + totalboxHG + "(Box)");
   };
 
   $("#saveHandleGrip").on("click", function () {

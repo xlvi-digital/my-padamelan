@@ -32,7 +32,7 @@ $(function () {
 
     if (!isNaN(sum)) {
       $("#totalLabelReg").text(sum.toLocaleString("en-US"));
-      $("#qtyLabelReg").text(totalBoxLabel + " / " + totalRollLabel);
+      $("#qtyLabelReg").text(totalBoxLabel + " (Box) " + totalRollLabel + " (Roll)");
     } else {
       $("#totalLabelReg").text("Invalid input");
     }

@@ -28,7 +28,7 @@ $(function () {
         totalpcs += Number(pcs);
       }
     });
-    $("#qtyPreform").text(totalKeranjang + " / " + totalpcs);
+    $("#qtyPreform").text(totalKeranjang + " (Pallet) " + totalpcs + " (pcs)");
     $("#totalPreform").text(sum.toLocaleString("en-US"));
   };
 

@@ -29,7 +29,7 @@ $(function () {
       }
     });
     $("#totalPhillReguler").text(sum.toLocaleString("en-US"));
-    $("#qtyPhillReguler").text(totalpalletPhillReguler + " / " + totallbrPhillReguler);
+    $("#qtyPhillReguler").text(totalpalletPhillReguler + " (Pallet) " + totallbrPhillReguler + " (Lembar)");
   };
 
   $("#savePhillReguler").on("click", function () {
