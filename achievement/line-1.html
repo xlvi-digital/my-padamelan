@@ -224,20 +224,14 @@
             </div>
             <div class="card-body">
                 <div class="row">   
-                    <div class="col-md-6 mb-2">
-                        <select class="form-select sku" id="produk" required name="produk">
-                          <option aria-readonly="true">Jenis Produk</option>
-                          <option value="600ml">600ml</option>
-                          <option value="1500ml">1500ml</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 mb-1">
+                    <div class="col-md-12 mb-1">
                         <select class="form-select sku" id="sku" name="sku" style="border-radius: 5px; font-size: 1rem">
                           <option selected disabled>Pilih SKU</option>
                           <option value="Promo">Promo</option>
                           <option value="Reguler">Reguler</option>
                           <option value="Reguler_GT">Reguler GT</option>
                           <option value="Phill_Reguler">Phill Reguler</option>
+
                         </select>
                     </div>
                   </div>
@@ -376,7 +370,7 @@
       // method
       function insert() {
           const form = $("#formTransaksi").serializeArray(); 
-          let line7 = JSON.parse(localStorage.getItem("line7")) || [];
+          let line1 = JSON.parse(localStorage.getItem("line1")) || [];
   
           let newData = {};   
   
@@ -387,11 +381,11 @@
           });
           
           // console.log(newData)
-          localStorage.setItem("line7", JSON.stringify([...line7, newData]));
+          localStorage.setItem("line1", JSON.stringify([...line1, newData]));
           return newData;
       }
   
-      function showData(line7) {
+      function showData(line1) {
         var row = "";
         
         var awal = 0;
@@ -403,8 +397,7 @@
   
         var shift = $('#shift').val();
         var sku = $('#sku').val();
-        var produk = $('#produk').val();
-      
+    
         if(sku == "Phill_Reguler"){
           sku = "Phill Reguler"
         }
@@ -412,7 +405,7 @@
           sku = "Reguler GT"
         }
         var tgl = "";   
-        if (line7.length == 0) {
+        if (line1.length == 0) {
           return (row = `<h1>
                 Silahkan Isi Form Diatas
               </h1>`);
@@ -426,15 +419,15 @@
           const tanggal = new Date(tanggalInput.value);
           const tanggalFormat = tanggal.toLocaleDateString('id-ID', options);
           row += `<h4 id="title">Hasil Produksi Shift ${shift}</h4>`;
-          row += `<h4 id="line_running"><i>LINE 7</i></h4>`;
+          row += `<h4 id="line_running"><i>LINE 1</i></h4>`;
           row += `<h4 id="tgl_produksi">${tanggalFormat}</h4>`;
         } else {
           row += `<h4>Hasil Produksi Shift ${shift}</h4>`;
-          row += `<h4><i>LINE 7</i></h4>`;
+          row += `<h4><i>LINE 1</i></h4>`;
         }
   
         row += `<br/>`;
-        row += `<i id="sku_running">Le Minerale ${produk} ${sku}</i>`;
+        row += `<i id="sku_running">Le Minerale 1500ml ${sku}</i>`;
         row += `<hr/>`;
     
         // row += `<br/>`;
@@ -443,28 +436,17 @@
         var buffer = $("#buffer").val();
         var minus = $("#minus").val();
       
-        line7.forEach(function (item, index) {
-          if(produk == '1500ml'){
-              hasil = item['akhir'] - item['awal'];
-              if(item['receh']){
-                jumlahCar =(hasil * 33) + Number(item['receh']);
-              }else{
-                jumlahCar = hasil * 33;
-              }
-            }else{
-              hasil = item['akhir'] - item['awal'];
-              if(item['receh']){
-                jumlahCar =(hasil * 40) + Number(item['receh']);
-              }else{
-                jumlahCar = hasil * 40;
-              }   
-          }
-          if(produk == "1500ml"){
-            persen = Math.round((jumlahCar / 2083) * 100);
+        line1.forEach(function (item, index) {
+          hasil = item['akhir'] - item['awal'];
+          if(item['receh']){
+            jumlahCar =(hasil * 33) + Number(item['receh']);
           }else{
-            persen = Math.round((jumlahCar / 1666) * 100);
-          }
-            total += Number(jumlahCar);
+             jumlahCar = hasil * 33;
+          }  
+          
+          persen = Math.round((jumlahCar / 1666) * 100);
+          
+          total += Number(jumlahCar);
             var formatJumlahCar = jumlahCar.toLocaleString("en-US").replace(',','.');
              formatTotal = total.toLocaleString("en-US").replace(',','.');
     
@@ -477,7 +459,7 @@
                 Hapus
                 </button>
               </p>`;
-  
+
         });
         var note = $("#note").val();
         var bufferNumber = Number(buffer); // Pastikan buffer juga berupa angka
@@ -510,9 +492,9 @@
         if (pElement) {
           pElement.remove(); // Menghapus tag "p" berdasarkan id-nya
   
-          // Menghapus data dari line7 berdasarkan index
-          line7.splice(index, 1);
-          localStorage.setItem("line7", JSON.stringify(line7));
+          // Menghapus data dari line1 berdasarkan index
+          line1.splice(index, 1);
+          localStorage.setItem("line1", JSON.stringify(line1));
   
           updateTotal(); // Memperbarui total setelah penghapusan
         }
@@ -520,9 +502,7 @@
   
       function updateTotal() {
         var newTotal = 0;
-        var jenis = $('#produk').val();
-        if(jenis == '1500ml'){
-          line7.forEach(function (item) {
+        line1.forEach(function (item) {
             var hasil = item['akhir'] - item['awal'];
             var jumlahCar = item['receh'] ? (hasil * 33) + Number(item['receh']) : hasil * 33;
             newTotal += jumlahCar;
@@ -533,34 +513,20 @@
             totalElement.textContent = ` *${newTotal.toLocaleString('en-US').replace(',','.')} car*`;
           }
           
-        }else{
-          line7.forEach(function (item) {
-            var hasil = item['akhir'] - item['awal'];
-            var jumlahCar = item['receh'] ? (hasil * 40) + Number(item['receh']) : hasil * 40;
-            newTotal += jumlahCar;
-          });
-    
-          var totalElement = document.getElementById('total_produksi');
-          if (totalElement) {
-            totalElement.textContent = ` *${newTotal.toLocaleString('en-US').replace(',','.')} car*`;
-          }
-  
-        }
-  
       }
       
       let dataTansaksi;
       $(function () {
         // initialize
-        line7  = JSON.parse(localStorage.getItem("line7")) || [];
+        line1  = JSON.parse(localStorage.getItem("line1")) || [];
   
-        $(".result").html(showData(line7));
+        $(".result").html(showData(line1));
         // events
         $("#formTransaksi").on("submit", function (e) {
           e.preventDefault();
-          line7.push(insert());
+          line1.push(insert());
   
-          $(".result").html(showData(line7));
+          $(".result").html(showData(line1));
           var akhir = document.getElementById("akhir").value;
           var jamAkhir = document.getElementById("jam_akhir").value;
           // var update2 = document.getElementById("total").innerHTML;
@@ -594,9 +560,9 @@
         $("#delete").on("click", function (e) {
           e.preventDefault();
           if (confirm("Hapus Semua Data?")) {
-            line7 = filterTransaksi = [];
-            localStorage.removeItem("line7");
-            $(".result").html(showData(line7));
+            line1 = filterTransaksi = [];
+            localStorage.removeItem("line1");
+            $(".result").html(showData(line1));
           }
         });
   
