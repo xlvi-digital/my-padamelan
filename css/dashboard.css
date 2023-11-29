@@ -58,6 +58,39 @@ body {
   font-size: 0.75rem;
 }
 
+.submenu {
+  display: none;
+  padding-left: 20px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s, max-height 0.3s;
+}
+
+.submenu.active {
+  display: block;
+  opacity: 1;
+  max-height: 100%; /* Sesuaikan dengan tinggi maksimum submenu */
+}
+.submenu li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.submenu a {
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.submenu a:hover {
+  color: #2470dc;
+}
+
 /*
  * Navbar
  */

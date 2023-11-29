@@ -43,7 +43,7 @@ function tambahBoxHandleGrip() {
 }
 
 function tambahlabelReg() {
-  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 akhirlabelReg").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 boxLabel").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "akhirlabelReg"
   $("#akhirlabelReg").append(newElement);
@@ -57,7 +57,7 @@ function tambahRollLabelReg() {
 }
 
 function tambahlabelExp() {
-  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 akhirlabelExp").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 boxLabelExp").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "akhirlabelExp"
   $("#akhirlabelExp").append(newElement);
@@ -70,34 +70,34 @@ function tambahRollLabelExp() {
 }
 
 function tambahLemAMDK() {
-  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 akhirLemAMDK").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 boxLemAMDK").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "akhirLemAMDK"
   $("#akhirLemAMDK").append(newElement);
 }
 
 function tambahKgLemAMDK() {
-  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 kgLemAMDK").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 kg").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "kgLemAMDK"
   $("#kgLemAMDK").append(newElement);
 }
 function tambahLemKarton() {
-  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 akhirLemKarton").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 sakLemAdtek").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "akhirLemKarton"
   $("#akhirLemKarton").append(newElement);
 }
 
 function tambahKgLemKarton() {
-  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 kgLemKarton").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 kgLemAdtek").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "kgLemKarton"
   $("#kgLemKarton").append(newElement);
 }
 
 function tambahCapseal() {
-  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 akhirCapseal").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 boxCapseal").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "akhirCapseal"
   $("#akhirCapseal").append(newElement);
@@ -111,7 +111,7 @@ function tambahRollCapseal() {
 }
 
 function tambahPackingTape() {
-  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 akhirPackingTape").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 boxPackingTape").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "akhirPackingTape"
   $("#akhirPackingTape").append(newElement);
@@ -124,7 +124,7 @@ function tambahRollPackingTape() {
 }
 
 function tambahPromo() {
-  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 akhirPromo").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 palletPromo").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "akhirPromo"
   $("#akhirPromo").append(newElement);
@@ -137,7 +137,7 @@ function tambahLbrPromo() {
 }
 
 function tambahReguler() {
-  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 akhirReguler").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 palletReguler").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "akhirReguler"
   $("#akhirReguler").append(newElement);
@@ -150,7 +150,7 @@ function tambahLbrReguler() {
 }
 
 function tambahPhillReguler() {
-  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 akhirPhillReguler").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 palletPhillReguler").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "akhirPhillReguler"
   $("#akhirPhillReguler").append(newElement);

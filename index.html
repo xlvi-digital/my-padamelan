@@ -94,11 +94,61 @@
                   Opname Material
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="achievement.html">
-                  <i class='bx bx-line-chart'></i>
+              <li class="nav-item" id="updateAchievementItem">
+                <a class="nav-link" href="#">
+                  <i class="bx bx-line-chart"></i>
                   Update Achievement
                 </a>
+                <ul class="submenu" id="updateAchievementSubMenu">
+                  <li>
+                    <a href="achievement/line-1.html">
+                      <i class='bx bx-radio-circle-marked'></i>
+                      Line 1
+                    </a>
+                  </li>
+                  <li>
+                    <a href="achievement/line-2.html">
+                      <i class='bx bx-radio-circle-marked'></i>
+                      Line 2
+                    </a>
+                  </li>
+                  <li>
+                    <a href="achievement/line-3.html">
+                      <i class='bx bx-radio-circle-marked'></i>
+                      Line 3
+                    </a>
+                  </li>
+                  <li>
+                    <a href="achievement/line-4.html">
+                      <i class='bx bx-radio-circle-marked'></i>
+                      Line 4
+                    </a>
+                  </li>
+                  <li>
+                    <a href="achievement/line-5.html">
+                      <i class='bx bx-radio-circle-marked'></i>
+                      Line 5
+                    </a>
+                  </li>
+                  <li>
+                    <a href="achievement/line-6.html">
+                      <i class='bx bx-radio-circle-marked'></i>
+                      Line 6
+                    </a>
+                  </li>
+                  <li>
+                    <a href="achievement/line-7.html">
+                      <i class='bx bx-radio-circle-marked'></i>
+                      Line 7
+                    </a>
+                  </li>
+                  <li>
+                    <a href="achievement/line-8.html">
+                      <i class='bx bx-radio-circle-marked'></i>
+                      Line 8
+                    </a>
+                  </li>
+               </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -563,7 +613,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="mt-2">
+                        <div class="mt-2">  
                           <button type="button" id="saveLemKarton" data-bs-toggle="collapse" data-bs-target="#LemKarton" aria-expanded="false" aria-controls="#LemKarton" class="btn btn-outline-dark">Submit</button>                           
                         </div>
                       </div>
@@ -638,7 +688,6 @@
                             <div class="col-md-12">
                               <select class="form-select qty-promo" aria-label="Default select example">
                                 <option selected>Qty Karton</option>
-                                <option value="150">150 Lembar</option>
                                 <option value="800">800 Lembar</option>
                                 <option value="1000">1000 Lembar</option>
                               </select>
@@ -986,7 +1035,12 @@
 
         $("#jenis_preform").val( (value == 1 || value == 7) ? "1500ml" : (value == 3) ? "330ml" : (value == 6) ? "5L" : "600ml");
         $(".jenisCap").val( (value != 6 ) ? "3600" : "2150");
+        $(".qty-Reguler").val( (value == 6) ? "150" : (value == 3) ? "550" : "800");
+        $(".qty-PhillReguler").val( (value == 6) ? "150" : (value == 3) ? "550" : "800");
+        $(".qty-promo").val("800");
 
+        $(".jenisLabel").val( (value == 6) ? "4" : (value == 1 || value == 7) ? "2" : "3" );
+        $(".jumlahLemAmdk").val(  (value == 4 || value == 7) ? "20" : "12" );
 
 
       });

@@ -10,7 +10,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/" />
 
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- my Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet" />
@@ -70,43 +70,10 @@
         -webkit-overflow-scrolling: touch;
       }
 
-      .submenu {
-          display: none;
-          padding-left: 20px;
-          opacity: 0;
-          max-height: 0;
-          overflow: hidden;
-          transition: opacity 0.3s, max-height 0.3s;
-      }
-
-      .submenu.active {
-          display: block;
-          opacity: 1;
-          max-height: 100%; /* Sesuaikan dengan tinggi maksimum submenu */
-      }
-        .submenu li {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .submenu a {
-            display: block;
-            padding: 0.5rem;
-            text-decoration: none;
-            font-weight: 500;
-            color: #333;
-            transition: background-color 0.3s;
-        }
-
-        .submenu a:hover {
-            color: #2470dc;
-        }
-
     </style>
 
     <!-- Custom styles for this template -->
-    <link href="css/dashboard.css" rel="stylesheet" />
+    <link href="../css/dashboard.css" rel="stylesheet" />
   </head>
   <body>
     <header class="navbar navbar-dark sticky-top bg-danger flex-md-nowrap p-0 shadow">
@@ -122,7 +89,7 @@
           <div class="position-sticky mb-2 sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="../index.html">
                   <i class="bx bx-package"></i>
                   Opname Material  
                 </a>
@@ -134,49 +101,49 @@
                 </a>
                 <ul class="submenu" id="updateAchievementSubMenu">
                   <li>
-                    <a href="#">
+                    <a href="../achievement/line-1.html">
                       <i class='bx bx-radio-circle-marked'></i>
                       Line 1
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="../achievement/line-2.html">
                       <i class='bx bx-radio-circle-marked'></i>
                       Line 2
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="../achievement/line-3.html">
                       <i class='bx bx-radio-circle-marked'></i>
                       Line 3
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="../achievement/line-4.html">
                       <i class='bx bx-radio-circle-marked'></i>
                       Line 4
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="../achievement/line-5.html">
                       <i class='bx bx-radio-circle-marked'></i>
                       Line 5
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="../achievement/line-6.html">
                       <i class='bx bx-radio-circle-marked'></i>
                       Line 6
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="../achievement/line-7.html">
                       <i class='bx bx-radio-circle-marked'></i>
                       Line 7
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="../achievement/line-8.html">
                       <i class='bx bx-radio-circle-marked'></i>
                       Line 8
                     </a>
@@ -197,26 +164,17 @@
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2 mb-2">Update Achievement</h1>
             <form id="formTransaksi">
-            <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-toolbar mt-2 mb-md-0">
               <div class="btn-group me-2">
-                <select class="form-select form-select border-success" id="line" style="border-radius: 5px; font-size: 1rem">
-                  <option selected>Line</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                </select>
+                <input type="date" class="form-control form-control-sm" id="input_tgl" name="input_tgl" required
+                placeholder="Enter Name here" />
               </div>
               <div class="me-2">
-                <select class="form-select form-select border-success" id="shift" style="border-radius: 5px; font-size: 1rem">
-                  <option selected>Shift</option>
-                  <option value="1">shift 1</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                <select class="form-select border-success" id="shift" style="border-radius: 5px; font-size: 1rem">
+                  <option disabled selected>Shift</option>
+                  <option value="1">Shift 1</option>
+                  <option value="2">Sihft 2</option>
+                  <option value="3">Shift 3</option>
                 </select>
               </div>
 
@@ -227,7 +185,28 @@
             </div>
           </div>
 
+          <!-- Modal -->
+          <div class="modal fade" id="whatapps" tabindex="-1" aria-labelledby="whatappsLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="whatappsLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <label for="no_wa" >Masukan No Whatapps</label>
+                  <input type="number" name="no_wa" id="no_wa" class="form-control form-control-sm">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="wa" class="btn btn-success">Kirim</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="card">
+            <div class="card-header">
+              <h5>Hasil Achievement</h5>
+            </div>
             <div class="card-body">
               <div class="row text-center">
                 <div class="col-md-12">
@@ -238,99 +217,113 @@
           </div>
 
           <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">
+                SKU
+              </h5>
+            </div>
             <div class="card-body">
-
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <div class="form-floating">
+                <div class="row">   
+                    <div class="col-md-6 mb-2">
                         <select class="form-select sku" id="produk" required name="produk">
                           <option aria-readonly="true">Jenis Produk</option>
                           <option value="600ml">600ml</option>
                           <option value="1500ml">1500ml</option>
                         </select>
-                        <label for="tb-email">Pilih Produk</label>
-                      </div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                      <div class="form-floating">
-                        <select class="form-select sku" id="sku" name="sku">
+                    <div class="col-md-6 mb-1">
+                        <select class="form-select sku" id="sku" name="sku" style="border-radius: 5px; font-size: 1rem">
+                          <option selected disabled>Pilih SKU</option>
                           <option value="Promo">Promo</option>
                           <option value="Reguler">Reguler</option>
                           <option value="Reguler_GT">Reguler GT</option>
                           <option value="Phill_Reguler">Phill Reguler</option>
                           <option value="Phill_Promo">Phill Promo</option>
                         </select>
-                        <label for="tb-email">Pilih SKU</label>
-                      </div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                      <div class="form-floating mb-3">
-                        <input type="date" class="form-control" id="input_tgl" name="input_tgl" required
-                          placeholder="Enter Name here" />
-                        <label for="input_tgl">Tanggal </label>
+                  </div>
+              </div>
+          </div>
+              <div class="card">
+                <div class="card-header">
+                  <h5>Jam dan No Pallet</h5>
+                 </div>
+                  <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6 mb-1">
+                          <div class="form-floating mb-1">
+                            <input type="time" class="form-control form-control-sm" id="jam_awal" name="jam_awal" required
+                              placeholder="Enter Name here" />
+                            <label for="jam_awal">Dari Jam </label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                          <div class="form-floating mb-1">
+                            <input type="time" class="form-control form-control-sm" id="jam_akhir" name="jam_akhir" required
+                              placeholder="Enter Name here" />
+                            <label for="jam_akhir">Sampai Jam </label>
+                          </div>
+                        </div>
+              
+                        <div class="col-md-6 mb-1">
+                          <div class="form-floating mb-1">
+                            <input type="number" class="form-control form-control-sm" id="awal" name="awal" required
+                              placeholder="Enter Name here" />
+                            <label for="awal">No Pallet Awal </label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                          <div class="form-floating mb-3">
+                            <input type="number" class="form-control form-control-sm" id="akhir" name="akhir" required
+                              placeholder="Enter Name here" />
+                            <label for="akhir">No Pallet Akhir </label>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <hr>
-                    <div class="col-md-6 mb-1">
-                      <div class="form-floating mb-1">
-                        <input type="time" class="form-control" id="jam_awal" name="jam_awal" required
-                          placeholder="Enter Name here" />
-                        <label for="jam_awal">Dari Jam </label>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-1">
-                      <div class="form-floating mb-1">
-                        <input type="time" class="form-control" id="jam_akhir" name="jam_akhir" required
-                          placeholder="Enter Name here" />
-                        <label for="jam_akhir">Sampai Jam </label>
-                      </div>
-                    </div>
-                    <hr>
-                    <div class="col-md-6 mb-1">
-                      <div class="form-floating mb-1">
-                        <input type="number" class="form-control" id="awal" name="awal" required
-                          placeholder="Enter Name here" />
-                        <label for="awal">No Pallet Awal </label>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-1">
-                      <div class="form-floating mb-3">
-                        <input type="number" class="form-control" id="akhir" name="akhir" required
-                          placeholder="Enter Name here" />
-                        <label for="akhir">No Pallet Akhir </label>
-                      </div>
-                    </div>
-                    <hr>
-                    <div class="col-md-6 mb-1">
-                      <div class="form-floating mb-3">
-                        <input type="number" class="form-control" id="receh" name="receh"
-                          placeholder="Enter Name here" />
-                        <label for="receh">Receh </label>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-1">
-                      <div class="form-floating mb-3">
-                        <input type="number" class="form-control" id="buffer" name="buffer"
-                          placeholder="Enter Name here" />
-                        <label for="buffer">Buffer </label>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-1">
-                      <div class="form-floating mb-3">
-                        <input type="number" class="form-control" id="minus" name="minus"
-                          placeholder="Enter Name here" />
-                        <label for="minus">Minus </label>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-1">
-                      <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="note" name="note"
-                          placeholder="Enter Name here" />
-                        <label for="note">Note </label>
-                      </div>
-                    </div>
                 </div>
-                <div class="col-12">
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <h5>Tambahan</h5>
+                </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-6 mb-1">
+                        <div class="form-floating mb-3">
+                          <input type="number" class="form-control form-control-sm" id="receh" name="receh"
+                            placeholder="Enter Name here" />
+                          <label for="receh">Receh </label>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <div class="form-floating mb-3">
+                          <input type="number" class="form-control form-control-sm" id="buffer" name="buffer"
+                            placeholder="Enter Name here" />
+                          <label for="buffer">Buffer </label>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <div class="form-floating mb-3">
+                          <input type="number" class="form-control form-control-sm" id="minus" name="minus"
+                            placeholder="Enter Name here" />
+                          <label for="minus">Minus </label>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control form-control-sm" id="note" name="note"
+                            placeholder="Enter Name here" />
+                          <label for="note">Note </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+              </div>
+                 
+           
+                <div class="col-12 mb-5">
                   <div class="d-md-flex align-items-center mt-3">
                     <div class="ms-auto mt-3 mt-md-0">
                       <button type="button" id="delete" class="
@@ -357,33 +350,20 @@
                       </button>
                     </div>
                   </div>
-                </div>
-            </div>
             </form>
-          </div>
+          
         </main>
       </div>
     </div>
 
-    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/dashboard.js"></script>
-    <script src="js/opname/tambah.js"></script>
-    <script src="js/opname/preform.js"></script>
-    <script src="js/opname/cap.js"></script>
-    <script src="js/opname/HandleGrip.js"></script>
-    <script src="js/opname/labelReg.js"></script>
-    <script src="js/opname/labelExp.js"></script>
-    <script src="js/opname/capseal.js"></script>
-    <script src="js/opname/LemAMDK.js"></script>
-    <script src="js/opname/lemAdtek.js"></script>
-    <script src="js/opname/pt.js"></script>
-    <script src="js/opname/promo.js"></script>
-    <script src="js/opname/reguler.js"></script>
-    <script src="js/opname/phill_reguler.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/dashboard.js"></script>
+   
+
     <script>
       var inputTanggal = document.getElementById('input_tgl');
 
@@ -392,17 +372,6 @@
 
       // Mengatur nilai default pada elemen input
       inputTanggal.value = today;
-      // Menambahkan peristiwa klik pada item 'Update Achievement'
-      var updateAchievementItem = document.getElementById('updateAchievementItem');
-      var updateAchievementSubMenu = document.getElementById('updateAchievementSubMenu');
-
-      updateAchievementItem.addEventListener('click', function (event) {
-          event.preventDefault();
-
-          // Toggle tampilan submenu
-          updateAchievementSubMenu.classList.toggle('active');
-      });
-
     </script>
     <script>
       // method

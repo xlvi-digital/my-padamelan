@@ -8,14 +8,14 @@ $(function () {
       var boxCapseal = $(this).val().replace(",", "");
       if (boxCapseal != 0) {
         sum += parseFloat(boxCapseal) * 3;
-        totalBoxCapseal += boxCapseal;
+        totalBoxCapseal += Number(boxCapseal);
       }
     });
     $(".rollCapseal").each(function () {
       var rollCapseal = $(this).val().replace(",", "");
       if (rollCapseal != 0) {
         sum += parseFloat(rollCapseal);
-        totalRollCapseal += rollCapseal;
+        totalRollCapseal += Number(rollCapseal);
       }
     });
     $("#totalCapseal").text(sum.toLocaleString("en-US"));
