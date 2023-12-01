@@ -161,27 +161,52 @@
           </div>
         </nav>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2 mb-2">Update Achievement</h1>
-            <form id="formTransaksi">
-            <div class="btn-toolbar mt-2 mb-md-0">
-              <div class="btn-group me-2">
-                <input type="date" class="form-control form-control-sm" id="input_tgl" name="input_tgl" required
-                placeholder="Enter Name here" />
-              </div>
-              <div class="me-2">
-                <select class="form-select border-success" id="shift" style="border-radius: 5px; font-size: 1rem">
-                  <option disabled selected>Shift</option>
-                  <option value="1">Shift 1</option>
-                  <option value="2">Sihft 2</option>
-                  <option value="3">Shift 3</option>
-                </select>
-              </div>
 
-              <button type="button" data-bs-toggle="modal" data-bs-target="#whatapps" class="btn btn-sm btn-outline-success">
-                <i class="bx bxl-whatsapp" style="vertical-align: bottom; font-size: 1.5rem"></i>
-                Share
+          <div class=" sticky-top bg-light mb-2" style="top:48px;">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h1 class="h2 mb-2">Update Achievement</h1>
+              <form id="formTransaksi">
+              <div class="btn-toolbar mt-2 mb-md-0">
+                <div class="me-2">
+                  <button type="button" data-bs-toggle="modal" data-bs-target="#whatapps"  class="
+                  btn btn-outline-success
+                  font-weight-medium
+                  rounded-pill
+                  px-4
+                ">
+                <div class="d-flex align-items-center">
+                  <i class="bx bxl-whatsapp" style="vertical-align: bottom; font-size: 1.5rem"></i>
+                    Share
+                </div>
               </button>
+                </div>
+                <div class="btn-group me-2">
+                  <button type="button" id="delete" class="
+                  btn btn-outline-danger
+                  font-weight-medium 
+                  rounded-pill
+                  px-4
+                ">
+                <div class="d-flex align-items-center">
+                  <i data-feather="send" class="feather-sm fill-white me-2"></i>
+                  Reset
+                </div>
+              </button>
+                </div>   
+                <div class="me-2">
+                  <button type="submit" class="
+                      btn btn-outline-primary
+                      font-weight-medium
+                      rounded-pill
+                      px-4
+                    ">
+                    <div class="d-flex align-items-center">
+                      <i data-feather="send" id="submit" class="feather-sm fill-white me-2"></i>
+                      Submit
+                    </div>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -204,14 +229,17 @@
             </div>
           </div>
           <div class="card">
-            <div class="card-header">
-              <h5>Hasil Achievement</h5>
-            </div>
             <div class="card-body">
               <div class="row text-center">
                 <div class="col-md-12">
-                  <div class="result"></div>
-                </div>
+                  <h4 id="title">Hasil Produksi Shift <span id="shift">1</span></h4>
+                  <h4 id="line_running"><i>LINE 7</i></h4> 
+                  <h4 id="tgl_produksi"></h4>
+                  <i id="sku_running mb-2">Le Minerale <span id="produk">1500ml</span> <span id="sku">Promo</span></i>
+                  <hr>
+                  <div class="result">
+                  </div>
+                </div>  
               </div>
             </div>
           </div>
@@ -223,16 +251,28 @@
               </h5>
             </div>
             <div class="card-body">
-                <div class="row">   
+                <div class="row form-sku">
+                  <div class="col-md-6 mb-2">
+                    <select class="form-select" id="input-shift" style="border-radius: 5px; font-size: 1rem">
+                      <option disabled selected>Shift</option>
+                      <option value="1">Shift 1</option>
+                      <option value="2">Sihft 2</option>
+                      <option value="3">Shift 3</option>
+                    </select>
+                  </div>   
+                  <div class="col-md-6 mb-2">
+                    <input type="date" class="form-control" id="input_tgl" name="input_tgl" required
+                    placeholder="Enter Name here" />
+                  </div>
                     <div class="col-md-6 mb-2">
-                        <select class="form-select sku" id="produk" required name="produk">
+                        <select class="form-select " id="input-produk" required name="produk">
                           <option aria-readonly="true">Jenis Produk</option>
                           <option value="600ml">600ml</option>
                           <option value="1500ml">1500ml</option>
                         </select>
                     </div>
-                    <div class="col-md-6 mb-1">
-                        <select class="form-select sku" id="sku" name="sku" style="border-radius: 5px; font-size: 1rem">
+                    <div class="col-md-6 mb-2">
+                        <select class="form-select sku" id="input-sku" name="sku" style="border-radius: 5px; font-size: 1rem">
                           <option selected disabled>Pilih SKU</option>
                           <option value="Promo">Promo</option>
                           <option value="Reguler">Reguler</option>
@@ -249,29 +289,29 @@
                  </div>
                   <div class="card-body">
                       <div class="row">
-                        <div class="col-md-6 mb-1">
-                          <div class="form-floating mb-1">
+                        <div class="col-md-6 mb-2">
+                          <div class="form-floating mb-2">
                             <input type="time" class="form-control form-control-sm" id="jam_awal" name="jam_awal" required
                               placeholder="Enter Name here" />
                             <label for="jam_awal">Dari Jam </label>
                           </div>
                         </div>
-                        <div class="col-md-6 mb-1">
-                          <div class="form-floating mb-1">
+                        <div class="col-md-6 mb-2">
+                          <div class="form-floating mb-2">
                             <input type="time" class="form-control form-control-sm" id="jam_akhir" name="jam_akhir" required
                               placeholder="Enter Name here" />
                             <label for="jam_akhir">Sampai Jam </label>
                           </div>
                         </div>
               
-                        <div class="col-md-6 mb-1">
-                          <div class="form-floating mb-1">
+                        <div class="col-md-6 mb-2">
+                          <div class="form-floating mb-2">
                             <input type="number" class="form-control form-control-sm" id="awal" name="awal" required
                               placeholder="Enter Name here" />
                             <label for="awal">No Pallet Awal </label>
                           </div>
                         </div>
-                        <div class="col-md-6 mb-1">
+                        <div class="col-md-6 mb-2">
                           <div class="form-floating mb-3">
                             <input type="number" class="form-control form-control-sm" id="akhir" name="akhir" required
                               placeholder="Enter Name here" />
@@ -288,28 +328,28 @@
                 </div>
                   <div class="card-body">
                     <div class="row">
-                      <div class="col-md-6 mb-1">
+                      <div class="col-md-6 mb-2">
                         <div class="form-floating mb-3">
                           <input type="number" class="form-control form-control-sm" id="receh" name="receh"
                             placeholder="Enter Name here" />
                           <label for="receh">Receh </label>
                         </div>
                       </div>
-                      <div class="col-md-6 mb-1">
+                      <div class="col-md-6 mb-2">
                         <div class="form-floating mb-3">
                           <input type="number" class="form-control form-control-sm" id="buffer" name="buffer"
                             placeholder="Enter Name here" />
                           <label for="buffer">Buffer </label>
                         </div>
                       </div>
-                      <div class="col-md-6 mb-1">
+                      <div class="col-md-6 mb-2">
                         <div class="form-floating mb-3">
                           <input type="number" class="form-control form-control-sm" id="minus" name="minus"
                             placeholder="Enter Name here" />
                           <label for="minus">Minus </label>
                         </div>
                       </div>
-                      <div class="col-md-6 mb-1">
+                      <div class="col-md-6 mb-2">
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control form-control-sm" id="note" name="note"
                             placeholder="Enter Name here" />
@@ -320,35 +360,7 @@
                   </div>
                 
               </div>
-                 
-           
-                <div class="col-12 mb-5">
-                  <div class="d-md-flex align-items-center mt-3">
-                    <div class="ms-auto mt-3 mt-md-0">
-                      <button type="button" id="delete" class="
-                          btn btn-danger
-                          font-weight-medium 
-                          rounded-pill
-                          px-4
-                        ">
-                        <div class="d-flex align-items-center">
-                          <i data-feather="send" class="feather-sm fill-white me-2"></i>
-                          Reset
-                        </div>
-                      </button>
-                      <button type="submit" class="
-                          btn btn-info
-                          font-weight-medium
-                          rounded-pill
-                          px-4
-                        ">
-                        <div class="d-flex align-items-center">
-                          <i data-feather="send" id="submit" class="feather-sm fill-white me-2"></i>
-                          Submit
-                        </div>
-                      </button>
-                    </div>
-                  </div>
+ 
             </form>
           
         </main>
@@ -361,17 +373,20 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
     <script src="../js/jquery.js"></script>
     <script src="../js/dashboard.js"></script>
-   
-
     <script>
-      var inputTanggal = document.getElementById('input_tgl');
+       // Mengatur nilai input tanggal menjadi tanggal hari ini
+      document.getElementById('input_tgl').valueAsDate = new Date();
 
-      // Mendapatkan tanggal hari ini dalam format YYYY-MM-DD
-      var today = new Date().toISOString().split('T')[0];
+      // Mendapatkan nilai dari input tanggal
+      var inputTanggal = document.getElementById('input_tgl').valueAsDate;
 
-      // Mengatur nilai default pada elemen input
-      inputTanggal.value = today;
+      // Mengatur nilai h4 dengan format "Hari, Tanggal Bulan Tahun"
+      var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      var formattedDate = inputTanggal.toLocaleDateString('id-ID', options);
+      document.getElementById('tgl_produksi').textContent = formattedDate;
     </script>
+
+  
     <script>
       // method
       function insert() {
@@ -401,41 +416,6 @@
         var persen = 0;
         var total = 0;
   
-        var shift = $('#shift').val();
-        var sku = $('#sku').val();
-        var produk = $('#produk').val();
-      
-        if(sku == "Phill_Reguler"){
-          sku = "Phill Reguler"
-        }
-        if(sku == "Reguler_GT"){
-          sku = "Reguler GT"
-        }
-        var tgl = "";   
-        if (line7.length == 0) {
-          return (row = `<h1>
-                Silahkan Isi Form Diatas
-              </h1>`);
-        }
-  
-        // Memeriksa apakah elemen dengan id "input_tgl" sudah terdefinisi
-        const tanggalInput = document.getElementById("input_tgl");
-  
-        if (tanggalInput) {
-          const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-          const tanggal = new Date(tanggalInput.value);
-          const tanggalFormat = tanggal.toLocaleDateString('id-ID', options);
-          row += `<h4 id="title">Hasil Produksi Shift ${shift}</h4>`;
-          row += `<h4 id="line_running"><i>LINE 7</i></h4>`;
-          row += `<h4 id="tgl_produksi">${tanggalFormat}</h4>`;
-        } else {
-          row += `<h4>Hasil Produksi Shift ${shift}</h4>`;
-          row += `<h4><i>LINE 7</i></h4>`;
-        }
-  
-        row += `<br/>`;
-        row += `<i id="sku_running">Le Minerale ${produk} ${sku}</i>`;
-        row += `<hr/>`;
     
         // row += `<br/>`;
         var formatTotal = "";
@@ -499,6 +479,12 @@
           row += `<br/>`
           row += `<b id='noted'>${note}</b>`
         }
+
+        if (line7.length == 0) {
+          return (row = `<h1>
+                Silahkan Isi Form Di bawah Ini
+              </h1>`);
+        }
   
         row.replace('${total}', total);
   
@@ -555,11 +541,45 @@
         line7  = JSON.parse(localStorage.getItem("line7")) || [];
   
         $(".result").html(showData(line7));
+
+        $(".form-sku").on("change", function() {
+          var shift = $('#input-shift').val();
+          var sku = $('#input-sku').val();
+          var produk = $('#input-produk').val();
+
+          if(sku == "Phill_Reguler"){
+            sku = "Phill Reguler"
+          }
+          if(sku == "Reguler_GT"){
+            sku = "Reguler GT"
+          }
+          var tgl = "";   
+        
+    
+          // Memeriksa apakah elemen dengan id "input_tgl" sudah terdefinisi
+          const tanggalInput = document.getElementById("input_tgl");
+          const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+          const tanggal = new Date(tanggalInput.value);
+          const tanggalFormat = tanggal.toLocaleDateString('id-ID', options);
+          if(tanggalFormat){
+
+            $("#shift").text(shift);
+            $("#produk").text(produk);
+            $("#sku").text(sku);
+            $("#tgl_produksi").text(tanggalFormat);
+          }else{
+            $("#shift").text(shift);
+            $("#produk").text(produk);
+            $("#sku").text(sku);
+
+          }
+        
+        })
         // events
         $("#formTransaksi").on("submit", function (e) {
           e.preventDefault();
           line7.push(insert());
-  
+          
           $(".result").html(showData(line7));
           var akhir = document.getElementById("akhir").value;
           var jamAkhir = document.getElementById("jam_akhir").value;
