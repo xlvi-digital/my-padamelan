@@ -1,15 +1,40 @@
-const stickyTop = document.querySelector(".sidebar-sticky");
-const collapse = document.querySelector(".collapse");
-const Humberger = document.querySelector(".navbar-toggler-icon");
+// const stickyTop = document.querySelector(".sidebar-sticky");
+// const collapse = document.querySelector(".collapse");
+// const button = document.querySelector(".button");
+// const Humberger = document.querySelector(".navbar-toggler-icon");
 
-Humberger.addEventListener("click", function () {
-  // document.body.style.paddingRight = "400px";
-  stickyTop.style.overflow = "visible";
-});
+// Humberger.addEventListener("click", function () {
+//   stickyTop.style.overflow = "visible";
+//   button.style.overflow = "hidden";
+// });
 
-collapse.addEventListener("hidden.bs.collapse", function () {
-  // document.body.style.paddingRight = "0";
-  stickyTop.style.overflow = "hidden";
+// collapse.addEventListener("hidden.bs.collapse", function () {
+//   stickyTop.style.overflow = "hidden";
+//   button.style.overflow = "visible";
+// });
+
+// Wait for the DOM to be ready
+document.addEventListener("DOMContentLoaded", function () {
+  // Get references to the sidebar and the toggle button
+  const sidebar = document.getElementById("sidebarMenu");
+  const toggleButton = document.querySelector(".toggle-button");
+
+  // Add an event listener to the toggle button
+  toggleButton.addEventListener("click", function () {
+    // Toggle the 'visible' class on the toggle button
+    toggleButton.classList.toggle("visible");
+  });
+
+  // Add an event listener to the sidebar to hide the toggle button when the sidebar is collapsed
+  sidebar.addEventListener("transitionend", function () {
+    // Check if the sidebar is collapsed
+    const isCollapsed = sidebar.classList.contains("collapse");
+
+    // If the sidebar is collapsed, remove the 'visible' class from the toggle button
+    if (isCollapsed) {
+      toggleButton.classList.remove("visible");
+    }
+  });
 });
 
 // Active

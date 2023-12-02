@@ -69,7 +69,6 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
-
     </style>
 
     <!-- Custom styles for this template -->
@@ -91,7 +90,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="../index.html">
                   <i class="bx bx-package"></i>
-                  Opname Material  
+                  Opname Material
                 </a>
               </li>
               <li class="nav-item" id="updateAchievementItem">
@@ -102,54 +101,53 @@
                 <ul class="submenu" id="updateAchievementSubMenu">
                   <li>
                     <a href="../achievement/line-1.html">
-                      <i class='bx bx-radio-circle-marked'></i>
+                      <i class="bx bx-radio-circle-marked"></i>
                       Line 1
                     </a>
                   </li>
                   <li>
                     <a href="../achievement/line-2.html">
-                      <i class='bx bx-radio-circle-marked'></i>
+                      <i class="bx bx-radio-circle-marked"></i>
                       Line 2
                     </a>
                   </li>
                   <li>
                     <a href="../achievement/line-3.html">
-                      <i class='bx bx-radio-circle-marked'></i>
+                      <i class="bx bx-radio-circle-marked"></i>
                       Line 3
                     </a>
                   </li>
                   <li>
                     <a href="../achievement/line-4.html">
-                      <i class='bx bx-radio-circle-marked'></i>
+                      <i class="bx bx-radio-circle-marked"></i>
                       Line 4
                     </a>
                   </li>
                   <li>
                     <a href="../achievement/line-5.html">
-                      <i class='bx bx-radio-circle-marked'></i>
+                      <i class="bx bx-radio-circle-marked"></i>
                       Line 5
                     </a>
                   </li>
                   <li>
                     <a href="../achievement/line-6.html">
-                      <i class='bx bx-radio-circle-marked'></i>
+                      <i class="bx bx-radio-circle-marked"></i>
                       Line 6
                     </a>
                   </li>
                   <li>
                     <a href="../achievement/line-7.html">
-                      <i class='bx bx-radio-circle-marked'></i>
+                      <i class="bx bx-radio-circle-marked"></i>
                       Line 7
                     </a>
                   </li>
                   <li>
                     <a href="../achievement/line-8.html">
-                      <i class='bx bx-radio-circle-marked'></i>
+                      <i class="bx bx-radio-circle-marked"></i>
                       Line 8
                     </a>
                   </li>
-               
-              </ul>
+                </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -161,96 +159,49 @@
           </div>
         </nav>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
-          <div class=" sticky-top bg-light mb-2" style="top:48px;">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-              <h1 class="h2 mb-2">Update Achievement</h1>
-              <form id="formTransaksi">
-              <div class="btn-toolbar mt-2 mb-md-0">
-                <div class="me-2">
-                  <button type="button" data-bs-toggle="modal" data-bs-target="#whatapps"  class="
-                  btn btn-outline-success
-                  font-weight-medium
-                  rounded-pill
-                  px-4
-                ">
-                <div class="d-flex align-items-center">
-                  <i class="bx bxl-whatsapp" style="vertical-align: bottom; font-size: 1.5rem"></i>
-                    Share
-                </div>
-              </button>
-                </div>
-                <div class="btn-group me-2">
-                  <button type="button" id="delete" class="
-                  btn btn-outline-danger
-                  font-weight-medium 
-                  rounded-pill
-                  px-4
-                ">
-                <div class="d-flex align-items-center">
-                  <i data-feather="send" class="feather-sm fill-white me-2"></i>
-                  Reset
-                </div>
-              </button>
-                </div>   
-                <div class="me-2">
-                  <button type="submit" class="
-                      btn btn-outline-primary
-                      font-weight-medium
-                      rounded-pill
-                      px-4
-                    ">
-                    <div class="d-flex align-items-center">
-                      <i data-feather="send" id="submit" class="feather-sm fill-white me-2"></i>
-                      Submit
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2 mb-2">Update Achievement</h1>
           </div>
 
           <!-- Modal -->
-          <div class="modal fade" id="whatapps" tabindex="-1" aria-labelledby="whatappsLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="whatappsLabel">Modal title</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <label for="no_hp" >Masukan No Whatapps</label>
-                  <input type="number" name="no_hp" id="no_hp" class="form-control form-control-sm">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" id="wa" class="btn btn-success">Kirim</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="row text-center">
-                <div class="col-md-12">
-                  <h4 id="title">Hasil Produksi Shift <span id="shift">1</span></h4>
-                  <h4 id="line_running"><i>LINE 7</i></h4> 
-                  <h4 id="tgl_produksi"></h4>
-                  <i id="sku_running mb-2">Le Minerale <span id="produk">1500ml</span> <span id="sku">Promo</span></i>
-                  <hr>
-                  <div class="result">
+          <form id="formTransaksi">
+            <div class="modal fade" id="whatapps" tabindex="-1" aria-labelledby="whatappsLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="whatappsLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                </div>  
+                  <div class="modal-body">
+                    <label for="no_hp">Masukan No Whatapps</label>
+                    <input type="number" name="no_hp" id="no_hp" class="form-control form-control-sm" />
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" id="wa" class="btn btn-success">Kirim</button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <h5 class="card-title">
-                SKU
-              </h5>
+            <div class="card">
+              <div class="card-body">
+                <div class="row text-center">
+                  <div class="col-md-12">
+                    <h4 id="title">Hasil Produksi Shift <span id="shift">1</span></h4>
+                    <h4 id="line_running"><i>LINE 7</i></h4>
+                    <h4 id="tgl_produksi"></h4>
+                    <i id="sku_running mb-2">Le Minerale <span id="produk">1500ml</span> <span id="sku">Promo</span></i>
+                    <hr />
+                    <div class="result"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="card-body">
+
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title">SKU</h5>
+              </div>
+              <div class="card-body">
                 <div class="row form-sku">
                   <div class="col-md-6 mb-2">
                     <select class="form-select" id="input-shift" style="border-radius: 5px; font-size: 1rem">
@@ -259,110 +210,128 @@
                       <option value="2">Sihft 2</option>
                       <option value="3">Shift 3</option>
                     </select>
-                  </div>   
+                  </div>
                   <div class="col-md-6 mb-2">
-                    <input type="date" class="form-control" id="input_tgl" name="input_tgl" required
-                    placeholder="Enter Name here" />
+                    <input type="date" class="form-control" id="input_tgl" name="input_tgl" required placeholder="Enter Name here" />
                   </div>
-                    <div class="col-md-6 mb-2">
-                        <select class="form-select " id="input-produk" required name="produk">
-                          <option aria-readonly="true">Jenis Produk</option>
-                          <option value="600ml">600ml</option>
-                          <option value="1500ml">1500ml</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <select class="form-select sku" id="input-sku" name="sku" style="border-radius: 5px; font-size: 1rem">
-                          <option selected disabled>Pilih SKU</option>
-                          <option value="Promo">Promo</option>
-                          <option value="Reguler">Reguler</option>
-                          <option value="Reguler_GT">Reguler GT</option>
-                          <option value="Phill_Reguler">Phill Reguler</option>
-                        </select>
-                    </div>
+                  <div class="col-md-6 mb-2">
+                    <select class="form-select" id="input-produk" required name="produk">
+                      <option aria-readonly="true">Jenis Produk</option>
+                      <option value="600ml">600ml</option>
+                      <option value="1500ml">1500ml</option>
+                    </select>
                   </div>
-              </div>
-          </div>
-              <div class="card">
-                <div class="card-header">
-                  <h5>Jam dan No Pallet</h5>
-                 </div>
-                  <div class="card-body">
-                      <div class="row">
-                        <div class="col-md-6 mb-2">
-                          <div class="form-floating mb-2">
-                            <input type="time" class="form-control form-control-sm" id="jam_awal" name="jam_awal" required
-                              placeholder="Enter Name here" />
-                            <label for="jam_awal">Dari Jam </label>
-                          </div>
-                        </div>
-                        <div class="col-md-6 mb-2">
-                          <div class="form-floating mb-2">
-                            <input type="time" class="form-control form-control-sm" id="jam_akhir" name="jam_akhir" required
-                              placeholder="Enter Name here" />
-                            <label for="jam_akhir">Sampai Jam </label>
-                          </div>
-                        </div>
-              
-                        <div class="col-md-6 mb-2">
-                          <div class="form-floating mb-2">
-                            <input type="number" class="form-control form-control-sm" id="awal" name="awal" required
-                              placeholder="Enter Name here" />
-                            <label for="awal">No Pallet Awal </label>
-                          </div>
-                        </div>
-                        <div class="col-md-6 mb-2">
-                          <div class="form-floating mb-3">
-                            <input type="number" class="form-control form-control-sm" id="akhir" name="akhir" required
-                              placeholder="Enter Name here" />
-                            <label for="akhir">No Pallet Akhir </label>
-                          </div>
-                        </div>
-                      </div>
+                  <div class="col-md-6 mb-2">
+                    <select class="form-select sku" id="input-sku" name="sku" style="border-radius: 5px; font-size: 1rem">
+                      <option selected disabled>Pilih SKU</option>
+                      <option value="Promo">Promo</option>
+                      <option value="Reguler">Reguler</option>
+                      <option value="Reguler_GT">Reguler GT</option>
+                      <option value="Phill_Reguler">Phill Reguler</option>
+                    </select>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h5>Jam dan No Pallet</h5>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <div class="form-floating mb-2">
+                      <input type="time" class="form-control form-control-sm" id="jam_awal" name="jam_awal" required placeholder="Enter Name here" />
+                      <label for="jam_awal">Dari Jam </label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <div class="form-floating mb-2">
+                      <input type="time" class="form-control form-control-sm" id="jam_akhir" name="jam_akhir" required placeholder="Enter Name here" />
+                      <label for="jam_akhir">Sampai Jam </label>
+                    </div>
+                  </div>
 
-              <div class="card">
-                <div class="card-header">
-                  <h5>Tambahan</h5>
-                </div>
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-6 mb-2">
-                        <div class="form-floating mb-3">
-                          <input type="number" class="form-control form-control-sm" id="receh" name="receh"
-                            placeholder="Enter Name here" />
-                          <label for="receh">Receh </label>
-                        </div>
-                      </div>
-                      <div class="col-md-6 mb-2">
-                        <div class="form-floating mb-3">
-                          <input type="number" class="form-control form-control-sm" id="buffer" name="buffer"
-                            placeholder="Enter Name here" />
-                          <label for="buffer">Buffer </label>
-                        </div>
-                      </div>
-                      <div class="col-md-6 mb-2">
-                        <div class="form-floating mb-3">
-                          <input type="number" class="form-control form-control-sm" id="minus" name="minus"
-                            placeholder="Enter Name here" />
-                          <label for="minus">Minus </label>
-                        </div>
-                      </div>
-                      <div class="col-md-6 mb-2">
-                        <div class="form-floating mb-3">
-                          <input type="text" class="form-control form-control-sm" id="note" name="note"
-                            placeholder="Enter Name here" />
-                          <label for="note">Note </label>
-                        </div>
-                      </div>
+                  <div class="col-md-6 mb-2">
+                    <div class="form-floating mb-2">
+                      <input type="number" class="form-control form-control-sm" id="awal" name="awal" required placeholder="Enter Name here" />
+                      <label for="awal">No Pallet Awal </label>
                     </div>
                   </div>
-                
+                  <div class="col-md-6 mb-2">
+                    <div class="form-floating mb-3">
+                      <input type="number" class="form-control form-control-sm" id="akhir" name="akhir" required placeholder="Enter Name here" />
+                      <label for="akhir">No Pallet Akhir </label>
+                    </div>
+                  </div>
+                </div>
               </div>
- 
-            </form>
-          
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h5>Tambahan</h5>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <div class="form-floating mb-3">
+                      <input type="number" class="form-control form-control-sm" id="receh" name="receh" placeholder="Enter Name here" />
+                      <label for="receh">Receh </label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <div class="form-floating mb-3">
+                      <input type="number" class="form-control form-control-sm" id="buffer" name="buffer" placeholder="Enter Name here" />
+                      <label for="buffer">Buffer </label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <div class="form-floating mb-3">
+                      <input type="number" class="form-control form-control-sm" id="minus" name="minus" placeholder="Enter Name here" />
+                      <label for="minus">Minus </label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control form-control-sm" id="note" name="note" placeholder="Enter Name here" />
+                      <label for="note">Note </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sticky-bottom bg-light">
+              <div class="d-flex justify-content-end flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <div class="btn-toolbar mt-2 mb-md-0">
+                  <div class="me-2">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#whatapps" class="btn btn-outline-success font-weight-medium rounded-pill px-4">
+                      <div class="d-flex align-items-center">
+                        <i class="bx bxl-whatsapp" style="vertical-align: bottom; font-size: 1.5rem"></i>
+                        Share
+                      </div>
+                    </button>
+                  </div>
+                  <div class="btn-group me-2">
+                    <button type="button" id="delete" class="btn btn-outline-danger font-weight-medium rounded-pill px-4">
+                      <div class="d-flex align-items-center">
+                        <i data-feather="send" class="feather-sm fill-white me-2"></i>
+                        Reset
+                      </div>
+                    </button>
+                  </div>
+                  <div class="me-2">
+                    <button type="submit" class="btn btn-outline-primary font-weight-medium rounded-pill px-4">
+                      <div class="d-flex align-items-center">
+                        <i data-feather="send" id="submit" class="feather-sm fill-white me-2"></i>
+                        Submit
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
         </main>
       </div>
     </div>
@@ -374,110 +343,124 @@
     <script src="../js/jquery.js"></script>
     <script src="../js/dashboard.js"></script>
     <script>
-       // Mengatur nilai input tanggal menjadi tanggal hari ini
-      document.getElementById('input_tgl').valueAsDate = new Date();
+      // Mengatur nilai input tanggal menjadi tanggal hari ini
+      $(document).ready(function () {
+        document.getElementById("input_tgl").valueAsDate = new Date();
 
-      // Mendapatkan nilai dari input tanggal
-      var inputTanggal = document.getElementById('input_tgl').valueAsDate;
+        // Mendapatkan nilai dari input tanggal
+        var inputTanggal = document.getElementById("input_tgl").valueAsDate;
 
-      // Mengatur nilai h4 dengan format "Hari, Tanggal Bulan Tahun"
-      var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      var formattedDate = inputTanggal.toLocaleDateString('id-ID', options);
-      document.getElementById('tgl_produksi').textContent = formattedDate;
+        // Mengatur nilai h4 dengan format "Hari, Tanggal Bulan Tahun"
+        var options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+        var formattedDate = inputTanggal.toLocaleDateString("id-ID", options);
+        document.getElementById("tgl_produksi").textContent = formattedDate;
+
+        // Mendapatkan waktu sekarang
+        var waktuSekarang = new Date().toLocaleTimeString("en-GB", { timeZone: "Asia/Jakarta" });
+        var jamAwalDefaultValue = waktuSekarang.slice(0, 5);
+
+        var waktuSatuJamSetelahIni = new Date();
+        waktuSatuJamSetelahIni.setHours(waktuSatuJamSetelahIni.getHours() + 1);
+
+        // Mendapatkan jam dan menit satu jam setelah ini dalam format hh:mm
+        var jamAkhirDefaultValue = waktuSatuJamSetelahIni.toLocaleTimeString("en-GB", { timeZone: "Asia/Jakarta" }).slice(0, 5);
+
+        // Mengatur nilai default pada input jam_awal dan jam_akhir menggunakan jQuery
+        $("#jam_awal").val(jamAwalDefaultValue);
+        $("#jam_akhir").val(jamAkhirDefaultValue);
+      });
     </script>
 
-  
     <script>
       // method
       function insert() {
-          const form = $("#formTransaksi").serializeArray(); 
-          let line7 = JSON.parse(localStorage.getItem("line7")) || [];
-  
-          let newData = {};   
-  
-          form.forEach(function (item, index) {
-            let name = item["name"];
-            let value = name === 'id' ? Number(item['value']):item['value']
-            newData[name] = value;
-          });
-          
-          // console.log(newData)
-          localStorage.setItem("line7", JSON.stringify([...line7, newData]));
-          return newData;
+        const form = $("#formTransaksi").serializeArray();
+        let line7 = JSON.parse(localStorage.getItem("line7")) || [];
+
+        let newData = {};
+
+        form.forEach(function (item, index) {
+          let name = item["name"];
+          let value = name === "id" ? Number(item["value"]) : item["value"];
+          newData[name] = value;
+        });
+
+        // console.log(newData)
+        localStorage.setItem("line7", JSON.stringify([...line7, newData]));
+        return newData;
       }
-  
+
       function showData(line7) {
         var row = "";
-        
+
         var awal = 0;
         var akhir = 0;
         var hasil = 0;
         var jumlahCar = 0;
         var persen = 0;
         var total = 0;
-  
-    
+        var produk = $("#input-produk").val();
+
         // row += `<br/>`;
         var formatTotal = "";
         var totalAkhir = "";
         var buffer = $("#buffer").val();
         var minus = $("#minus").val();
-      
+
         line7.forEach(function (item, index) {
-          if(produk == '1500ml'){
-              hasil = item['akhir'] - item['awal'];
-              if(item['receh']){
-                jumlahCar =(hasil * 33) + Number(item['receh']);
-              }else{
-                jumlahCar = hasil * 33;
-              }
-            }else{
-              hasil = item['akhir'] - item['awal'];
-              if(item['receh']){
-                jumlahCar =(hasil * 40) + Number(item['receh']);
-              }else{
-                jumlahCar = hasil * 40;
-              }   
+          if (produk == "1500ml") {
+            hasil = item["akhir"] - item["awal"];
+            if (item["receh"]) {
+              jumlahCar = hasil * 33 + Number(item["receh"]);
+            } else {
+              jumlahCar = hasil * 33;
+            }
+          } else {
+            hasil = item["akhir"] - item["awal"];
+            if (item["receh"]) {
+              jumlahCar = hasil * 40 + Number(item["receh"]);
+            } else {
+              jumlahCar = hasil * 40;
+            }
           }
-          if(produk == "1500ml"){
+          if (produk == "1500ml") {
             persen = Math.round((jumlahCar / 2083) * 100);
-          }else{
+          } else {
             persen = Math.round((jumlahCar / 1666) * 100);
           }
-            total += Number(jumlahCar);
-            var formatJumlahCar = jumlahCar.toLocaleString("en-US").replace(',','.');
-             formatTotal = total.toLocaleString("en-US").replace(',','.');
-    
-            var jamAwal = item.jam_awal.replace(':', '.'); // Mengganti ":" dengan "."
-            var jamAkhir = item.jam_akhir.replace(':', '.'); // Mengganti ":" dengan "."
-            row += `
+          total += Number(jumlahCar);
+          var formatJumlahCar = jumlahCar.toLocaleString("en-US").replace(",", ".");
+          formatTotal = total.toLocaleString("en-US").replace(",", ".");
+
+          var jamAwal = item.jam_awal.replace(":", "."); // Mengganti ":" dengan "."
+          var jamAkhir = item.jam_akhir.replace(":", "."); // Mengganti ":" dengan "."
+          row += `
               <p id="hasil_produksi_${index}" class="hasil_produksi">
                 ${jamAwal}-${jamAkhir} = ${formatJumlahCar} car ${persen}% 
                 <button onclick="deleteData(${index})" class="btn btn-danger btn-sm mb-2">
                 Hapus
                 </button>
               </p>`;
-  
         });
         var note = $("#note").val();
         var bufferNumber = Number(buffer); // Pastikan buffer juga berupa angka
         var minusNumber = Number(minus); // Pastikan buffer juga berupa angka
-        if(minus != 0){
+        if (minus != 0) {
           totalAkhir = total - minusNumber;
-          var formatedTotal = totalAkhir.toLocaleString("en-US").replace(',','.');
-          row += `<b id='total_produksi'> *${formatedTotal} car*</b>`
-          row += `<br/>`
-          row += `<b id='noted'>*${note} = ${minus} car*</b>`
-        }else if(buffer != 0){
+          var formatedTotal = totalAkhir.toLocaleString("en-US").replace(",", ".");
+          row += `<b id='total_produksi'> *${formatedTotal} car*</b>`;
+          row += `<br/>`;
+          row += `<b id='noted'>*${note} = ${minus} car*</b>`;
+        } else if (buffer != 0) {
           totalAkhir = total + bufferNumber;
-          var formatedTotal = totalAkhir.toLocaleString("en-US").replace(',','.');
-          row += `<b id='total_produksi'> *${formatedTotal} car*</b>`
-          row += `<br/>`
-          row += `<b id='noted'>*${note} = ${buffer} car*</b>`
-        }else{
-          row += `<b id='total_produksi'> *${formatTotal} car*</b>`
-          row += `<br/>`
-          row += `<b id='noted'>${note}</b>`
+          var formatedTotal = totalAkhir.toLocaleString("en-US").replace(",", ".");
+          row += `<b id='total_produksi'> *${formatedTotal} car*</b>`;
+          row += `<br/>`;
+          row += `<b id='noted'>*${note} = ${buffer} car*</b>`;
+        } else {
+          row += `<b id='total_produksi'> *${formatTotal} car*</b>`;
+          row += `<br/>`;
+          row += `<b id='noted'>${note}</b>`;
         }
 
         if (line7.length == 0) {
@@ -485,101 +468,94 @@
                 Silahkan Isi Form Di bawah Ini
               </h1>`);
         }
-  
-        row.replace('${total}', total);
-  
+
+        row.replace("${total}", total);
+
         return row;
       }
-  
+
       function deleteData(index) {
         const pElement = document.getElementById(`hasil_produksi_${index}`);
         if (pElement) {
           pElement.remove(); // Menghapus tag "p" berdasarkan id-nya
-  
+
           // Menghapus data dari line7 berdasarkan index
           line7.splice(index, 1);
           localStorage.setItem("line7", JSON.stringify(line7));
-  
+
           updateTotal(); // Memperbarui total setelah penghapusan
         }
       }
-  
+
       function updateTotal() {
         var newTotal = 0;
-        var jenis = $('#produk').val();
-        if(jenis == '1500ml'){
+        var jenis = $("#produk").val();
+        if (jenis == "1500ml") {
           line7.forEach(function (item) {
-            var hasil = item['akhir'] - item['awal'];
-            var jumlahCar = item['receh'] ? (hasil * 33) + Number(item['receh']) : hasil * 33;
+            var hasil = item["akhir"] - item["awal"];
+            var jumlahCar = item["receh"] ? hasil * 33 + Number(item["receh"]) : hasil * 33;
             newTotal += jumlahCar;
           });
-     
-          var totalElement = document.getElementById('total_produksi');
+
+          var totalElement = document.getElementById("total_produksi");
           if (totalElement) {
-            totalElement.textContent = ` *${newTotal.toLocaleString('en-US').replace(',','.')} car*`;
+            totalElement.textContent = ` *${newTotal.toLocaleString("en-US").replace(",", ".")} car*`;
           }
-          
-        }else{
+        } else {
           line7.forEach(function (item) {
-            var hasil = item['akhir'] - item['awal'];
-            var jumlahCar = item['receh'] ? (hasil * 40) + Number(item['receh']) : hasil * 40;
+            var hasil = item["akhir"] - item["awal"];
+            var jumlahCar = item["receh"] ? hasil * 40 + Number(item["receh"]) : hasil * 40;
             newTotal += jumlahCar;
           });
-    
-          var totalElement = document.getElementById('total_produksi');
+
+          var totalElement = document.getElementById("total_produksi");
           if (totalElement) {
-            totalElement.textContent = ` *${newTotal.toLocaleString('en-US').replace(',','.')} car*`;
+            totalElement.textContent = ` *${newTotal.toLocaleString("en-US").replace(",", ".")} car*`;
           }
-  
         }
-  
       }
-      
+
       let dataTansaksi;
       $(function () {
         // initialize
-        line7  = JSON.parse(localStorage.getItem("line7")) || [];
-  
+        line7 = JSON.parse(localStorage.getItem("line7")) || [];
+
         $(".result").html(showData(line7));
 
-        $(".form-sku").on("change", function() {
-          var shift = $('#input-shift').val();
-          var sku = $('#input-sku').val();
-          var produk = $('#input-produk').val();
+        $(".form-sku").on("change", function () {
+          var shift = $("#input-shift").val();
+          var sku = $("#input-sku").val();
+          var produk = $("#input-produk").val();
 
-          if(sku == "Phill_Reguler"){
-            sku = "Phill Reguler"
+          if (sku == "Phill_Reguler") {
+            sku = "Phill Reguler";
           }
-          if(sku == "Reguler_GT"){
-            sku = "Reguler GT"
+          if (sku == "Reguler_GT") {
+            sku = "Reguler GT";
           }
-          var tgl = "";   
-        
-    
+          var tgl = "";
+
           // Memeriksa apakah elemen dengan id "input_tgl" sudah terdefinisi
           const tanggalInput = document.getElementById("input_tgl");
-          const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+          const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
           const tanggal = new Date(tanggalInput.value);
-          const tanggalFormat = tanggal.toLocaleDateString('id-ID', options);
-          if(tanggalFormat){
-
+          const tanggalFormat = tanggal.toLocaleDateString("id-ID", options);
+          if (tanggalFormat) {
             $("#shift").text(shift);
             $("#produk").text(produk);
             $("#sku").text(sku);
             $("#tgl_produksi").text(tanggalFormat);
-          }else{
+          } else {
             $("#shift").text(shift);
             $("#produk").text(produk);
             $("#sku").text(sku);
-
           }
-        
-        })
+        });
         // events
         $("#formTransaksi").on("submit", function (e) {
           e.preventDefault();
           line7.push(insert());
-          
+
           $(".result").html(showData(line7));
           var akhir = document.getElementById("akhir").value;
           var jamAkhir = document.getElementById("jam_akhir").value;
@@ -588,10 +564,10 @@
           document.getElementById("awal").value = akhir;
           document.getElementById("akhir").value = null;
           document.getElementById("jam_awal").value = jamAkhir;
-  
+
           var jamAkhir = document.getElementById("jam_akhir").value;
           var jamAkhirArray = jamAkhir.split(":");
-  
+
           var jamAkhirBaru = parseInt(jamAkhirArray[0]) + 1;
           if (jamAkhirBaru === 24) {
             jamAkhirBaru = 0;
@@ -599,18 +575,15 @@
           } else {
             jamAkhirArray[0] = jamAkhirBaru.toString().padStart(2, "0");
           }
-  
+
           var jamAkhirString = jamAkhirArray.join(":");
-  
+
           document.getElementById("jam_akhir").value = jamAkhirString;
-  
+
           document.getElementById("receh").value = null;
-  
-  
-          
         });
-  
-        // meriset 
+
+        // meriset
         $("#delete").on("click", function (e) {
           e.preventDefault();
           if (confirm("Hapus Semua Data?")) {
@@ -619,39 +592,29 @@
             $(".result").html(showData(line7));
           }
         });
-  
-        // 
+
+        //
         $("#wa").on("click", function () {
-          var title = $('#title').text();
-          var line = $('#line_running').text();
-          var tgl_produksi= $('#tgl_produksi').text();
-          var total_produksi= $('#total_produksi').text();
-          var no_hp= $('#no_hp').val();
-          var noted = $('#noted').text();
-          var sku = $('#sku_running').text();
+          var title = $("#title").text();
+          var line = $("#line_running").text();
+          var tgl_produksi = $("#tgl_produksi").text();
+          var total_produksi = $("#total_produksi").text();
+          var no_hp = $("#no_hp").val();
+          var noted = $("#noted").text();
+          var sku = $("#sku_running").text();
           var hasilProduksi = "";
-          $('.hasil_produksi').each(function() {
+          $(".hasil_produksi").each(function () {
             var text = $(this).text().trim();
-            var withoutDataAfterPercentage = text.substring(0, text.indexOf('%') + 1); // Mengambil teks hingga tanda '%' termasuk '%'
+            var withoutDataAfterPercentage = text.substring(0, text.indexOf("%") + 1); // Mengambil teks hingga tanda '%' termasuk '%'
             hasilProduksi += withoutDataAfterPercentage + "%0a";
           });
-  
-          var url =  "https://wa.me/+62"+no_hp+"?text=" 
-          +"*"+title+"*"+"%0a" 
-          +"_*"+line+"*_"+"%0a"
-          +"*"+tgl_produksi+"*"+"%0a"+"%0a"  
-  
-          +"_"+ sku +"_"  + total_produksi + "%0a"+"%0a" 
-          +hasilProduksi + "%0a"
-          +noted 
-  
+
+          var url =
+            "https://wa.me/+62" + no_hp + "?text=" + "*" + title + "*" + "%0a" + "_*" + line + "*_" + "%0a" + "*" + tgl_produksi + "*" + "%0a" + "%0a" + "_" + sku + "_" + total_produksi + "%0a" + "%0a" + hasilProduksi + "%0a" + noted;
+
           window.open(url, "_blank").focus();
         });
-  
-  
-       });
-  
-  
+      });
     </script>
   </body>
 </html>
