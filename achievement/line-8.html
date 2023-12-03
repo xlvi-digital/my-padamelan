@@ -169,7 +169,7 @@
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="whatappsLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="whatappsLabel">Modal Whatapps</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
@@ -187,9 +187,9 @@
                 <div class="row text-center">
                   <div class="col-md-12">
                     <h4 id="title">Hasil Produksi Shift <span id="shift">1</span></h4>
-                    <h4 id="line_running"><i>LINE 7</i></h4>
+                    <h4 id="line_running"><i>LINE 8</i></h4>
                     <h4 id="tgl_produksi"></h4>
-                    <i id="sku_running">Le Minerale <span id="produk">1500ml</span> <span id="sku">Promo</span></i>
+                    <i id="sku_running">Le Minerale 600ml <span id="sku">Promo</span></i>
                     <hr />
                     <div class="result"></div>
                   </div>
@@ -213,13 +213,6 @@
                   </div>
                   <div class="col-md-6 mb-2">
                     <input type="date" class="form-control" id="input_tgl" name="input_tgl" required placeholder="Enter Name here" />
-                  </div>
-                  <div class="col-md-6 mb-2">
-                    <select class="form-select" id="input-produk" required name="produk">
-                      <option aria-readonly="true">Jenis Produk</option>
-                      <option value="600ml">600ml</option>
-                      <option value="1500ml">1500ml</option>
-                    </select>
                   </div>
                   <div class="col-md-6 mb-2">
                     <select class="form-select sku" id="input-sku" name="sku" style="border-radius: 5px; font-size: 1rem">
@@ -380,7 +373,7 @@
       // method
       function insert() {
         const form = $("#formTransaksi").serializeArray();
-        let line7 = JSON.parse(localStorage.getItem("line7")) || [];
+        let line8 = JSON.parse(localStorage.getItem("line8")) || [];
 
         let newData = {};
 
@@ -391,11 +384,11 @@
         });
 
         // console.log(newData)
-        localStorage.setItem("line7", JSON.stringify([...line7, newData]));
+        localStorage.setItem("line8", JSON.stringify([...line8, newData]));
         return newData;
       }
 
-      function showData(line7) {
+      function showData(line8) {
         var row = "";
 
         var awal = 0;
@@ -412,27 +405,16 @@
         var buffer = $("#buffer").val();
         var minus = $("#minus").val();
 
-        line7.forEach(function (item, index) {
-          if (produk == "1500ml") {
-            hasil = item["akhir"] - item["awal"];
-            if (item["receh"]) {
-              jumlahCar = hasil * 33 + Number(item["receh"]);
-            } else {
-              jumlahCar = hasil * 33;
-            }
+        line8.forEach(function (item, index) {
+          hasil = item["akhir"] - item["awal"];
+          if (item["receh"]) {
+            jumlahCar = hasil * 40 + Number(item["receh"]);
           } else {
-            hasil = item["akhir"] - item["awal"];
-            if (item["receh"]) {
-              jumlahCar = hasil * 40 + Number(item["receh"]);
-            } else {
-              jumlahCar = hasil * 40;
-            }
+            jumlahCar = hasil * 40;
           }
-          if (produk == "1500ml") {
-            persen = Math.round((jumlahCar / 2083) * 100);
-          } else {
-            persen = Math.round((jumlahCar / 1666) * 100);
-          }
+
+          persen = Math.round((jumlahCar / 3000) * 100);
+
           total += Number(jumlahCar);
           var formatJumlahCar = jumlahCar.toLocaleString("en-US").replace(",", ".");
           formatTotal = total.toLocaleString("en-US").replace(",", ".");
@@ -468,10 +450,10 @@
           row += `<b id='noted'>${note}</b>`;
         }
 
-        if (line7.length == 0) {
-          return (row = `<h1>
+        if (line8.length == 0) {
+          return (row = `<h5>
                 Silahkan Isi Form Di bawah Ini
-              </h1>`);
+              </h5>`);
         }
 
         row.replace("${total}", total);
@@ -484,9 +466,9 @@
         if (pElement) {
           pElement.remove(); // Menghapus tag "p" berdasarkan id-nya
 
-          // Menghapus data dari line7 berdasarkan index
-          line7.splice(index, 1);
-          localStorage.setItem("line7", JSON.stringify(line7));
+          // Menghapus data dari line8 berdasarkan index
+          line8.splice(index, 1);
+          localStorage.setItem("line8", JSON.stringify(line8));
 
           updateTotal(); // Memperbarui total setelah penghapusan
         }
@@ -494,38 +476,25 @@
 
       function updateTotal() {
         var newTotal = 0;
-        var jenis = $("#produk").val();
-        if (jenis == "1500ml") {
-          line7.forEach(function (item) {
-            var hasil = item["akhir"] - item["awal"];
-            var jumlahCar = item["receh"] ? hasil * 33 + Number(item["receh"]) : hasil * 33;
-            newTotal += jumlahCar;
-          });
 
-          var totalElement = document.getElementById("total_produksi");
-          if (totalElement) {
-            totalElement.textContent = ` *${newTotal.toLocaleString("en-US").replace(",", ".")} car*`;
-          }
-        } else {
-          line7.forEach(function (item) {
-            var hasil = item["akhir"] - item["awal"];
-            var jumlahCar = item["receh"] ? hasil * 40 + Number(item["receh"]) : hasil * 40;
-            newTotal += jumlahCar;
-          });
+        line8.forEach(function (item) {
+          var hasil = item["akhir"] - item["awal"];
+          var jumlahCar = item["receh"] ? hasil * 27 + Number(item["receh"]) : hasil * 27;
+          newTotal += jumlahCar;
+        });
 
-          var totalElement = document.getElementById("total_produksi");
-          if (totalElement) {
-            totalElement.textContent = ` *${newTotal.toLocaleString("en-US").replace(",", ".")} car*`;
-          }
+        var totalElement = document.getElementById("total_produksi");
+        if (totalElement) {
+          totalElement.textContent = ` *${newTotal.toLocaleString("en-US").replace(",", ".")} car*`;
         }
       }
 
       let dataTansaksi;
       $(function () {
         // initialize
-        line7 = JSON.parse(localStorage.getItem("line7")) || [];
+        line8 = JSON.parse(localStorage.getItem("line8")) || [];
 
-        $(".result").html(showData(line7));
+        $(".result").html(showData(line8));
 
         $(".form-sku").on("change", function () {
           var shift = $("#input-shift").val();
@@ -559,9 +528,9 @@
         // events
         $("#formTransaksi").on("submit", function (e) {
           e.preventDefault();
-          line7.push(insert());
+          line8.push(insert());
 
-          $(".result").html(showData(line7));
+          $(".result").html(showData(line8));
           var akhir = document.getElementById("akhir").value;
           var jamAkhir = document.getElementById("jam_akhir").value;
           // var update2 = document.getElementById("total").innerHTML;
@@ -592,9 +561,9 @@
         $("#delete").on("click", function (e) {
           e.preventDefault();
           if (confirm("Hapus Semua Data?")) {
-            line7 = filterTransaksi = [];
-            localStorage.removeItem("line7");
-            $(".result").html(showData(line7));
+            line8 = filterTransaksi = [];
+            localStorage.removeItem("line8");
+            $(".result").html(showData(line8));
           }
         });
 
