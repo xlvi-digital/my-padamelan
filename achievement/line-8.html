@@ -203,7 +203,7 @@
               </div>
               <div class="card-body">
                 <div class="row form-sku">
-                  <div class="col-md-6 mb-2">
+                  <div class="col-md-6 col-sm-6 mb-2">
                     <select class="form-select" id="input-shift" style="border-radius: 5px; font-size: 1rem">
                       <option disabled selected>Shift</option>
                       <option value="1">Shift 1</option>
@@ -462,6 +462,30 @@
       }
 
       function deleteData(index) {
+        var akhir = document.getElementById("akhir").value;
+        var jamAwal = document.getElementById("jam_awal").value;
+        // var update2 = document.getElementById("total").innerHTML;
+        // alert(total);
+        document.getElementById("awal").value = null;
+        document.getElementById("akhir").value = null;
+        document.getElementById("jam_akhir").value = jamAwal;
+
+        var jamAkhir = document.getElementById("jam_awal").value;
+        var jamAkhirArray = jamAkhir.split(":");
+
+        var jamAkhirBaru = parseInt(jamAkhirArray[0]) - 1;
+        if (jamAkhirBaru === 24) {
+          jamAkhirBaru = 0;
+          jamAkhirArray[0] = "00";
+        } else {
+          jamAkhirArray[0] = jamAkhirBaru.toString().padStart(2, "0");
+        }
+
+        var jamAkhirString = jamAkhirArray.join(":");
+
+        document.getElementById("jam_awal").value = jamAkhirString;
+
+        document.getElementById("receh").value = null;
         const pElement = document.getElementById(`hasil_produksi_${index}`);
         if (pElement) {
           pElement.remove(); // Menghapus tag "p" berdasarkan id-nya
