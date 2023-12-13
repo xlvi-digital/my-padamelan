@@ -359,20 +359,6 @@
         var options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
         var formattedDate = inputTanggal.toLocaleDateString("id-ID", options);
         document.getElementById("tgl_produksi").textContent = formattedDate;
-
-        // Mendapatkan waktu sekarang
-        var waktuSekarang = new Date().toLocaleTimeString("en-GB", { timeZone: "Asia/Jakarta" });
-        var jamAwalDefaultValue = waktuSekarang.slice(0, 5);
-
-        var waktuSatuJamSetelahIni = new Date();
-        waktuSatuJamSetelahIni.setHours(waktuSatuJamSetelahIni.getHours() + 1);
-
-        // Mendapatkan jam dan menit satu jam setelah ini dalam format hh:mm
-        var jamAkhirDefaultValue = waktuSatuJamSetelahIni.toLocaleTimeString("en-GB", { timeZone: "Asia/Jakarta" }).slice(0, 5);
-
-        // Mengatur nilai default pada input jam_awal dan jam_akhir menggunakan jQuery
-        $("#jam_awal").val(jamAwalDefaultValue);
-        $("#jam_akhir").val(jamAkhirDefaultValue);
       });
     </script>
 
@@ -469,6 +455,19 @@
         }
 
         if (line7.length == 0) {
+          // Mendapatkan waktu sekarang
+          var waktuSekarang = new Date().toLocaleTimeString("en-GB", { timeZone: "Asia/Jakarta" });
+          var jamAwalDefaultValue = waktuSekarang.slice(0, 5);
+
+          var waktuSatuJamSetelahIni = new Date();
+          waktuSatuJamSetelahIni.setHours(waktuSatuJamSetelahIni.getHours() + 1);
+
+          // Mendapatkan jam dan menit satu jam setelah ini dalam format hh:mm
+          var jamAkhirDefaultValue = waktuSatuJamSetelahIni.toLocaleTimeString("en-GB", { timeZone: "Asia/Jakarta" }).slice(0, 5);
+
+          // Mengatur nilai default pada input jam_awal dan jam_akhir menggunakan jQuery
+          $("#jam_awal").val(jamAwalDefaultValue);
+          $("#jam_akhir").val(jamAkhirDefaultValue);
           return (row = `<h1>
                 Silahkan Isi Form Di bawah Ini
               </h1>`);
