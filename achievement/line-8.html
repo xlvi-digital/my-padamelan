@@ -223,6 +223,9 @@
                       <option value="Phill_Reguler">Phill Reguler</option>
                     </select>
                   </div>
+                  <div class="col-lg-12">
+                    <button type="button" class="btn btn-dark" id="buttonSku">Sumbit</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -519,7 +522,7 @@
 
         $(".result").html(showData(line8));
 
-        $(".form-sku").on("change", function () {
+        $("#buttonSku").on("click", function () {
           var shift = $("#input-shift").val();
           var sku = $("#input-sku").val();
           var produk = $("#input-produk").val();

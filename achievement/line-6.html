@@ -189,7 +189,7 @@
                     <h4 id="title">Hasil Produksi Shift <span id="shift">1</span></h4>
                     <h4 id="line_running"><i>LINE 6</i></h4>
                     <h4 id="tgl_produksi"></h4>
-                    <i id="sku_running">Le Minerale 5L <span id="sku">Reguler</span></i>
+                    <i id="sku_running">Le Minerale <span id="produk">5L</span> <span id="sku">Reguler</span></i>
                     <hr />
                     <div class="result"></div>
                   </div>
@@ -209,6 +209,13 @@
                       <option value="1">Shift 1</option>
                       <option value="2">Sihft 2</option>
                       <option value="3">Shift 3</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <select class="form-select" id="input-produk" required name="produk">
+                      <option aria-readonly="true">Jenis Produk</option>
+                      <option value="3L">3 Liter</option>
+                      <option value="5L">5 Liter</option>
                     </select>
                   </div>
                   <div class="col-md-6 mb-2">
@@ -391,14 +398,25 @@
         var minus = $("#minus").val();
 
         line6.forEach(function (item, index) {
-          hasil = item["akhir"] - item["awal"];
-          if (item["receh"]) {
-            jumlahCar = hasil * 27 + Number(item["receh"]);
-          } else {
-            jumlahCar = hasil * 27;
-          }
+          if (produk == "3L") {
+            hasil = item["akhir"] - item["awal"];
+            if (item["receh"]) {
+              jumlahCar = hasil * 30 + Number(item["receh"]);
+            } else {
+              jumlahCar = hasil * 30;
+            }
 
-          persen = Math.round((jumlahCar / 1500) * 100);
+            persen = Math.round((jumlahCar / 1000) * 100);
+          } else {
+            hasil = item["akhir"] - item["awal"];
+            if (item["receh"]) {
+              jumlahCar = hasil * 27 + Number(item["receh"]);
+            } else {
+              jumlahCar = hasil * 27;
+            }
+
+            persen = Math.round((jumlahCar / 1500) * 100);
+          }
 
           total += Number(jumlahCar);
           var formatJumlahCar = jumlahCar.toLocaleString("en-US").replace(",", ".");
@@ -498,16 +516,29 @@
 
       function updateTotal() {
         var newTotal = 0;
+        var jenis = $("#input-produk").val();
+        if (jenis == "3L") {
+          line6.forEach(function (item) {
+            var hasil = item["akhir"] - item["awal"];
+            var jumlahCar = item["receh"] ? hasil * 30 + Number(item["receh"]) : hasil * 30;
+            newTotal += jumlahCar;
+          });
 
-        line6.forEach(function (item) {
-          var hasil = item["akhir"] - item["awal"];
-          var jumlahCar = item["receh"] ? hasil * 27 + Number(item["receh"]) : hasil * 27;
-          newTotal += jumlahCar;
-        });
+          var totalElement = document.getElementById("total_produksi");
+          if (totalElement) {
+            totalElement.textContent = ` *${newTotal.toLocaleString("en-US").replace(",", ".")} car*`;
+          }
+        } else {
+          line6.forEach(function (item) {
+            var hasil = item["akhir"] - item["awal"];
+            var jumlahCar = item["receh"] ? hasil * 27 + Number(item["receh"]) : hasil * 27;
+            newTotal += jumlahCar;
+          });
 
-        var totalElement = document.getElementById("total_produksi");
-        if (totalElement) {
-          totalElement.textContent = ` *${newTotal.toLocaleString("en-US").replace(",", ".")} car*`;
+          var totalElement = document.getElementById("total_produksi");
+          if (totalElement) {
+            totalElement.textContent = ` *${newTotal.toLocaleString("en-US").replace(",", ".")} car*`;
+          }
         }
       }
 
