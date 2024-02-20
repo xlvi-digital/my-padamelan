@@ -186,10 +186,10 @@
               <div class="card-body">
                 <div class="row text-center">
                   <div class="col-md-12">
-                    <h4 id="title">Hasil Produksi Shift <span id="shift">1</span></h4>
+                    <h4 id="title">Hasil Produksi Shift <span id="shift">shift</span></h4>
                     <h4 id="line_running"><i>LINE 8</i></h4>
                     <h4 id="tgl_produksi"></h4>
-                    <i id="sku_running">Le Minerale 600ml <span id="sku">Promo</span></i>
+                    <i id="sku_running">Le Minerale 600ml <span id="sku">sku</span></i>
                     <hr />
                     <div class="result"></div>
                   </div>
@@ -205,7 +205,7 @@
                 <div class="row form-sku">
                   <div class="col-md-6 col-sm-6 mb-2">
                     <select class="form-select" id="input-shift" style="border-radius: 5px; font-size: 1rem">
-                      <option disabled selected>Shift</option>
+                      <option selected value="shift">Shift</option>
                       <option value="1">Shift 1</option>
                       <option value="2">Sihft 2</option>
                       <option value="3">Shift 3</option>
@@ -216,7 +216,7 @@
                   </div>
                   <div class="col-md-6 mb-2">
                     <select class="form-select sku" id="input-sku" name="sku" style="border-radius: 5px; font-size: 1rem">
-                      <option selected disabled>Pilih SKU</option>
+                      <option selected value="sku">Pilih SKU</option>
                       <option value="Promo">Promo</option>
                       <option value="Reguler">Reguler</option>
                       <option value="Reguler_GT">Reguler GT</option>
@@ -440,19 +440,6 @@
         }
 
         if (line8.length == 0) {
-          // Mendapatkan waktu sekarang
-          var waktuSekarang = new Date().toLocaleTimeString("en-GB", { timeZone: "Asia/Jakarta" });
-          var jamAwalDefaultValue = waktuSekarang.slice(0, 5);
-
-          var waktuSatuJamSetelahIni = new Date();
-          waktuSatuJamSetelahIni.setHours(waktuSatuJamSetelahIni.getHours() + 1);
-
-          // Mendapatkan jam dan menit satu jam setelah ini dalam format hh:mm
-          var jamAkhirDefaultValue = waktuSatuJamSetelahIni.toLocaleTimeString("en-GB", { timeZone: "Asia/Jakarta" }).slice(0, 5);
-
-          // Mengatur nilai default pada input jam_awal dan jam_akhir menggunakan jQuery
-          $("#jam_awal").val(jamAwalDefaultValue);
-          $("#jam_akhir").val(jamAkhirDefaultValue);
           return (row = `<h5>
                 Silahkan Isi Form Di bawah Ini
               </h5>`);
@@ -523,13 +510,10 @@
         $(".result").html(showData(line8));
 
         $("#buttonSku").on("click", function () {
-          var shift = $("#input-shift").val();
-          var sku = $("#input-sku").val();
-          var produk = $("#input-produk").val();
+          var inputShift = $("#input-shift").val();
+          var inputSku = $("#input-sku").val();
+          var inputProduk = $("#input-produk").val();
 
-          if (sku == "Phill_Reguler") {
-            sku = "Phill Reguler";
-          }
           if (sku == "Reguler_GT") {
             sku = "Reguler GT";
           }
@@ -541,46 +525,53 @@
           const tanggal = new Date(tanggalInput.value);
           const tanggalFormat = tanggal.toLocaleDateString("id-ID", options);
           if (tanggalFormat) {
-            $("#shift").text(shift);
-            $("#produk").text(produk);
-            $("#sku").text(sku);
+            $("#shift").text(inputShift);
+            $("#produk").text(inputProduk);
+            $("#sku").text(inputSku);
             $("#tgl_produksi").text(tanggalFormat);
           } else {
-            $("#shift").text(shift);
-            $("#produk").text(produk);
-            $("#sku").text(sku);
+            $("#shift").text(inputShift);
+            $("#produk").text(inputProduk);
+            $("#sku").text(inputSku);
           }
         });
         // events
         $("#formTransaksi").on("submit", function (e) {
           e.preventDefault();
-          line8.push(insert());
+          var shift = $("#shift").text();
+          var sku = $("#sku").text();
 
-          $(".result").html(showData(line8));
-          var akhir = document.getElementById("akhir").value;
-          var jamAkhir = document.getElementById("jam_akhir").value;
-          // var update2 = document.getElementById("total").innerHTML;
-          // alert(total);
-          document.getElementById("awal").value = akhir;
-          document.getElementById("akhir").value = null;
-          document.getElementById("jam_awal").value = jamAkhir;
-
-          var jamAkhir = document.getElementById("jam_akhir").value;
-          var jamAkhirArray = jamAkhir.split(":");
-
-          var jamAkhirBaru = parseInt(jamAkhirArray[0]) + 1;
-          if (jamAkhirBaru === 24) {
-            jamAkhirBaru = 0;
-            jamAkhirArray[0] = "00";
+          if (shift == "shift" || sku == "sku") {
+            alert("silahkan isi form SKU di atas");
           } else {
-            jamAkhirArray[0] = jamAkhirBaru.toString().padStart(2, "0");
+            line8.push(insert());
+
+            $(".result").html(showData(line8));
+            var akhir = document.getElementById("akhir").value;
+            var jamAkhir = document.getElementById("jam_akhir").value;
+            // var update2 = document.getElementById("total").innerHTML;
+            // alert(total);
+            document.getElementById("awal").value = akhir;
+            document.getElementById("akhir").value = null;
+            document.getElementById("jam_awal").value = jamAkhir;
+
+            var jamAkhir = document.getElementById("jam_akhir").value;
+            var jamAkhirArray = jamAkhir.split(":");
+
+            var jamAkhirBaru = parseInt(jamAkhirArray[0]) + 1;
+            if (jamAkhirBaru === 24) {
+              jamAkhirBaru = 0;
+              jamAkhirArray[0] = "00";
+            } else {
+              jamAkhirArray[0] = jamAkhirBaru.toString().padStart(2, "0");
+            }
+
+            var jamAkhirString = jamAkhirArray.join(":");
+
+            document.getElementById("jam_akhir").value = jamAkhirString;
+
+            document.getElementById("receh").value = null;
           }
-
-          var jamAkhirString = jamAkhirArray.join(":");
-
-          document.getElementById("jam_akhir").value = jamAkhirString;
-
-          document.getElementById("receh").value = null;
         });
 
         // meriset
