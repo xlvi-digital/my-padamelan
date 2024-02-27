@@ -14,6 +14,8 @@ $(function () {
         sum += parseFloat(keranjang) * 9216;
       } else if (jenis == "1500ml") {
         sum += parseFloat(keranjang) * 5976;
+      } else if (jenis === "3L") {
+        sum += parseFloat(keranjang) * 3840;
       } else {
         sum += parseFloat(keranjang) * 3080;
       }
