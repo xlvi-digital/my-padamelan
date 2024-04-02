@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+    <meta name="generator" content="Hugo 0.104.2" />
+    <title>My Padamelan</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/" />
+
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- my Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet" />
+
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+
+    <!-- Sweetalert2 -->
+    <link rel="stylesheet" href="assets/dist/sweetalert2/sweetalert2.min.css" />
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1), inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      p {
+        margin: 0;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="navbar navbar-dark sticky-top bg-danger flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#" style="font-family: 'Agbalumo'; text-transform: uppercase">MY padamelan</a>
+      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="position-sticky mb-2 sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                  <i class="bx bx-package"></i>
+                  Opname Material
+                </a>
+              </li>
+              <li class="nav-item" id="updateAchievementItem">
+                <a class="nav-link" href="#">
+                  <i class="bx bx-line-chart"></i>
+                  Update Achievement
+                </a>
+                <ul class="submenu" id="updateAchievementSubMenu">
+                  <li>
+                    <a href="achievement/line-1.html">
+                      <i class="bx bx-radio-circle-marked"></i>
+                      Line 1
+                    </a>
+                  </li>
+                  <li>
+                    <a href="achievement/line-2.html">
+                      <i class="bx bx-radio-circle-marked"></i>
+                      Line 2
+                    </a>
+                  </li>
+                  <li>
+                    <a href="achievement/line-3.html">
+                      <i class="bx bx-radio-circle-marked"></i>
+                      Line 3
+                    </a>
+                  </li>
+                  <li>
+                    <a href="achievement/line-4.html">
+                      <i class="bx bx-radio-circle-marked"></i>
+                      Line 4
+                    </a>
+                  </li>
+                  <li>
+                    <a href="achievement/line-5.html">
+                      <i class="bx bx-radio-circle-marked"></i>
+                      Line 5
+                    </a>
+                  </li>
+                  <li>
+                    <a href="achievement/line-6.html">
+                      <i class="bx bx-radio-circle-marked"></i>
+                      Line 6
+                    </a>
+                  </li>
+                  <li>
+                    <a href="achievement/line-7.html">
+                      <i class="bx bx-radio-circle-marked"></i>
+                      Line 7
+                    </a>
+                  </li>
+                  <li>
+                    <a href="achievement/line-8.html">
+                      <i class="bx bx-radio-circle-marked"></i>
+                      Line 8
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="reject.html">
+                  <span data-feather="shopping-cart" class="align-text-bottom"></span>
+                  Data Reject
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2 mb-2">Update Achievement</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group me-2">
+                <select class="form-select form-select border-success" id="line" style="border-radius: 5px; font-size: 1rem">
+                  <option selected>Line</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                </select>
+              </div>
+              <div class="me-2">
+                <select class="form-select form-select border-success" id="shift" style="border-radius: 5px; font-size: 1rem">
+                  <option selected>Shift</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="me-2">
+                <input type="date" class="form-control d-none" id="input_tgl" />
+              </div>
+
+              <button type="button" data-bs-toggle="modal" data-bs-target="#whatapps" class="btn btn-sm btn-outline-success">
+                <i class="bx bxl-whatsapp" style="vertical-align: bottom; font-size: 1.5rem"></i>
+                Share
+              </button>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <form id="formTransaksi">
+            <div class="modal fade" id="whatapps" tabindex="-1" aria-labelledby="whatappsLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="whatappsLabel">Modal Whatapps</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <label for="no_hp">Masukan No Whatapps</label>
+                    <input type="number" name="no_hp" id="no_hp" class="form-control form-control-sm" />
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" id="wa" class="btn btn-success">Kirim</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <div class="row justify-content-center">
+                  <div class="col-md-6">
+                    <h5 id="title">Data Reject peShift PET HPDE, & dan Karton</h5>
+                    <h5 id="tgl"></h5>
+                    <h5 class="line">line <span id="dataLine">7</span></h5>
+                    <h5 class="line">Shift <span id="dataShift">3</span></h5>
+                    <br />
+                    <p>Reject (Preform) : <span id="dataPreform"></span> pcs</p>
+                    <p>Reject (Botol Fresh) : <span id="dataFresh"></span> pcs</p>
+                    <p>Reject (Botol Isi) : <span id="dataIsi"></span>pcs</p>
+                    <p>Total Reject PET : <span id="total"></span>pcs</p>
+                    <p>Reject HPDE (Cap) : <span id="dataCap"></span>pcs</p>
+                    <p>Reject Karton Lbr : <span id="dataKarton"></span>Lbr</p>
+                    <br />
+                    <p>Counter filling line <span id="line">7</span> shift <span id="shift">3</span></p>
+                    <br />
+                    <p>counter awal : <span id="dataAwal"></span></p>
+                    <p>counter akhir : <span id="dataAkhir"></span></p>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5>Isi Data Reject Disini</h5>
+                        <form action="">
+                          <div class="">
+                            <label for="preform">Preform</label>
+                            <input type="number" class="form-control" name="preform" id="preform" />
+                          </div>
+                          <div class="">
+                            <label for="fresh">Botol Fresh</label>
+                            <input type="number" class="form-control" name="fresh" id="fresh" />
+                          </div>
+                          <div class="">
+                            <label for="isi">Botol Isi</label>
+                            <input type="number" class="form-control" name="isi" id="isi" />
+                          </div>
+                          <div class="">
+                            <label for="cap">Cap</label>
+                            <input type="number" class="form-control" name="cap" id="cap" />
+                          </div>
+                          <div class="">
+                            <label for="karton">Karton</label>
+                            <input type="number" class="form-control" name="karton" id="karton" />
+                          </div>
+                          <div class="mt-2">
+                            <h5>Counter filling</h5>
+                          </div>
+                          <div class="">
+                            <label for="awal">Counter awal</label>
+                            <input type="number" class="form-control" name="awal" id="awal" />
+                          </div>
+                          <div class="">
+                            <label for="akhir">akhir</label>
+                            <input type="number" class="form-control" name="akhir" id="akhir" />
+                          </div>
+                          <div class="col-md-12 mt-2">
+                            <button type="button" class="btn btn-dark" id="submit">submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </main>
+      </div>
+    </div>
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/dashboard.js"></script>
+    <!-- Sweetalert2 -->
+    <script src="assets/dist/sweetalert2/sweetalert2.min.js"></script>
+
+    <script>
+      // Mengatur nilai input tanggal menjadi tanggal hari ini
+      $(document).ready(function () {
+        document.getElementById("input_tgl").valueAsDate = new Date();
+
+        // Mendapatkan nilai dari input tanggal
+        var inputTanggal = document.getElementById("input_tgl").valueAsDate;
+
+        // Mengatur nilai h4 dengan format "Hari, Tanggal Bulan Tahun"
+        var options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+        var formattedDate = inputTanggal.toLocaleDateString("id-ID", options);
+        document.getElementById("tgl").textContent = formattedDate;
+      });
+    </script>
+    <script>
+      $("#submit").on("click", function () {
+        var total = "";
+        var preform = Number($("#preform").val());
+        var fresh = Number($("#fresh").val());
+        var isi = Number($("#isi").val());
+        var cap = Number($("#cap").val());
+        var karton = Number($("#karton").val());
+        var awal = Number($("#awal").val());
+        var akhir = Number($("#akhir").val());
+        var shift = Number($("#shift").val());
+        var line = Number($("#line").val());
+
+        total = preform + fresh + isi;
+
+        $("#dataPreform").text(preform);
+        $("#dataFresh").text(fresh);
+        $("#dataIsi").text(isi);
+        $("#dataCap").text(cap);
+        $("#dataKarton").text(karton);
+        $("#dataAwal").text(awal);
+        $("#dataAkhir").text(akhir);
+        $("#dataLine").text(line);
+        $("#dataShift").text(shift);
+        $("#total").text(total);
+      });
+      $("#wa").on("click", function () {
+        var no_hp = document.getElementById("no_hp").value;
+        var line = document.getElementById("line").value; // Gantilah dengan nilai sesuai kebutuhan
+        var shift = document.getElementById("shift").value; // Gantilah dengan nilai sesuai kebutuhan
+        var tgl = $("#tgl").text(); // Gantilah dengan nilai sesuai kebutuhan
+
+        // Objek untuk menyimpan data variabel dan pesan
+        var data = {
+          "Reject (Prefrom)": "dataPreform",
+          "Reject (Botol Fresh) ": "dataFresh",
+          "Reject (Botol Isi)": "dataIsi",
+          "Total Reject PET": "total",
+          "Reject HPDE (Cap)": "dataCap",
+          "Reject Karton Lbr": "dataKarton",
+        };
+
+        var message = "*Data Reject peShift PET HPDE, & dan Karton" + "\n" + tgl + "\n\n" + line + "\n" + "Shift" + shift + "*" + "\n\n";
+
+        // Loop melalui data variabel dan tambahkan ke pesan jika nilainya tidak nol
+        for (var key in data) {
+          var value = document.getElementById(data[key]).innerHTML;
+          if (value !== "0") {
+            var unit = "";
+
+            if (key === "Reject Karton Lbr") {
+              unit = " lbr";
+            } else {
+              unit = "pcs";
+            }
+
+            message += key + " : " + value + unit + "\n";
+          }
+        }
+
+        var awal = document.getElementById("awal").innerHTML;
+        var akhir = document.getElementById("akhir").innerHTML;
+
+        if (awal !== "0" || akhir !== "0") {
+          message += "\n" + "Counter filling Line " + line + "Shift " + shift + "\n" + "Counter Awal : " + awal + "\n" + "Counter Akhir : " + akhir + "\n";
+        }
+
+        var url = "https://wa.me/+62" + no_hp + "?text=" + encodeURIComponent(message);
+
+        window.open(url, "_blank").focus();
+      });
+    </script>
+  </body>
+</html>
