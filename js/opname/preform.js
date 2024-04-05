@@ -30,7 +30,7 @@ $(function () {
         totalpcs += Number(pcs);
       }
     });
-    $("#qtyPreform").text(totalKeranjang + " (Keranjang) " + totalpcs + " (pcs)");
+    $("#qtyPreform").text(totalKeranjang + " Keranjang , " + totalpcs + " pcs");
     $("#totalPreform").text(sum.toLocaleString("en-US"));
   };
 

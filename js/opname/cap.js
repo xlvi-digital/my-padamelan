@@ -34,7 +34,7 @@ $(function () {
     if (!isNaN(sumCap)) {
       // Memeriksa apakah sumCap adalah angka yang valid sebelum menampilkan
       $("#totalCap").text(sumCap.toLocaleString("en-US"));
-      $("#qtyCap").text(totalPalletCap + " (pallet) " + totalBoxCap + "(Box)");
+      $("#qtyCap").text(totalPalletCap + " pallet , " + totalBoxCap + " Box");
     } else {
       $("#totalCap").text("Invalid input");
     }

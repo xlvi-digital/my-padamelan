@@ -354,12 +354,12 @@
         $("#dataIsi").text(isi);
         $("#dataCap").text(cap);
         $("#dataKarton").text(karton);
-        $("#dataAwal").text(awal);
-        $("#dataAkhir").text(akhir);
+        $("#dataAwal").text(awal.toLocaleString("en-US"));
+        $("#dataAkhir").text(akhir.toLocaleString("en-US"));
         $("#dataLine").text(line);
         $("#dataShift").text(shift);
-        $("#total").text(total);
-        $("#dataActual").text(actual);
+        $("#total").text(total.toLocaleString("en-US"));
+        $("#dataActual").text(actual.toLocaleString("en-US"));
       });
       $("#wa").on("click", function () {
         var no_hp = document.getElementById("no_hp").value;
@@ -377,7 +377,7 @@
           "Reject Karton Lbr": "dataKarton",
         };
 
-        var message = "*Data Reject peShift PET HPDE, & dan Karton*" + "\n" + tgl + "\n\n" + "*Line" + line + "*" + "\n" + "*Shift" + shift + "*" + "\n\n";
+        var message = "*Data Reject peShift, PET, HPDE, & dan Karton*" + "\n" + "*" + tgl + "* " + "\n\n" + "*Line" + line + "*" + "\n" + "*Shift" + shift + "*" + "\n\n";
 
         // Loop melalui data variabel dan tambahkan ke pesan jika nilainya tidak nol
         for (var key in data) {
@@ -399,6 +399,7 @@
         var akhir = document.getElementById("dataAkhir").innerHTML;
         var dataActual = document.getElementById("dataActual").innerHTML;
 
+        dataAwal = parseFloat(awal);
         if (awal !== "0" || akhir !== "0" || dataActual !== "0") {
           message += "\n" + "Counter filling Line " + line + "Shift " + shift + "\n" + "Counter Awal : " + awal + "\n" + "Counter Akhir : " + akhir + "\n\n" + "*Output Actual = " + dataActual + "*" + "\n";
         }

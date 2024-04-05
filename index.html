@@ -1055,8 +1055,6 @@
 
         // Objek untuk menyimpan data variabel dan pesan
         var data = {
-          "Preform": "totalPreform",
-          "Cap": "totalCap",
           "Handle Grip": "totalHandleGrip",
           "Label Reg": "totalLabelReg",
           "Label Exp": "totalLabelExp",
@@ -1067,7 +1065,16 @@
         };
 
         var message = "*Hasil Opname Line " + line + " Shift " + shift + "*" + "\n\n";
+          // Tambahkan data Preform dan Cap
+        var totalPreform = document.getElementById("totalPreform").innerHTML;
+        var totalCap = document.getElementById("totalCap").innerHTML;
+        var qtyPreform = document.getElementById("qtyPreform").innerHTML;
+        var qtyCap = document.getElementById("qtyCap").innerHTML;
 
+        if (qtyPreform !== "" && qtyCap !== "") {
+            message += "Preform : " + totalPreform + " (" + qtyPreform + ")\n";
+            message += "Cap : " + totalCap + " (" + qtyCap + ")\n";
+        }
         // Loop melalui data variabel dan tambahkan ke pesan jika nilainya tidak nol
         for (var key in data) {
           var value = document.getElementById(data[key]).innerHTML;
@@ -1086,16 +1093,7 @@
           }
         }
 
-         // Tambahkan data Preform dan Cap
-        var totalPreform = document.getElementById("totalPreform").innerHTML;
-        var totalCap = document.getElementById("totalCap").innerHTML;
-        var qtyPreform = document.getElementById("qtyPreform").innerHTML;
-        var qtyCap = document.getElementById("qtyCap").innerHTML;
-
-        if (qtyPreform !== "" && qtyCap !== "") {
-            message += "Preform : " + totalPreform + " (" + qtyPreform + ")\n";
-            message += "Cap : " + totalCap + " (" + qtyCap + ")\n";
-        }
+       
 
         // Tambahkan pesan kartonPromo, kartonReguler, kartonphillPromo, kartonphillReguler
         var kartonPromo = document.getElementById("totalPromo").innerHTML;
