@@ -231,19 +231,20 @@
                       </div>
                     </div>
                     <br />
-                    <p>Reject (Preform) : <span id="dataPreform"></span> pcs</p>
-                    <p>Reject (Botol Fresh) : <span id="dataFresh"></span> pcs</p>
-                    <p>Reject (Botol Isi) : <span id="dataIsi"></span>pcs</p>
-                    <p>Total Reject PET : <span id="total"></span>pcs</p>
-                    <p>Reject HPDE (Cap) : <span id="dataCap"></span>pcs</p>
-                    <p>Reject Karton Lbr : <span id="dataKarton"></span>Lbr</p>
+                    <h5>Mesin Blowing</h5>
+                    <p>Reject Preform kotor: <span id="dataPreform"></span> pcs</p>
+                    <p>Reject Botol Fresh : <span id="dataFresh"></span> pcs</p>
                     <br />
-                    <p>Counter filling line <span id="line">7</span> shift <span id="shift">3</span></p>
+                    <h5>Mesin Sortir PNS</h5>
+                    <p>Reject Botol Isi : <span id="dataIsi"></span> pcs</p>
+
+                    <p>Reject Cap Bersih : <span id="dataCap"></span> pcs</p>
+                    <p>Reject Cap kotor Sample QC : <span id="dataCap"></span> pcs</p>
                     <br />
-                    <p>counter awal : <span id="dataAwal"></span></p>
-                    <p>counter akhir : <span id="dataAkhir"></span></p>
+                    <!-- <h5>L</h5> -->
+                    <h5>Mesin Karton Erector</h5>
+                    <p>Reject Karton Lbr : <span id="dataKarton"></span> Lbr</p>
                     <br />
-                    <p>Output Actual = <span id="dataActual"></span></p>
                   </div>
                   <div class="col-md-6">
                     <div class="modal fade" id="form" tabindex="-1" aria-labelledby="formLabel" aria-hidden="true">
@@ -272,26 +273,16 @@
                                 <input type="number" class="form-control" name="cap" id="cap" />
                               </div>
                               <div class="">
+                                <label for="label">Label</label>
+                                <input type="number" class="form-control" name="label" id="label" />
+                              </div>
+                              <div class="">
+                                <label for="capseal">Capseal</label>
+                                <input type="number" class="form-control" name="capseal" id="capseal" />
+                              </div>
+                              <div class="">
                                 <label for="karton">Karton</label>
                                 <input type="number" class="form-control" name="karton" id="karton" />
-                              </div>
-                              <div class="mt-2">
-                                <h5>Counter filling</h5>
-                              </div>
-                              <div class="">
-                                <label for="awal">Counter awal</label>
-                                <input type="number" class="form-control" name="awal" id="awal" />
-                              </div>
-                              <div class="">
-                                <label for="akhir">Counter Akhir</label>
-                                <input type="number" class="form-control" name="akhir" id="akhir" />
-                              </div>
-                              <div class="mt-2">
-                                <h5>Output Actual</h5>
-                              </div>
-                              <div class="">
-                                <label for="actual">Output Actual</label>
-                                <input type="number" class="form-control" name="actual" id="actual" />
                               </div>
                             </form>
                           </div>
@@ -335,31 +326,49 @@
     </script>
     <script>
       $("#submit").on("click", function () {
-        var total = "";
+        var line = document.getElementById("line").value; // Gantilah dengan nilai sesuai kebutuhan
         var preform = Number($("#preform").val());
         var fresh = Number($("#fresh").val());
         var isi = Number($("#isi").val());
         var cap = Number($("#cap").val());
+        var label = Number($("#label").val());
+        var capseal = Number($("#capseal").val());
         var karton = Number($("#karton").val());
-        var awal = Number($("#awal").val());
-        var akhir = Number($("#akhir").val());
-        var shift = Number($("#shift").val());
-        var line = Number($("#line").val());
-        var actual = Number($("#actual").val());
 
-        total = preform + fresh + isi;
+        // konversi kilo ke pcs
+        if (line == "6") {
+          var totalPreform = Math.round((preform * 1000) / 100);
+          var totalFresh = Math.round((fresh * 1000) / 100);
+          var totalIsi = Math.round((isi * 1000) / 100);
+          var totalCap = Math.round((cap * 1000) / 3.2);
 
-        $("#dataPreform").text(preform);
-        $("#dataFresh").text(fresh);
-        $("#dataIsi").text(isi);
-        $("#dataCap").text(cap);
+          $("#dataPreform").text(totalPreform);
+          $("#dataFresh").text(totalFresh);
+          $("#dataIsi").text(totalIsi);
+          $("#dataCap").text(totalCap);
+        } else if (line == "7") {
+          var totalPreform = Math.round((preform * 1000) / 27);
+          var totalFresh = Math.round((fresh * 1000) / 27);
+          var totalIsi = Math.round((isi * 1000) / 27);
+          var totalCap = Math.round((cap * 1000) / 1.81);
+
+          $("#dataPreform").text(totalPreform);
+          $("#dataFresh").text(totalFresh);
+          $("#dataIsi").text(totalIsi);
+          $("#dataCap").text(totalCap);
+        } else {
+          var totalPreform = Math.round((preform * 1000) / 14.5);
+          var totalFresh = Math.round((fresh * 1000) / 14.5);
+          var totalIsi = Math.round((isi * 1000) / 14.5);
+          var totalCap = Math.round((cap * 1000) / 1.81);
+
+          $("#dataPreform").text(totalPreform);
+          $("#dataFresh").text(totalFresh);
+          $("#dataIsi").text(totalIsi);
+          $("#dataCap").text(totalCap);
+        }
+
         $("#dataKarton").text(karton);
-        $("#dataAwal").text(awal.toLocaleString("en-US"));
-        $("#dataAkhir").text(akhir.toLocaleString("en-US"));
-        $("#dataLine").text(line);
-        $("#dataShift").text(shift);
-        $("#total").text(total.toLocaleString("en-US"));
-        $("#dataActual").text(actual.toLocaleString("en-US"));
       });
       $("#wa").on("click", function () {
         var no_hp = document.getElementById("no_hp").value;
