@@ -166,13 +166,36 @@
         </nav>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2 mb-2">Update Achievement</h1>
+            <h1 class="h2 mb-2">Data Reject</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="me-2">
                 <input type="date" class="form-control d-none" id="input_tgl" />
-                <button type="button" data-bs-toggle="modal" data-bs-target="#form" class="btn btn-sm btn-outline-danger">input data</button>
               </div>
-
+              <h5 class="line">
+                <div class="btn-group me-2">
+                  <select class="form-select form-select border-success" id="line" style="border-radius: 5px; font-size: 1rem">
+                    <option selected>Line</option>
+                    <option value="1">Line 1</option>
+                    <option value="2">Line 2</option>
+                    <option value="3">Line 3</option>
+                    <option value="4">Line 4</option>
+                    <option value="5">Line 5</option>
+                    <option value="6">Line 6</option>
+                    <option value="7">Line 7</option>
+                    <option value="8">Line 8</option>
+                  </select>
+                </div>
+              </h5>
+              <div class="line btn-toolbar mb-md-0">
+                <div class="me-2">
+                  <select class="form-select form-select border-success" id="shift" style="border-radius: 5px; font-size: 1rem">
+                    <option selected>Shift</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
               <button type="button" data-bs-toggle="modal" data-bs-target="#whatapps" class="btn btn-sm btn-outline-success">
                 <i class="bx bxl-whatsapp" style="vertical-align: bottom; font-size: 1.5rem"></i>
                 Share
@@ -182,6 +205,7 @@
 
           <!-- Modal -->
           <form id="formTransaksi">
+            <!-- Modal Whatapp -->
             <div class="modal fade" id="whatapps" tabindex="-1" aria-labelledby="whatappsLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -199,95 +223,250 @@
                 </div>
               </div>
             </div>
+
             <div class="card">
               <div class="card-body">
                 <div class="row justify-content-center">
                   <div class="col-md-12">
                     <h5 id="title">Data Reject peShift PET HPDE, & dan Karton</h5>
                     <h5 id="tgl"></h5>
-                    <h5 class="line">
-                      <div class="btn-group me-2">
-                        <select class="form-select form-select border-success" id="line" style="border-radius: 5px; font-size: 1rem">
-                          <option selected>Line</option>
-                          <option value="1">Line 1</option>
-                          <option value="2">Line 2</option>
-                          <option value="3">Line 3</option>
-                          <option value="4">Line 4</option>
-                          <option value="5">Line 5</option>
-                          <option value="6">Line 6</option>
-                          <option value="7">Line 7</option>
-                          <option value="8">Line 8</option>
-                        </select>
-                      </div>
-                    </h5>
                     <div class="line btn-toolbar mb-md-0">
                       <div class="me-2">
-                        <select class="form-select form-select border-success" id="shift" style="border-radius: 5px; font-size: 1rem">
-                          <option selected>Shift</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                        <select class="form-select form-select border-success" id="jenis" style="border-radius: 5px; font-size: 1rem">
+                          <option selected>Jenis Material</option>
+                          <option value="330">330 ml</option>
+                          <option value="600">600 ml</option>
+                          <option value="1500">1500 ml</option>
+                          <option value="5000">5000 ml</option>
                         </select>
                       </div>
                     </div>
-                    <br />
-                    <h5>Mesin Blowing</h5>
-                    <p>Reject Preform kotor: <span id="dataPreform"></span> pcs</p>
-                    <p>Reject Botol Fresh : <span id="dataFresh"></span> pcs</p>
-                    <br />
-                    <h5>Mesin Sortir PNS</h5>
-                    <p>Reject Botol Isi : <span id="dataIsi"></span> pcs</p>
-
-                    <p>Reject Cap Bersih : <span id="dataCap"></span> pcs</p>
-                    <p>Reject Cap kotor Sample QC : <span id="dataCap"></span> pcs</p>
-                    <br />
-                    <!-- <h5>L</h5> -->
-                    <h5>Mesin Karton Erector</h5>
-                    <p>Reject Karton Lbr : <span id="dataKarton"></span> Lbr</p>
-                    <br />
+                    <table class="table table-responsive">
+                      <thead>
+                        <tr>
+                          <th>Nama Material</th>
+                          <th>Kg</th>
+                          <th>Pcs</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="d-grid gap-2">
+                              <button type="button" data-bs-toggle="modal" data-bs-target="#Preform" class="btn btn-sm btn-outline-dark">Prefrom</button>
+                            </div>
+                          </td>
+                          <td id="dataKgPreform"></td>
+                          <td id="dataPcsPreform"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="d-grid gap-2">
+                              <button type="button" data-bs-toggle="modal" data-bs-target="#Fresh" class="btn btn-sm btn-outline-dark">Botol Fresh</button>
+                            </div>
+                          </td>
+                          <td id="dataKgFresh"></td>
+                          <td id="dataPcsFresh"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="d-grid gap-2">
+                              <button type="button" data-bs-toggle="modal" data-bs-target="#Isi" class="btn btn-sm btn-outline-dark">Botol Isi</button>
+                            </div>
+                          </td>
+                          <td id="dataKgIsi"></td>
+                          <td id="dataPcsIsi"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="d-grid gap-2">
+                              <button type="button" data-bs-toggle="modal" data-bs-target="#Cap" class="btn btn-sm btn-outline-dark">Cap Bersih</button>
+                            </div>
+                          </td>
+                          <td id="dataKgCap"></td>
+                          <td id="dataPcsCap"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="d-grid gap-2">
+                              <button type="button" data-bs-toggle="modal" data-bs-target="#QC" class="btn btn-sm btn-outline-dark">Cap Kotor / Sampel QC</button>
+                            </div>
+                          </td>
+                          <td id="dataKgQC"></td>
+                          <td id="dataPcsQC"></td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" align="left"><h5>Karton</h5></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="d-grid gap-2">
+                              <button type="button" data-bs-toggle="modal" data-bs-target="#Promo" class="btn btn-sm btn-outline-dark">Promo</button>
+                            </div>
+                          </td>
+                          <td id="dataKgPromo"></td>
+                          <td id="dataPcsPromo"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="d-grid gap-2">
+                              <button type="button" data-bs-toggle="modal" data-bs-target="#Reguler" class="btn btn-sm btn-outline-dark">Reguler</button>
+                            </div>
+                          </td>
+                          <td id="dataKgReguler"></td>
+                          <td id="dataPcsReguler"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="d-grid gap-2">
+                              <button type="button" data-bs-toggle="modal" data-bs-target="#Phill" class="btn btn-sm btn-outline-dark">Phill</button>
+                            </div>
+                          </td>
+                          <td id="dataKgPhill"></td>
+                          <td id="dataPcsPhill"></td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                   <div class="col-md-6">
-                    <div class="modal fade" id="form" tabindex="-1" aria-labelledby="formLabel" aria-hidden="true">
+                    <!-- Preform -->
+                    <div class="modal fade" id="Preform" tabindex="-1" aria-labelledby="PreformLabel" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="formLabel">Isi Data Disini</h1>
+                            <h1 class="modal-title fs-5" id="PreformLabel">Isi Data Disini</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
                             <form action="">
-                              <div class="">
-                                <label for="preform">Preform</label>
-                                <input type="number" class="form-control" name="preform" id="preform" />
+                              <div id="awalPreform">
+                                <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="tambahPrefrom()">+ Colom Pallet</button>
+                                <div class="mb-2">
+                                  <label for="">Masukan Reject Preform</label>
+                                  <input type="number" value="0" class="form-control text-right preform" id="preform" required />
+                                </div>
                               </div>
-                              <div class="">
-                                <label for="fresh">Botol Fresh</label>
-                                <input type="number" class="form-control" name="fresh" id="fresh" />
+                              <div id="akhirPrefrom"></div>
+                              <div id="awalPcsPreform">
+                                <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="tambahPcsPrefrom()">+ Colom Pallet</button>
+                                <div class="mb-2">
+                                  <label for="">Masukan Reject Preform</label>
+                                  <input type="number" value="0" class="form-control text-right pcsPreform" id="preform" required />
+                                </div>
                               </div>
-                              <div class="">
-                                <label for="isi">Botol Isi</label>
-                                <input type="number" class="form-control" name="isi" id="isi" />
-                              </div>
-                              <div class="">
-                                <label for="cap">Cap</label>
-                                <input type="number" class="form-control" name="cap" id="cap" />
-                              </div>
-                              <div class="">
-                                <label for="label">Label</label>
-                                <input type="number" class="form-control" name="label" id="label" />
-                              </div>
-                              <div class="">
-                                <label for="capseal">Capseal</label>
-                                <input type="number" class="form-control" name="capseal" id="capseal" />
-                              </div>
-                              <div class="">
-                                <label for="karton">Karton</label>
-                                <input type="number" class="form-control" name="karton" id="karton" />
-                              </div>
+                              <div id="akhirPcsPrefrom"></div>
                             </form>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="submit">submit</button>
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="check">submit</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Botol Fresh -->
+                    <div class="modal fade" id="Fresh" tabindex="-1" aria-labelledby="FreshLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="FreshLabel">Isi Data Disini</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form action="">
+                              <div id="awalFresh">
+                                <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="tambahFresh()">+ Colom Pallet</button>
+                                <div class="mb-2">
+                                  <label for="">Masukan Reject Fresh</label>
+                                  <input type="number" value="0" class="form-control text-right Fresh" id="Fresh" required />
+                                </div>
+                              </div>
+                              <div id="akhirFresh"></div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="fresh">submit</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Botol Isi -->
+                    <div class="modal fade" id="Isi" tabindex="-1" aria-labelledby="IsiLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="IsiLabel">Isi Data Disini</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form action="">
+                              <div id="awalIsi">
+                                <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="tambahIsi()">+ Colom Pallet</button>
+                                <div class="mb-2">
+                                  <label for="">Masukan Reject Isi</label>
+                                  <input type="number" value="0" class="form-control text-right Isi" id="Isi" required />
+                                </div>
+                              </div>
+                              <div id="akhirIsi"></div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="Isi">submit</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Cap-->
+                    <div class="modal fade" id="Cap" tabindex="-1" aria-labelledby="CapLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="CapLabel">Cap Data DCapni</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form action="">
+                              <div id="awalCap">
+                                <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="tambahCap()">+ Colom Pallet</button>
+                                <div class="mb-2">
+                                  <label for="">Masukan Reject Cap</label>
+                                  <input type="number" value="0" class="form-control text-right Cap" id="Cap" required />
+                                </div>
+                              </div>
+                              <div id="akhirCap"></div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="Cap">submit</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- QC-->
+                    <div class="modal fade" id="QC" tabindex="-1" aria-labelledby="QCLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="QCLabel">QC Data DQCni</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form action="">
+                              <div id="awalQC">
+                                <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="tambahQC()">+ Colom Pallet</button>
+                                <div class="mb-2">
+                                  <label for="">Masukan Reject QC</label>
+                                  <input type="number" value="0" class="form-control text-right QC" id="QC" required />
+                                </div>
+                              </div>
+                              <div id="akhirQC"></div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="QC">submit</button>
                           </div>
                         </div>
                       </div>
@@ -307,6 +486,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
     <script src="js/jquery.js"></script>
     <script src="js/dashboard.js"></script>
+    <script src="js/reject/preform.js"></script>
+    <script src="js/reject/fresh.js"></script>
+    <script src="js/reject/isi.js"></script>
+    <script src="js/reject/cap.js"></script>
+    <script src="js/reject/qc.js"></script>
     <!-- Sweetalert2 -->
     <script src="assets/dist/sweetalert2/sweetalert2.min.js"></script>
 
@@ -324,52 +508,8 @@
         document.getElementById("tgl").textContent = formattedDate;
       });
     </script>
+    <script></script>
     <script>
-      $("#submit").on("click", function () {
-        var line = document.getElementById("line").value; // Gantilah dengan nilai sesuai kebutuhan
-        var preform = Number($("#preform").val());
-        var fresh = Number($("#fresh").val());
-        var isi = Number($("#isi").val());
-        var cap = Number($("#cap").val());
-        var label = Number($("#label").val());
-        var capseal = Number($("#capseal").val());
-        var karton = Number($("#karton").val());
-
-        // konversi kilo ke pcs
-        if (line == "6") {
-          var totalPreform = Math.round((preform * 1000) / 100);
-          var totalFresh = Math.round((fresh * 1000) / 100);
-          var totalIsi = Math.round((isi * 1000) / 100);
-          var totalCap = Math.round((cap * 1000) / 3.2);
-
-          $("#dataPreform").text(totalPreform);
-          $("#dataFresh").text(totalFresh);
-          $("#dataIsi").text(totalIsi);
-          $("#dataCap").text(totalCap);
-        } else if (line == "7") {
-          var totalPreform = Math.round((preform * 1000) / 27);
-          var totalFresh = Math.round((fresh * 1000) / 27);
-          var totalIsi = Math.round((isi * 1000) / 27);
-          var totalCap = Math.round((cap * 1000) / 1.81);
-
-          $("#dataPreform").text(totalPreform);
-          $("#dataFresh").text(totalFresh);
-          $("#dataIsi").text(totalIsi);
-          $("#dataCap").text(totalCap);
-        } else {
-          var totalPreform = Math.round((preform * 1000) / 14.5);
-          var totalFresh = Math.round((fresh * 1000) / 14.5);
-          var totalIsi = Math.round((isi * 1000) / 14.5);
-          var totalCap = Math.round((cap * 1000) / 1.81);
-
-          $("#dataPreform").text(totalPreform);
-          $("#dataFresh").text(totalFresh);
-          $("#dataIsi").text(totalIsi);
-          $("#dataCap").text(totalCap);
-        }
-
-        $("#dataKarton").text(karton);
-      });
       $("#wa").on("click", function () {
         var no_hp = document.getElementById("no_hp").value;
         var line = document.getElementById("line").value; // Gantilah dengan nilai sesuai kebutuhan
