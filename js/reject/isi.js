@@ -1,6 +1,7 @@
 $(function () {
   var total_Isi = function () {
-    var sum = 0;
+    var kg = 0;
+    var pcs = 0;
     var jenis = $("#jenis").val();
     var totalPcsIsi = 0;
     var totalpcs = 0;
@@ -9,22 +10,42 @@ $(function () {
       var Isi = $(this).val().replace(",", "");
       // alert(option)
       if (Isi != 0 && jenis == "330") {
-        sum += (Isi * 1000) / 11.3;
+        kg += (Isi * 1000) / 11.3;
       } else if (jenis == "600") {
-        sum += (Isi * 1000) / 14.5;
+        kg += (Isi * 1000) / 14.5;
       } else if (jenis == "1500") {
-        sum += (Isi * 1000) / 27;
+        kg += (Isi * 1000) / 27;
       } else {
-        sum += (Isi * 1000) / 100;
+        kg += (Isi * 1000) / 100;
       }
 
       // totalKgIsi += parseFloat(sum);
       totalPcsIsi += Number(Isi);
     });
 
-    $("#dataKgIsi").text(totalPcsIsi);
-    $("#dataPcsIsi").text(Math.round(sum));
-    // $("#totalPreform").text(sum.toLocaleString("en-US"));
+    $(".pcsIsi").each(function () {
+      var pcsIsi = $(this).val().replace(",", "");
+      // alert(option)
+      if (pcsIsi != 0 && jenis == "330") {
+        pcs += (pcsIsi * 11.3) / 1000;
+      } else if (jenis == "600") {
+        pcs += (pcsIsi * 14.5) / 1000;
+      } else if (jenis == "1500") {
+        pcs += (pcsIsi * 27) / 1000;
+      } else {
+        pcs += (pcsIsi * 100) / 1000;
+      }
+
+      // totalKgpcsIsi += parseFloat(sum);
+      totalpcs += Number(pcsIsi);
+    });
+    var roundedPcs = pcs.toFixed(2);
+    var roundedKg = Math.round(kg);
+
+    $("#dataPcsIsi").text(roundedPcs + "/" + totalpcs);
+    $("#dataKgIsi").text(totalPcsIsi + "/" + roundedKg);
+
+    // $("#totalIsi").text(sum.toLocaleString("en-US"));
   };
 
   $("#Isi").on("click", function () {
@@ -40,4 +61,10 @@ function tambahIsi() {
 
   // Tempelkan elemen baru ke dalam elemen dengan id "palletCap"
   $("#akhirIsi").append(newElement);
+}
+function tambahPcsIsi() {
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 pcsIsi").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+
+  // Tempelkan elemen baru ke dalam elemen dengan id "palletCap"
+  $("#akhirPcsIsi").append(newElement);
 }

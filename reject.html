@@ -304,8 +304,7 @@
                               <button type="button" data-bs-toggle="modal" data-bs-target="#Promo" class="btn btn-sm btn-outline-dark">Promo</button>
                             </div>
                           </td>
-                          <td id="dataKgPromo"></td>
-                          <td id="dataPcsPromo"></td>
+                          <td colspan="2" id="dataPcsPromo"></td>
                         </tr>
                         <tr>
                           <td>
@@ -382,6 +381,14 @@
                                 </div>
                               </div>
                               <div id="akhirFresh"></div>
+                              <div id="awalPcsFresh">
+                                <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="tambahPcsFresh()">+ Colom Pallet</button>
+                                <div class="mb-2">
+                                  <label for="">Masukan Reject PcsFresh</label>
+                                  <input type="number" value="0" class="form-control text-right PcsFresh" id="PcsFresh" required />
+                                </div>
+                              </div>
+                              <div id="akhirPcsFresh"></div>
                             </form>
                           </div>
                           <div class="modal-footer">
@@ -402,13 +409,21 @@
                           <div class="modal-body">
                             <form action="">
                               <div id="awalIsi">
-                                <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="tambahIsi()">+ Colom Pallet</button>
+                                <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="tambahIsi()">+ Colom Kg</button>
                                 <div class="mb-2">
-                                  <label for="">Masukan Reject Isi</label>
+                                  <label for="">Masukan Reject Kg</label>
                                   <input type="number" value="0" class="form-control text-right Isi" id="Isi" required />
                                 </div>
                               </div>
                               <div id="akhirIsi"></div>
+                              <div id="awalPcsIsi">
+                                <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="tambahPcsIsi()">+ Colom Pcs</button>
+                                <div class="mb-2">
+                                  <label for="">Masukan Reject Pcs Isi</label>
+                                  <input type="number" value="0" class="form-control text-right pcsIsi" id="PcsIsi" required />
+                                </div>
+                              </div>
+                              <div id="akhirPcsIsi"></div>
                             </form>
                           </div>
                           <div class="modal-footer">
@@ -436,6 +451,14 @@
                                 </div>
                               </div>
                               <div id="akhirCap"></div>
+                              <div id="awalPcsCap">
+                                <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="tambahPcsCap()">+ Colom Pallet</button>
+                                <div class="mb-2">
+                                  <label for="">Masukan Reject PcsCap</label>
+                                  <input type="number" value="0" class="form-control text-right PcsCap" id="PcsCap" required />
+                                </div>
+                              </div>
+                              <div id="akhirPcsCap"></div>
                             </form>
                           </div>
                           <div class="modal-footer">
@@ -471,6 +494,84 @@
                         </div>
                       </div>
                     </div>
+                    <!-- Promo-->
+                    <div class="modal fade" id="Promo" tabindex="-1" aria-labelledby="PromoLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="PromoLabel">Promo Data Promon</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form action="">
+                              <div id="awalPromo">
+                                <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="tambahPromo()">+ Colom Pallet</button>
+                                <div class="mb-2">
+                                  <label for="">Masukan Reject Promo</label>
+                                  <input type="number" value="0" class="form-control text-right Promo" id="Promo" required />
+                                </div>
+                              </div>
+                              <div id="akhirPromo"></div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="Promo">submit</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Reguler-->
+                    <div class="modal fade" id="Reguler" tabindex="-1" aria-labelledby="RegulerLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="RegulerLabel">Reguler Data Regulern</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form action="">
+                              <div id="awalReguler">
+                                <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="tambahReguler()">+ Colom Pallet</button>
+                                <div class="mb-2">
+                                  <label for="">Masukan Reject Reguler</label>
+                                  <input type="number" value="0" class="form-control text-right Reguler" id="Reguler" required />
+                                </div>
+                              </div>
+                              <div id="akhirReguler"></div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="Reguler">submit</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Phill-->
+                    <div class="modal fade" id="Phill" tabindex="-1" aria-labelledby="PhillLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="PhillLabel">Phill Data Philln</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form action="">
+                              <div id="awalPhill">
+                                <button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="tambahPhill()">+ Colom Pallet</button>
+                                <div class="mb-2">
+                                  <label for="">Masukan Reject Phill</label>
+                                  <input type="number" value="0" class="form-control text-right Phill" id="Phill" required />
+                                </div>
+                              </div>
+                              <div id="akhirPhill"></div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="Phill">submit</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -491,6 +592,9 @@
     <script src="js/reject/isi.js"></script>
     <script src="js/reject/cap.js"></script>
     <script src="js/reject/qc.js"></script>
+    <script src="js/reject/promo.js"></script>
+    <script src="js/reject/Reguler.js"></script>
+    <script src="js/reject/Phill.js"></script>
     <!-- Sweetalert2 -->
     <script src="assets/dist/sweetalert2/sweetalert2.min.js"></script>
 
@@ -515,42 +619,19 @@
         var line = document.getElementById("line").value; // Gantilah dengan nilai sesuai kebutuhan
         var shift = document.getElementById("shift").value; // Gantilah dengan nilai sesuai kebutuhan
         var tgl = $("#tgl").text(); // Gantilah dengan nilai sesuai kebutuhan
-
         // Objek untuk menyimpan data variabel dan pesan
-        var data = {
-          "Reject (Prefrom)": "dataPreform",
-          "Reject (Botol Fresh) ": "dataFresh",
-          "Reject (Botol Isi)": "dataIsi",
-          "Total Reject PET": "total",
-          "Reject HPDE (Cap)": "dataCap",
-          "Reject Karton Lbr": "dataKarton",
-        };
 
         var message = "*Data Reject peShift, PET, HPDE, & dan Karton*" + "\n" + "*" + tgl + "* " + "\n\n" + "*Line" + line + "*" + "\n" + "*Shift" + shift + "*" + "\n\n";
 
-        // Loop melalui data variabel dan tambahkan ke pesan jika nilainya tidak nol
-        for (var key in data) {
-          var value = document.getElementById(data[key]).innerHTML;
-          if (value !== "0") {
-            var unit = "";
+        var blowing = "*Mesin Blowing*";
+        var preform = document.getElementById("dataPcsPreform").innerHTML;
+        var Fresh = document.getElementById("dataPcsFresh").innerHTML;
+        // var akhir = document.getElementById("dataAkhir").innerHTML;
+        // var dataActual = document.getElementById("dataActual").innerHTML;
 
-            if (key === "Reject Karton Lbr") {
-              unit = " lbr";
-            } else {
-              unit = " pcs";
-            }
-
-            message += key + " : " + value + unit + "\n";
-          }
-        }
-
-        var awal = document.getElementById("dataAwal").innerHTML;
-        var akhir = document.getElementById("dataAkhir").innerHTML;
-        var dataActual = document.getElementById("dataActual").innerHTML;
-
-        dataAwal = parseFloat(awal);
-        if (awal !== "0" || akhir !== "0" || dataActual !== "0") {
-          message += "\n" + "Counter filling Line " + line + "Shift " + shift + "\n" + "Counter Awal : " + awal + "\n" + "Counter Akhir : " + akhir + "\n\n" + "*Output Actual = " + dataActual + "*" + "\n";
+        // dataAwal = parseFloat(awal);
+        if (preform !== "0" || Fresh !== 0) {
+          message += "\n\n" + blowing + "Reject Preform Kotor : " + preform + "pcs \n" + "Reject Botol Fresh : " + Fresh + "pcs \n";
         }
 
         var url = "https://wa.me/+62" + no_hp + "?text=" + encodeURIComponent(message);

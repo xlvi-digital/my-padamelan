@@ -42,7 +42,7 @@ $(function () {
       // alert(pcs);
     });
 
-    var roundedPcs = Math.round(pcs);
+    var roundedPcs = pcs.toFixed(2);
     var roundedKg = Math.round(kg);
 
     $("#dataPcsPreform").text(roundedPcs + "/" + totalpcs);
