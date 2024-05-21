@@ -45,8 +45,8 @@ $(function () {
     var roundedPcs = pcs.toFixed(2);
     var roundedKg = Math.round(kg);
 
-    $("#dataPcsPreform").text(roundedPcs + "/" + totalpcs);
-    $("#dataKgPreform").text(totalPcsPreform + "/" + roundedKg);
+    $("#dataPcsPreform").text(roundedPcs + " Kg / " + totalpcs + " Pcs");
+    $("#dataKgPreform").text(totalPcsPreform + " Kg / " + roundedKg + " Pcs");
 
     // $("#totalPreform").text(sum.toLocaleString("en-US"));
   };

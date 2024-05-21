@@ -44,7 +44,7 @@ $(function () {
     var roundedKg = Math.round(kg);
 
     $("#dataPcsFresh").text(roundedPcs + "/" + totalpcs);
-    $("#dataKgFresh").text(totalPcsFresh + "/" + roundedKg);
+    $("#dataKgFresh").text(totalPcsFresh + " Kg / " + roundedKg + " Pcs");
   };
 
   $("#fresh").on("click", function () {

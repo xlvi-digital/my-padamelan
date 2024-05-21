@@ -256,8 +256,8 @@
                               <button type="button" data-bs-toggle="modal" data-bs-target="#Preform" class="btn btn-sm btn-outline-dark">Prefrom</button>
                             </div>
                           </td>
-                          <td id="dataKgPreform"></td>
-                          <td id="dataPcsPreform"></td>
+                          <td id="dataKgPreform">0</td>
+                          <td id="dataPcsPreform">0</td>
                         </tr>
                         <tr>
                           <td>
@@ -265,8 +265,8 @@
                               <button type="button" data-bs-toggle="modal" data-bs-target="#Fresh" class="btn btn-sm btn-outline-dark">Botol Fresh</button>
                             </div>
                           </td>
-                          <td id="dataKgFresh"></td>
-                          <td id="dataPcsFresh"></td>
+                          <td id="dataKgFresh">0</td>
+                          <td id="dataPcsFresh">0</td>
                         </tr>
                         <tr>
                           <td>
@@ -274,8 +274,8 @@
                               <button type="button" data-bs-toggle="modal" data-bs-target="#Isi" class="btn btn-sm btn-outline-dark">Botol Isi</button>
                             </div>
                           </td>
-                          <td id="dataKgIsi"></td>
-                          <td id="dataPcsIsi"></td>
+                          <td id="dataKgIsi">0</td>
+                          <td id="dataPcsIsi">0</td>
                         </tr>
                         <tr>
                           <td>
@@ -283,8 +283,8 @@
                               <button type="button" data-bs-toggle="modal" data-bs-target="#Cap" class="btn btn-sm btn-outline-dark">Cap Bersih</button>
                             </div>
                           </td>
-                          <td id="dataKgCap"></td>
-                          <td id="dataPcsCap"></td>
+                          <td id="dataKgCap">0</td>
+                          <td id="dataPcsCap">0</td>
                         </tr>
                         <tr>
                           <td>
@@ -292,8 +292,8 @@
                               <button type="button" data-bs-toggle="modal" data-bs-target="#QC" class="btn btn-sm btn-outline-dark">Cap Kotor / Sampel QC</button>
                             </div>
                           </td>
-                          <td id="dataKgQC"></td>
-                          <td id="dataPcsQC"></td>
+                          <td id="dataKgQC">0</td>
+                          <td id="dataPcsQC">0</td>
                         </tr>
                         <tr>
                           <td colspan="2" align="left"><h5>Karton</h5></td>
@@ -304,7 +304,7 @@
                               <button type="button" data-bs-toggle="modal" data-bs-target="#Promo" class="btn btn-sm btn-outline-dark">Promo</button>
                             </div>
                           </td>
-                          <td colspan="2" id="dataPcsPromo"></td>
+                          <td colspan="2" id="dataPcsPromo">0</td>
                         </tr>
                         <tr>
                           <td>
@@ -312,8 +312,8 @@
                               <button type="button" data-bs-toggle="modal" data-bs-target="#Reguler" class="btn btn-sm btn-outline-dark">Reguler</button>
                             </div>
                           </td>
-                          <td id="dataKgReguler"></td>
-                          <td id="dataPcsReguler"></td>
+                          <td id="dataKgReguler">0</td>
+                          <td id="dataPcsReguler">0</td>
                         </tr>
                         <tr>
                           <td>
@@ -321,8 +321,8 @@
                               <button type="button" data-bs-toggle="modal" data-bs-target="#Phill" class="btn btn-sm btn-outline-dark">Phill</button>
                             </div>
                           </td>
-                          <td id="dataKgPhill"></td>
-                          <td id="dataPcsPhill"></td>
+                          <td id="dataKgPhill">0</td>
+                          <td id="dataPcsPhill">0</td>
                         </tr>
                       </tbody>
                     </table>
@@ -624,14 +624,43 @@
         var message = "*Data Reject peShift, PET, HPDE, & dan Karton*" + "\n" + "*" + tgl + "* " + "\n\n" + "*Line" + line + "*" + "\n" + "*Shift" + shift + "*" + "\n\n";
 
         var blowing = "*Mesin Blowing*";
-        var preform = document.getElementById("dataPcsPreform").innerHTML;
-        var Fresh = document.getElementById("dataPcsFresh").innerHTML;
-        // var akhir = document.getElementById("dataAkhir").innerHTML;
-        // var dataActual = document.getElementById("dataActual").innerHTML;
+        var preform = document.getElementById("dataKgPreform").innerHTML;
+        var Fresh = document.getElementById("dataKgFresh").innerHTML;
+        var Isi = document.getElementById("dataKgIsi").innerHTML;
+        var Cap = document.getElementById("dataKgCap").innerHTML;
+        var QC = document.getElementById("dataKgQC").innerHTML;
 
-        // dataAwal = parseFloat(awal);
-        if (preform !== "0" || Fresh !== 0) {
-          message += "\n\n" + blowing + "Reject Preform Kotor : " + preform + "pcs \n" + "Reject Botol Fresh : " + Fresh + "pcs \n";
+        message +=
+          blowing +
+          "\nReject Preform Kotor : " +
+          preform +
+          "\n" +
+          "Reject Botol Fresh : " +
+          Fresh +
+          "\n\n" +
+          "*Reject Sortir PNS*" +
+          "\nReject Botol Isi : " +
+          Isi +
+          "\nReject Cap Bersih PNS : " +
+          Cap +
+          "\nReject Cap Kotor Sample QC : " +
+          QC;
+
+        var Promo = document.getElementById("dataPcsPromo").innerHTML;
+        var Reguler = document.getElementById("dataPcsReguler").innerHTML;
+        var phill = document.getElementById("dataPcsPhill").innerHTML;
+
+        if (Promo !== "0" || Reguler !== "0" || phill !== "0") {
+          message += "\n\n" + "*Mesin Karton Erector*" + "\n";
+          if (Promo !== "0") {
+            message += "Reject Karton Promo : " + Promo + " Pcs" + "\n";
+          }
+          if (Reguler !== "0") {
+            message += "Reject Karton Reguler : " + Reguler + " Pcs" + "\n";
+          }
+          if (phill !== "0") {
+            message += "Reject Karton Phill : " + phill + " Pcs" + "\n";
+          }
         }
 
         var url = "https://wa.me/+62" + no_hp + "?text=" + encodeURIComponent(message);

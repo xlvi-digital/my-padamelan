@@ -35,7 +35,7 @@ $(function () {
     var roundedKg = Math.round(kg);
 
     $("#dataPcsCap").text(roundedPcs + "/" + totalpcs);
-    $("#dataKgCap").text(totalPcsCap + "/" + roundedKg);
+    $("#dataKgCap").text(totalPcsCap + " Kg / " + roundedKg + " Pcs");
   };
 
   $("#Cap").on("click", function () {

@@ -43,7 +43,7 @@ $(function () {
     var roundedKg = Math.round(kg);
 
     $("#dataPcsIsi").text(roundedPcs + "/" + totalpcs);
-    $("#dataKgIsi").text(totalPcsIsi + "/" + roundedKg);
+    $("#dataKgIsi").text(totalPcsIsi + " Kg / " + roundedKg + " Pcs");
 
     // $("#totalIsi").text(sum.toLocaleString("en-US"));
   };
