@@ -61,7 +61,7 @@ $(function () {
   total();
 });
 
-function tambahPcsPrefrom() {
+function tambahPrefrom() {
   var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 preform").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "palletCap"
