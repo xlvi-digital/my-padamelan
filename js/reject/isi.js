@@ -1,70 +1,77 @@
 $(function () {
-  var total_Isi = function () {
+  var total = function () {
     var kg = 0;
     var pcs = 0;
     var jenis = $("#jenis").val();
-    var totalPcsIsi = 0;
+    var totalPcsPreform = 0;
     var totalpcs = 0;
 
-    $(".Isi").each(function () {
-      var Isi = $(this).val().replace(",", "");
+    $(".preform").each(function () {
+      var preform = $(this).val().replace(",", "");
       // alert(option)
-      if (Isi != 0 && jenis == "330") {
-        kg += (Isi * 1000) / 11.3;
+      if (preform != 0 && jenis == "330") {
+        kg += (preform * 1000) / 11.3;
       } else if (jenis == "600") {
-        kg += (Isi * 1000) / 14.5;
+        kg += (preform * 1000) / 14.5;
       } else if (jenis == "1500") {
-        kg += (Isi * 1000) / 27;
+        kg += (preform * 1000) / 27;
+      } else if (jenis == "3000") {
+        kg += (preform * 1000) / 54;
       } else {
-        kg += (Isi * 1000) / 100;
+        kg += (preform * 1000) / 100;
       }
 
-      // totalKgIsi += parseFloat(sum);
-      totalPcsIsi += Number(Isi);
+      // totalKgPreform += parseFloat(sum);
+      totalPcsPreform += Number(preform);
     });
 
-    $(".pcsIsi").each(function () {
-      var pcsIsi = $(this).val().replace(",", "");
+    $(".pcsPreform").each(function () {
+      var pcsPrefrom = $(this).val().replace(",", "");
+      pcsPrefrom = parseFloat(pcsPrefrom) || 0;
       // alert(option)
-      if (pcsIsi != 0 && jenis == "330") {
-        pcs += (pcsIsi * 11.3) / 1000;
+      if (pcsPrefrom != 0 && jenis == "330") {
+        pcs += (pcsPrefrom * 11.3) / 1000;
       } else if (jenis == "600") {
-        pcs += (pcsIsi * 14.5) / 1000;
+        pcs += (pcsPrefrom * 14.5) / 1000;
       } else if (jenis == "1500") {
-        pcs += (pcsIsi * 27) / 1000;
+        pcs += (pcsPrefrom * 27) / 1000;
       } else {
-        pcs += (pcsIsi * 100) / 1000;
+        pcs += (pcsPrefrom * 100) / 1000;
       }
 
-      // totalKgpcsIsi += parseFloat(sum);
-      totalpcs += Number(pcsIsi);
+      // totalKgpcs += parseFloat(sum);
+      totalpcs += Number(pcsPrefrom);
+      // alert(pcs);
     });
+
     var roundedPcs = pcs.toFixed(2);
     var roundedKg = Math.round(kg);
 
-    $("#dataPcsIsi").text(roundedPcs + "/" + totalpcs);
-    $("#dataKgIsi").text(totalPcsIsi + " Kg / " + roundedKg + " Pcs");
+    $("#dataPcsPreform").text(roundedPcs + " Kg / " + totalpcs + " Pcs");
+    $("#dataKgPreform").text(totalPcsPreform + " Kg / " + roundedKg + " Pcs");
 
-    // $("#totalIsi").text(sum.toLocaleString("en-US"));
+    // $("#totalPreform").text(sum.toLocaleString("en-US"));
   };
 
-  $("#Isi").on("click", function () {
-    total_Isi();
+  $("#check").on("click", function () {
+    total();
   });
   $("#jenis").on("click", function () {
-    total_Isi();
+    total();
   });
+
+  total();
 });
 
-function tambahIsi() {
-  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 Isi").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+function tambahPrefrom() {
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 preform").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "palletCap"
-  $("#akhirIsi").append(newElement);
+  $("#akhirPrefrom").append(newElement);
 }
-function tambahPcsIsi() {
-  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 pcsIsi").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
+function tambahPcsPrefrom() {
+  var newElement = $("<input>").attr("type", "number").val("").addClass("form-control mb-2 pcsPreform").attr("placeholder", "0"); // Nilainya diatur menjadi kosong
 
   // Tempelkan elemen baru ke dalam elemen dengan id "palletCap"
-  $("#akhirPcsIsi").append(newElement);
+  $("#akhirPcsPrefrom").append(newElement);
 }
