@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+    <meta name="generator" content="Hugo 0.104.2" />
+    <title>My Padamelan</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/" />
+
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- my Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet" />
+
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+
+    <!-- Sweetalert2 -->
+    <link rel="stylesheet" href="../assets/dist/sweetalert2/sweetalert2.min.css" />
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1), inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      p {
+        margin: 0;
+        font-size: 1rem;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="../css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="navbar navbar-dark sticky-top bg-danger flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#" style="font-family: 'Agbalumo'; text-transform: uppercase">MY padamelan</a>
+      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="position-sticky mb-2 sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">
+                  <i class="bx bx-package"></i>
+                  Opname Material
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="../reject.h.on("click", function() {
+                  
+                });tml">
+                  <i class="bx bxs-coffee-togo"></i>
+                  Data Reject
+                </a>
+              </li>
+            </ul>
+            <h6 class="sidebar-heading align-items-center px-3 mt-3 mb-1 text-body-secondary text-uppercase">Line 6</h6>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="../achievement/line-6.html">
+                  <i class="bx bx-radio-circle-marked"></i>
+                  Update Achievement
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../blowing/line6.html">
+                  <i class="bx bx-radio-circle-marked"></i>
+                  Update Blowing
+                </a>
+              </li>
+            </ul>
+            <h6 class="sidebar-heading align-items-center px-3 mt-3 mb-1 text-body-secondary text-uppercase">Line 7</h6>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="../achievement/line-7.html">
+                  <i class="bx bx-radio-circle-marked"></i>
+                  Update Achievement
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../blowing/line7.html">
+                  <i class="bx bx-radio-circle-marked"></i>
+                  Update Blowing
+                </a>
+              </li>
+            </ul>
+            <h6 class="sidebar-heading align-items-center px-3 mt-3 mb-1 text-body-secondary text-uppercase">Line 8</h6>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="../achievement/line-8.html">
+                  <i class="bx bx-radio-circle-marked"></i>
+                  Update Achievement
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../blowing/line8.html">
+                  <i class="bx bx-radio-circle-marked"></i>
+                  Update Blowing
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2 mb-2">Update Blowing</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="me-2">
+                <input type="date" class="form-control d-none" id="input_tgl" />
+              </div>
+              <h5 class="line">
+                <div class="btn-group me-2">
+                  <select class="form-select form-select border-success" id="line" style="border-radius: 5px; font-size: 1rem">
+                    <option selected>Line</option>
+                    <option value="1">Line 1</option>
+                    <option value="2">Line 2</option>
+                    <option value="3">Line 3</option>
+                    <option value="4">Line 4</option>
+                    <option value="5">Line 5</option>
+                    <option value="6">Line 6</option>
+                    <option value="7">Line 7</option>
+                    <option value="8">Line 8</option>
+                  </select>
+                </div>
+              </h5>
+              <div class="line btn-toolbar mb-md-0">
+                <div class="me-2">
+                  <select class="form-select form-select border-success" id="shift" style="border-radius: 5px; font-size: 1rem">
+                    <option selected>Shift</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#whatapps" class="btn btn-sm btn-outline-success">
+                <i class="bx bxl-whatsapp" style="vertical-align: bottom; font-size: 1.5rem"></i>
+                Share
+              </button>
+            </div>
+          </div>
+
+          <div class="modal fade" id="whatapps" tabindex="-1" aria-labelledby="whatappsLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="whatappsLabel">Modal Whatapps</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <label for="no_hp">Masukan No Whatapps</label>
+                  <input type="number" name="no_hp" id="no_hp" class="form-control form-control-sm" />
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="wa" class="btn btn-success">Kirim</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-body">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <h5>Line 6</h5>
+                <p><span id="jam_awal">00</span>-<span id="jam_akhir">01</span> = <span id="counter">0</span></p>
+                <p>Counter = <span id="total-counter">0</span></p>
+                <br />
+                <p>Highpress : <span id="highpress"></span></p>
+                <p>Lowpress : <span id="Lowpress"></span></p>
+                <p>Temp. Oven : <span id="Oven"></span></p>
+                <p>Temp. Chiler : <span id="Chiler"></span></p>
+                <p>Temp. AHU : <span id="AHU"></span></p>
+                <p>Dosing : <span id="Dosing"></span></p>
+                <p>Rinsing : <span id="Rinsing"></span></p>
+                <p>Drain Feedtank : <span id="Drain"></span></p>
+                <p>R.Preform : <span id="Preform"></span></p>
+                <p>R.Botol : <span id="Botol"></span></p>
+                <br />
+                <h5>Issue</h5>
+                <ul>
+                  <li id="issue">No issue <span id="time">(0)</span></li>
+                </ul>
+              </div>
+              <div class="col-md-8 text-center">
+                <form id="blowing">
+                  <div class="card card-body">
+                    <a class="btn btn-outline-dark mb-3" data-bs-toggle="collapse" href="#formCounter" role="button" aria-expanded="false" aria-controls="formCounter"> <i class="bx bx-barcode"></i> Counter </a>
+                    <div class="collapse mb-2" id="formCounter">
+                      <div class="card card-body">
+                        <div class="form-floating mb-3">
+                          <input type="number" class="form-control form-control-sm" id="jam-awal" />
+                          <label for="jam-awal">Jam Awal</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="number" class="form-control form-control-sm" id="jam-akhir" />
+                          <label for="jam-akhir">Jam Akhir</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control form-control-sm" id="counter-awal" oninput="formatCurrency(this)" data-original-value="" />
+                          <label for="counter-awal">Counter Awal</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control form-control-sm" id="counter-akhir" oninput="formatCurrency(this)" data-original-value="" />
+                          <label for="counter-akhir">Counter Akhir</label>
+                        </div>
+
+                        <button type="button" class="btn btn-dark" id="button-counter" data-bs-toggle="collapse" data-bs-target="#formCounter" aria-expanded="false" aria-controls="formCounter">Sumbit</button>
+                      </div>
+                    </div>
+                    <a class="btn btn-outline-dark mb-3" data-bs-toggle="collapse" href="#formParameter" role="button" aria-expanded="false" aria-controls="formParameter"> <i class="bx bx-notepad"></i> Parameter </a>
+                    <div class="collapse" id="formParameter">
+                      <div class="card card-body">
+                        <div class="form-floating mb-3">
+                          <input type="number" class="form-control form-control-sm" id="input-highpress" />
+                          <label for="input-highpress">Highpress</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="number" class="form-control form-control-sm" id="input-lowpress" />
+                          <label for="input-lowpress">Lowpress</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="number" class="form-control form-control-sm" id="input-oven" />
+                          <label for="input-oven">Temp. Oven</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="number" class="form-control form-control-sm" id="input-chiler" />
+                          <label for="input-chiler">Temp. Chiler</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="number" class="form-control form-control-sm" id="input-AHU" />
+                          <label for="input-AHU">Temp. AHU</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="number" class="form-control form-control-sm" id="input-dosing" />
+                          <label for="input-dosing">Dosing</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                          <div class="form-floating">
+                            <select class="form-select" id="input-rinsing" aria-label="Floating label select example">
+                              <option selected value="-">Tidak</option>
+                              <option value="berkala">Berkala</option>
+                            </select>
+                            <label for="input-rinsing">Rinsing</label>
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <div class="form-floating">
+                            <select class="form-select" id="input-drain" aria-label="Floating label select example">
+                              <option selected value="-">Tidak</option>
+                              <option value="berkala">Berkala</option>
+                            </select>
+                            <label for="input-drain">Drain Feedtank</label>
+                          </div>
+                        </div>
+                        <button type="button" class="btn btn-dark" id="button-parameter" data-bs-toggle="collapse" data-bs-target="#formParameter" aria-expanded="false" aria-controls="formParameter">Sumbit</button>
+                      </div>
+                    </div>
+                    <a class="btn btn-outline-dark mb-3" data-bs-toggle="collapse" href="#formReject" role="button" aria-expanded="false" aria-controls="formReject"><i class="bx bxs-trash"></i> Reject </a>
+                    <div class="collapse mb-2" id="formReject">
+                      <div class="card card-body">
+                        <div class="form-floating mb-3">
+                          <input type="number" class="form-control form-control-sm" id="input-prefrom" />
+                          <label for="input-prefrom">R.prefrom</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="number" class="form-control form-control-sm" id="input-Botol" />
+                          <label for="input-Botol">R.Botol</label>
+                        </div>
+                        <button type="button" class="btn btn-dark" id="button-reject" data-bs-toggle="collapse" data-bs-target="#formReject" aria-expanded="false" aria-controls="formReject">Sumbit</button>
+                      </div>
+                    </div>
+                    <a class="btn btn-outline-dark mb-3" data-bs-toggle="collapse" href="#formIssue" role="button" aria-expanded="false" aria-controls="formIssue"><i class="bx bxs-timer"></i> Issue </a>
+                    <div class="collapse mb-2" id="formIssue">
+                      <div class="card card-body">
+                        <button class="btn btn-dark btn-sm mb-2" type="button" onclick="tambahIssue()">+ Form Issue</button>
+                        <div class="input-group">
+                          <textarea type="text" aria-label="First name" class="form-control" id="input-issue" placeholder="issue"></textarea>
+                          <div class="input-group-text">
+                            <span class="input-group-text">Lama Donwtime</span>
+                            <input type="number" id="input-time" aria-label="Last name" class="form-control" />
+                          </div>
+                        </div>
+                        <div class="input-group" id="issue2"></div>
+                        <button type="button" class="btn btn-dark" id="button-issue" data-bs-toggle="collapse" data-bs-target="#formIssue" aria-expanded="false" aria-controls="formIssue">Sumbit</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/dashboard.js"></script>
+
+    <script>
+      function formatCurrency(input) {
+        // Hapus karakter selain digit
+        let value = input.value.replace(/[^,\d]/g, "");
+
+        // Pisahkan angka dan desimal
+        let parts = value.split(",");
+
+        // Format angka dengan ribuan
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+        // Gabungkan angka dan desimal
+        input.value = parts.join(",");
+
+        input.setAttribute("data-original-value", value.replace(/\./g, ""));
+      }
+
+      function tambahIssue() {
+        // Buat elemen container baru untuk input group
+        const newInputGroup = document.createElement("div");
+        newInputGroup.className = "input-group mt-2"; // Menambahkan margin top
+
+        // Buat textarea baru
+        const newTextArea = document.createElement("textarea");
+        newTextArea.type = "text";
+        newTextArea.className = "form-control";
+        newTextArea.placeholder = "issue";
+
+        // Buat div untuk input group text dan input time
+        const newInputGroupText = document.createElement("div");
+        newInputGroupText.className = "input-group-text";
+
+        const newSpan = document.createElement("span");
+        newSpan.className = "input-group-text";
+        newSpan.innerText = "Lama Downtime";
+
+        const newInputTime = document.createElement("input");
+        newInputTime.type = "number";
+        newInputTime.className = "form-control";
+
+        // Masukkan elemen-elemen ke dalam input group text
+        newInputGroupText.appendChild(newSpan);
+        newInputGroupText.appendChild(newInputTime);
+
+        // Masukkan textarea dan input group text ke dalam input group
+        newInputGroup.appendChild(newTextArea);
+        newInputGroup.appendChild(newInputGroupText);
+
+        // Tambahkan input group baru ke container form
+        const formContainer = document.getElementById("issue2");
+        formContainer.appendChild(newInputGroup);
+      }
+    </script>
+    <script>
+      $("#button-counter").on("click", function () {
+        var jamAwal = $("#jam-awal").val();
+        var jamAkhir = $("#jam-akhir").val();
+        var counterAwal = parseInt(document.getElementById("counter-awal").getAttribute("data-original-value")) || 0;
+        var counterAkhir = parseInt(document.getElementById("counter-akhir").getAttribute("data-original-value")) || 0;
+
+        var counter = counterAkhir - counterAwal;
+
+        $("#jam_awal").text(jamAwal);
+        $("#jam_akhir").text(jamAkhir);
+        $("#counter").text(counter);
+        $("#total-counter").text(counterAkhir);
+        // alert(counterAkhir);
+
+        // Tambah 1 jam ke jamAkhir
+        var jam = parseInt(jamAkhir); // Ambil nilai jam dan konversi ke integer
+
+        // Tambah 1 jam
+        jam = (jam + 1) % 24; // Pastikan jam tidak melebihi 23
+
+        // Set nilai baru ke input jam-akhir
+        $("#jam-akhir").val(jam);
+
+        // Update input lain
+        $("#jam-awal").val(jamAkhir);
+        $("#counter-awal").val(counterAkhir);
+        $("#counter-akhir").val(null);
+      });
+    </script>
+    <script>
+      $("#button-parameter").on("click", function () {
+        var highpress = $("#input-highpress").val();
+        var Lowpress = $("#input-lowpress").val();
+        var Oven = $("#input-highpress").val();
+        var Chiler = $("#input-highpress").val();
+        var AHU = $("#input-AHU").val();
+        var Dosing = $("#input-dosing").val();
+        var Rinsing = $("#input-rinsing").val();
+        var Drain = $("#input-drain").val();
+
+        $("#highpress").text(highpress);
+        $("#Lowpress").text(Lowpress);
+        $("#Oven").text(Oven);
+        $("#Chiler").text(Chiler);
+        $("#AHU").text(AHU);
+        $("#Dosing").text(Dosing);
+        $("#Rinsing").text(Rinsing);
+        $("#Drain").text(Drain);
+      });
+    </script>
+
+    <script>
+      $("#button-reject").on("click", function() {
+        var Preform = $("#input-prefrom").val();
+        var Botol = $("#input-Botol").val();
+
+        $("#Preform").text(Preform);
+        $("#Botol").text(Botol);
+
+
+      });
+    </script>
+  </body>
+</html>
