@@ -208,7 +208,7 @@
                   <input type="number" name="no_hp" id="no_hp" class="form-control form-control-sm" />
                 </div>
                 <div class="modal-footer">
-                  <button type="button" id="wa" class="btn btn-success">Kirim</button>
+                  <button type="button" id="wa" onclick="sendToWhatsApp()" class="btn btn-success">Kirim</button>
                 </div>
               </div>
             </div>
@@ -216,27 +216,6 @@
 
           <div class="card card-body">
             <div class="row justify-content-center">
-              <div class="col-md-4">
-                <h5>Line 6</h5>
-                <p><span id="jam_awal">00</span>-<span id="jam_akhir">01</span> = <span id="counter">0</span></p>
-                <p>Counter = <span id="total-counter">0</span></p>
-                <br />
-                <p>Highpress : <span id="highpress"></span></p>
-                <p>Lowpress : <span id="Lowpress"></span></p>
-                <p>Temp. Oven : <span id="Oven"></span></p>
-                <p>Temp. Chiler : <span id="Chiler"></span></p>
-                <p>Temp. AHU : <span id="AHU"></span></p>
-                <p>Dosing : <span id="Dosing"></span></p>
-                <p>Rinsing : <span id="Rinsing"></span></p>
-                <p>Drain Feedtank : <span id="Drain"></span></p>
-                <p>R.Preform : <span id="Preform"></span></p>
-                <p>R.Botol : <span id="Botol"></span></p>
-                <br />
-                <h5>Issue</h5>
-                <ul>
-                  <li id="issue">No issue <span id="time">(0)</span></li>
-                </ul>
-              </div>
               <div class="col-md-8 text-center">
                 <form id="blowing">
                   <div class="card card-body">
@@ -344,6 +323,28 @@
                   </div>
                 </form>
               </div>
+              <div class="col-md-4 mt-2">
+                <h5>Line 6</h5>
+                <p><span id="jam_awal">00</span>-<span id="jam_akhir">01</span> = <span id="counter">0</span></p>
+                <p>Counter = <span id="total-counter">0</span></p>
+                <br />
+                <p>Highpress : <span id="highpress"></span></p>
+                <p>Lowpress : <span id="Lowpress"></span></p>
+                <p>Temp. Oven : <span id="Oven"></span></p>
+                <p>Temp. Chiler : <span id="Chiler"></span></p>
+                <p>Temp. AHU : <span id="AHU"></span></p>
+                <p>Dosing : <span id="Dosing"></span></p>
+                <p>Rinsing : <span id="Rinsing"></span></p>
+                <p>Drain Feedtank : <span id="Drain"></span></p>
+                <p>R.Preform : <span id="Preform"></span></p>
+                <p>R.Botol : <span id="Botol"></span></p>
+                <br />
+                <h5>Issue</h5>
+                <ul id="issueList">
+                  <li id="issue">No issue <span id="time">(0)</span></li>
+                </ul>
+              </div>
+             
             </div>
           </div>
         </main>
@@ -409,6 +410,8 @@
         const formContainer = document.getElementById("issue2");
         formContainer.appendChild(newInputGroup);
       }
+
+    
     </script>
     <script>
       $("#button-counter").on("click", function () {
@@ -421,8 +424,8 @@
 
         $("#jam_awal").text(jamAwal);
         $("#jam_akhir").text(jamAkhir);
-        $("#counter").text(counter);
-        $("#total-counter").text(counterAkhir);
+        $("#counter").text(counter.toLocaleString("de-DE"));
+        $("#total-counter").text(counterAkhir.toLocaleString("de-DE"));
         // alert(counterAkhir);
 
         // Tambah 1 jam ke jamAkhir
@@ -436,7 +439,7 @@
 
         // Update input lain
         $("#jam-awal").val(jamAkhir);
-        $("#counter-awal").val(counterAkhir);
+        $("#counter-awal").val(counterAkhir.toLocaleString("de-DE"));
         $("#counter-akhir").val(null);
       });
     </script>
@@ -470,8 +473,98 @@
         $("#Preform").text(Preform);
         $("#Botol").text(Botol);
 
-
       });
+
+      $("#button-issue").on("click", function() {
+        const issueList = document.getElementById("issueList");
+
+        // Clear existing list items
+        issueList.innerHTML = '';
+
+        // Get data from the initial input fields
+        const initialIssue = document.getElementById("input-issue").value;
+        const initialTime = document.getElementById("input-time").value;
+
+        if (initialIssue || initialTime) {
+          const li = document.createElement("li");
+          li.innerHTML = ` ${initialIssue} <span>(${initialTime})</span>`;
+          issueList.appendChild(li);
+        }
+
+        // Get data from dynamically added input fields
+        const formContainer = document.getElementById("issue2");
+        const inputGroups = formContainer.getElementsByClassName("input-group");
+
+        for (let i = 0; i < inputGroups.length; i++) {
+          const textArea = inputGroups[i].querySelector("textarea").value;
+          const inputTime = inputGroups[i].querySelector("input[type='number']").value;
+
+          const li = document.createElement("li");
+          li.innerHTML = ` ${textArea} <span>(${inputTime})</span>`;
+
+          issueList.appendChild(li);
+        }
+
+        // If no issues were added, show the default message
+        if (!initialIssue && inputGroups.length === 0) {
+          const li = document.createElement("li");
+          li.id = "issue";
+          li.innerHTML = 'No issue <span id="time">(0)</span>';
+          issueList.appendChild(li);
+        }
+       }) 
     </script>
+
+<script>
+    function sendToWhatsApp() {
+      const jamAwal = document.getElementById('jam_awal').innerText;
+      const jamAkhir = document.getElementById('jam_akhir').innerText;
+      const counter = document.getElementById('counter').innerText;
+      const totalCounter = document.getElementById('total-counter').innerText;
+      const highpress = document.getElementById('highpress').innerText ;
+      const lowpress = document.getElementById('Lowpress').innerText ;
+      const oven = document.getElementById('Oven').innerText ;
+      const chiler = document.getElementById('Chiler').innerText ;
+      const ahu = document.getElementById('AHU').innerText ;
+      const dosing = document.getElementById('Dosing').innerText ;
+      const rinsing = document.getElementById('Rinsing').innerText ;
+      const drain = document.getElementById('Drain').innerText ;
+      const preform = document.getElementById('Preform').innerText ;
+      const botol = document.getElementById('Botol').innerText ;
+      const no_hp = document.getElementById('no_hp').value ;
+
+      // Get all issue list items
+      const issueList = document.getElementById('issueList').getElementsByTagName('li');
+      let issueData = "";
+      for (let i = 0; i < issueList.length; i++) {
+        issueData += `- ${issueList[i].innerText}\n`;
+      }
+
+      // Construct the message
+      const message = `*LINE 6*\n` +
+        `${jamAwal}-${jamAkhir} = ${counter}\n` +
+        `Counter: ${totalCounter}\n\n` +
+        `Highpress: ${highpress}\n` +
+        `Lowpress: ${lowpress}\n` +
+        `Temp. Oven: ${oven}\n` +
+        `Temp. Chiler: ${chiler}\n` +
+        `Temp. AHU: ${ahu}\n` +
+        `Dosing: ${dosing}\n` +
+        `Rinsing: ${rinsing}\n` +
+        `Drain Feedtank: ${drain}\n` +
+        `R.Preform: ${preform}\n` +
+        `R.Botol: ${botol}\n\n` +
+        `*Issue:*\n${issueData}`;
+
+      // Encode the message for use in a URL
+      const encodedMessage = encodeURIComponent(message);
+
+      // Create the WhatsApp URL
+      const whatsappUrl = "https://wa.me/+62" + no_hp + "?text=" + encodeURIComponent(message);
+
+      // Open the WhatsApp URL
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
   </body>
 </html>
