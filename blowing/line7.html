@@ -161,38 +161,12 @@
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2 mb-2">Update Blowing</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="me-2">
-                <input type="date" class="form-control d-none" id="input_tgl" />
-              </div>
-              <h5 class="line">
-                <div class="btn-group me-2">
-                  <select class="form-select form-select border-success" id="line" style="border-radius: 5px; font-size: 1rem">
-                    <option selected>Line</option>
-                    <option value="1">Line 1</option>
-                    <option value="2">Line 2</option>
-                    <option value="3">Line 3</option>
-                    <option value="4">Line 4</option>
-                    <option value="5">Line 5</option>
-                    <option value="6">Line 6</option>
-                    <option value="7">Line 7</option>
-                    <option value="8">Line 8</option>
-                  </select>
-                </div>
-              </h5>
-              <div class="line btn-toolbar mb-md-0">
-                <div class="me-2">
-                  <select class="form-select form-select border-success" id="shift" style="border-radius: 5px; font-size: 1rem">
-                    <option selected>Shift</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-              <button type="button" data-bs-toggle="modal" data-bs-target="#whatapps" class="btn btn-sm btn-outline-success">
-                <i class="bx bxl-whatsapp" style="vertical-align: bottom; font-size: 1.5rem"></i>
-                Share
+              
+              <button type="button" data-bs-toggle="modal" data-bs-target="#whatapps" class="btn btn-success" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+                <i class="bx bxl-whatsapp" style="vertical-align: bottom; font-size: 1.5rem;"></i>
+                
               </button>
+              
             </div>
           </div>
 
@@ -345,7 +319,7 @@
                 </form>
               </div>
               <div class="col-md-4 mt-2">
-                <h5>Line 6</h5>
+                <h5>Line 7</h5>
                 <p><span id="jam_awal">00</span>-<span id="jam_akhir">01</span> = <span id="counter">0</span></p>
                 <p>Counter = <span id="total-counter">0</span></p>
                 <br />
@@ -562,7 +536,7 @@
       }
 
       // Construct the message
-      const message = `*LINE 6*\n` +
+      const message = `*LINE 7*\n` +
         `${jamAwal}-${jamAkhir} = ${counter}\n` +
         `Counter: ${totalCounter}\n\n` +
         `Highpress: ${highpress}\n` +
