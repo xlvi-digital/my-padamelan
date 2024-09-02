@@ -603,7 +603,13 @@
         document.getElementById("tgl").textContent = formattedDate;
       });
     </script>
-    <script></script>
+    <script>
+      $("#line").on("click", function () {
+        var value = $(this).val();
+
+        $("#jenis").val(value == 6 ? "5000" : value == 3 ? "330" : value == 1 || value == 7 ? "1500" : "600");
+      });
+    </script>
     <script>
       $("#wa").on("click", function () {
         var no_hp = document.getElementById("no_hp").value;
